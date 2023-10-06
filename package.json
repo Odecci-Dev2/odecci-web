@@ -1,6 +1,5 @@
 {
   "name": "odecci-web",
-  "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
@@ -10,6 +9,16 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^3.2.3"
-  }
+    "astro": "^3.2.3",
+    "gulp-purgecss": "^5.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.69.0"
+  },
+  "description": "```sh npm create astro@latest -- --template basics ```",
+  "main": "index.astro",
+  "author": "KC Acuin",
+  "license": "ISC"
 }

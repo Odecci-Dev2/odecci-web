@@ -1,0 +1,48 @@
+---
+// interface Props {
+// 	title: string;
+// 	body: string;
+// 	href: string;
+// }
+
+import { Logo } from "../assets/constants.js";
+
+// const { href, body } = Astro.props;
+---
+
+<nav class="odecci-navbar-transparent">
+	<ul class="odecci-container">
+		<div class="odecci-row odecci-gap-1">
+			<li class="odecci-site-links">
+				<a href=''>
+					<img src={Logo} alt="" srcset="">
+				</a>
+			</li>
+		</div>
+		<div class="odecci-row odecci-gap-1">
+			<!-- {IconLinks.map((link, index) => (
+				<li>
+					<a href={link.url}>
+						<img src={link.icon} alt={`${link.name} Icon`} />
+						{link.name}
+					</a>
+				</li>
+			))} -->
+			<li class="odecci-site-links">
+				<a class="odecci-text-white" href=''>FB</a>
+			</li>
+			<li class="odecci-site-links">
+				<a class="odecci-text-white" href=''>X</a>
+			</li>
+			<li class="odecci-site-links">
+				<a class="odecci-text-white" href=''>LinkedIn</a>
+			</li>
+			<li class="odecci-site-links">
+				<a class="odecci-text-white" href=''>IG</a>
+			</li>
+		</div>
+		<div class="odecci-row odecci-gap-1">
+			<button class="odecci-btn-outlined-secondary odecci-text-secondary">Get Free Quote <img src="../" alt="Arrow Button"></button>
+		</div>
+	</ul>
+</nav>

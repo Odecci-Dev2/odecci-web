@@ -1,0 +1,43 @@
+---
+// interface Props {
+// 	title: string;
+// 	body: string;
+// 	href: string;
+// }
+import { IconLinks } from "../assets/constants.js";
+
+// const { href, body } = Astro.props;
+---
+
+<nav class="odecci-navbar-primary">
+	<ul class="odecci-container">
+		<div class="odecci-row odecci-gap-1">
+			<li class="odecci-site-links"><a class="odecci-text-white" href=''>info@odecci.com</a></li>
+			<li class="odecci-site-links"><a class="odecci-text-white" href=''>(+63) 961 6458 398</a></li>
+		</div>
+
+		<div class="odecci-row odecci-gap-1">
+			{IconLinks.map((link, index) => (
+				<li>
+					<a href={link.url}>
+						<img src={link.icon} alt={`${link.name} Icon`} />
+					</a>
+				</li>
+			))}
+		</div>
+	</ul>
+</nav>
+
+<style>
+	img {
+		-webkit-filter: invert(100%);
+		filter: invert(100%);
+		width: 2.6rem;
+		height: 2.6rem;
+		background-size: 100% 100%;
+	}
+	li:last-of-type > img {
+		width: 3rem;
+		height: 6rem;
+	}
+</style>

@@ -1,0 +1,49 @@
+@each $key, $val in $colors {
+    // * For Text Color
+    .odecci-text-#{$key} {
+      color: $val;
+    }
+    // * For Text Hover Color
+    .odecci-text-hover-#{$key} {
+        &:hover {
+            color: $val;
+        }
+    }
+    // * For Background Color
+    .odecci-bg-#{$key} {
+      background-color: $val;
+    }
+    
+    // * Color is not black or white
+    @if ($val != black and $val != white) {
+      // * light variations
+      @for $i from 1 through 9 {
+        .odecci-text-#{$key}-light-#{$i} {
+          color: mix(white, $val, $i * 10%);
+        }
+        .odecci-text-hover-#{$key}-light-#{$i} {
+            &:hover {
+                color: mix(white, $val, $i * 10%);
+            }
+        }
+        .odecci-bg-#{$key}-light-#{$i} {
+          background-color: mix(white, $val, $i * 10%);
+        }
+      }
+  
+      // * Dark variations
+      @for $i from 1 through 9 {
+        .odecci-text-#{$key}-dark-#{$i} {
+          color: mix(black, $val, $i * 10%);
+        }
+        .odecci-text-hover-#{$key}-dark-#{$i} {
+            &:hover {
+                color: mix(black, $val, $i * 10%);
+            }
+        }
+        .odecci-bg-#{$key}-dark-#{$i} {
+          background-color: mix(black, $val, $i * 10%);
+        }
+      }
+    }
+  }

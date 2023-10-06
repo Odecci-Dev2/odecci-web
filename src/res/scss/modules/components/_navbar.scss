@@ -1,0 +1,29 @@
+%flex-layout {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+  
+  .odecci-navbar {
+    @extend %flex-layout;
+    padding: $base-padding $base-padding * 2;
+    box-shadow: $base-box-shadow;
+    .odecci-site-title {
+      font-size: $font-size-lg;
+    }
+    .odecci-site-links {
+      font-size: $font-size-x-md;
+    }
+    .odecci-container {
+      @extend %flex-layout;
+    }
+  }
+  
+  @each $key, $val in $colors {
+    .odecci-navbar-#{$key} {
+      @extend .odecci-navbar;
+      background-color: $val;
+    }
+  }
