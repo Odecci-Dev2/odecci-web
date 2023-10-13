@@ -6,24 +6,73 @@
     box-sizing: border-box;
   }
   
-  .odecci-navbar {
+  .odc-navbar {
     @extend %flex-layout;
     padding: $base-padding $base-padding * 2;
-    box-shadow: $base-box-shadow;
-    .odecci-site-title {
+    // box-shadow: $base-box-shadow;
+    .odc-site-title {
       font-size: $font-size-lg;
     }
-    .odecci-site-links {
+    .odc-site-links {
       font-size: $font-size-x-md;
+      
+      a:has(.odc-caret-down) {
+        display: flex;
+        align-items: center;
+      }
     }
-    .odecci-container {
+    [role='tablist'] {
+      --_gap: 2rem;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      &:hover ~ li,
+      &:focus-visible ~ li {
+        --_translate: -100%;
+        --_scale-delay: 200ms;
+      }
+      .odc-nav-links {
+        overflow: hidden;
+        position: relative;
+        padding-inline: calc(var(--_gap) / 2);
+        min-inline-size: 3rem;
+        transition: 120ms ease-out;
+        &::after {
+          content: '';
+          position: absolute;
+          inset-inline: 0;
+          inset-block-end: 0;
+          block-size: 3px;
+          background-color: $secondary;
+  
+          translate: var(--_translate, 0);
+          scale: var(--_scale, 0) 1;
+          transition:
+            scale 100ms var(--_scale-delay, 0ms), 
+            translate 200ms;
+        }
+        &:hover ~ li,
+        &:focus-visible ~ li {
+          --_translate: -100%;
+          --_scale-delay: 200ms;
+        }
+        &:hover,
+        &:focus-visible {
+          transform: scale(1.0300);
+          --_scale: 1;
+          --_translate: 0;
+          --_scale-delay: 0ms;
+        }
+      }
+    }
+    .odc-container {
       @extend %flex-layout;
     }
   }
   
   @each $key, $val in $colors {
-    .odecci-navbar-#{$key} {
-      @extend .odecci-navbar;
+    .odc-navbar-#{$key} {
+      @extend .odc-navbar;
       background-color: $val;
     }
   }

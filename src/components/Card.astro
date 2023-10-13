@@ -1,15 +1,19 @@
 ---
 interface Props {
+	url: string;
 	title: string;
 	body: string;
-	href: string;
+	// href: string;
 }
 
-const { href, title, body } = Astro.props;
+// const { url, href, title, body } = Astro.props;
+const { url, title, body } = Astro.props;
 ---
 
-<li class="link-card">
-	<a href={href}>
+<li class="link-card odc-mr-1 odc-ml-1">
+	<!-- <a href={href}> -->
+	<a class="odc-fdc odc-align-center">
+		<img src={url} alt={title}>
 		<h2>
 			{title}
 			<span>&rarr;</span>

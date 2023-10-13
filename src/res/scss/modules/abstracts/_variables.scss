@@ -1,10 +1,38 @@
 // * Theme Colors * //
 $primary: #132B3C !default;
 $primary-accent: #19435E !default;
-$secondary: #ED1C24  !default;
+$secondary: #ed1c24  !default;
 $secondary-accent: #fb373d  !default;
 $error: #ED1C24 !default;
 $info: #f6c31c !default;
+
+// *** Root Variables *** //
+:root {
+  --primary: #{$primary}; 
+  --primary-accent: #{$primary-accent}; 
+  --secondary: #{$secondary}; 
+  --secondary-accent: #{$secondary-accent};
+  --accent-light: #{$secondary-accent};
+  --accent-dark: 49, 10, 101;
+
+  // *** Gradients *** //
+  --primary-gradient: linear-gradient(
+    60deg, var(--primary) 0%,
+    var(--primary-accent) 30%,
+    var(--secondary-accent) 70%,
+    var(--secondary) 100%)
+  ;
+  --accent-gradient: linear-gradient(
+    45deg, var(--secondary-accent),
+    var(--accent-light) 30%,
+    white 60%
+  );
+}
+
+
+
+// // * Gradients
+// $accent-gradient: 
 
 // * Colors ** //
 $colors: (
@@ -30,7 +58,7 @@ $base-margin: 0.75rem !default;
 
 // * Borders
 $base-border-thickness: 1px !default;
-$base-border-radius: 20px !default;
+$base-border-radius: 2rem !default;
 
 // * Box-shadow
 $base-box-shadow: 1px 3px 5px rgba(0,0,0,0.1) !default;
@@ -53,16 +81,3 @@ $font-size-xx-display: $base-font-size * 4.8 !default;
 $font-size-ultra-display: $base-font-size * 6 !default;
 $font-size-x-ultra-display: $base-font-size * 7.2 !default;
 $font-size-xx-ultra-display: $base-font-size * 8.4 !default;
-
-// *** Root Variables *** //
-:root {
-  --accent: 136, 58, 234;
-  --accent-light: 224, 204, 250;
-  --accent-dark: 49, 10, 101;
-  --accent-gradient: linear-gradient(
-    45deg,
-    rgb(var(--accent)),
-    rgb(var(--accent-light)) 30%,
-    white 60%
-  );
-}

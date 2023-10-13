@@ -1,16 +1,16 @@
 @each $key, $val in $colors {
     // * For Text Color
-    .odecci-text-#{$key} {
+    .odc-text-#{$key} {
       color: $val;
     }
     // * For Text Hover Color
-    .odecci-text-hover-#{$key} {
+    .odc-text-hover-#{$key} {
         &:hover {
             color: $val;
         }
     }
     // * For Background Color
-    .odecci-bg-#{$key} {
+    .odc-bg-#{$key} {
       background-color: $val;
     }
     
@@ -18,30 +18,30 @@
     @if ($val != black and $val != white) {
       // * light variations
       @for $i from 1 through 9 {
-        .odecci-text-#{$key}-light-#{$i} {
+        .odc-text-#{$key}-light-#{$i} {
           color: mix(white, $val, $i * 10%);
         }
-        .odecci-text-hover-#{$key}-light-#{$i} {
+        .odc-text-hover-#{$key}-light-#{$i} {
             &:hover {
                 color: mix(white, $val, $i * 10%);
             }
         }
-        .odecci-bg-#{$key}-light-#{$i} {
+        .odc-bg-#{$key}-light-#{$i} {
           background-color: mix(white, $val, $i * 10%);
         }
       }
   
       // * Dark variations
       @for $i from 1 through 9 {
-        .odecci-text-#{$key}-dark-#{$i} {
+        .odc-text-#{$key}-dark-#{$i} {
           color: mix(black, $val, $i * 10%);
         }
-        .odecci-text-hover-#{$key}-dark-#{$i} {
+        .odc-text-hover-#{$key}-dark-#{$i} {
             &:hover {
                 color: mix(black, $val, $i * 10%);
             }
         }
-        .odecci-bg-#{$key}-dark-#{$i} {
+        .odc-bg-#{$key}-dark-#{$i} {
           background-color: mix(black, $val, $i * 10%);
         }
       }

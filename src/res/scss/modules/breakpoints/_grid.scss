@@ -11,35 +11,47 @@ $grid-gaps: (
   "4": 4rem,
   "5": 5rem
 );
+
+// * Justify Content Values
 $layout-values: flex-start, flex-end, center, space-between, space-around;
 
+// * ALign Items Values
+$align-values: center, flex-start, flex-end, stretch, baseline;
+
 // * Base Layout Classes
-.odecci-container {
+.odc-container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box;
 }
-.odecci-row {
+.odc-row {
   display: flex;
   flex-flow: row wrap;
 }
 
 // * Grid Gaps
 @each $key, $val in $grid-gaps {
-  .odecci-gap-#{$key} > * {
+  .odc-gap-#{$key} > * {
     padding: $val;
   }
-  .odecci-gap-#{$key} {
+  .odc-gap-#{$key} {
     margin-left: -$val;
     margin-right: -$val;
   }
 }
 
+// * Align Items Classes
+@each $val in $align-values {
+  .odc-align-#{$val} {
+    align-items: $val;
+  }
+}
+
 // * Justify Content Classes
 @each $val in $layout-values {
-  .odecci-justify-#{$val} {
+  .odc-justify-#{$val} {
     justify-content: $val;
   }
 }
@@ -47,7 +59,7 @@ $layout-values: flex-start, flex-end, center, space-between, space-around;
 // * Col Classes
 @include xs {
   @for $i from 1 through $grid-columns {
-    .odecci-col-#{$i}-xs {
+    .odc-col-#{$i}-xs {
       box-sizing: border-box;
       flex-grow: 0;
       width: math.div($i * 100%, $grid-columns);
@@ -56,7 +68,7 @@ $layout-values: flex-start, flex-end, center, space-between, space-around;
 }
 @include sm {
   @for $i from 1 through $grid-columns {
-    .odecci-col-#{$i}-sm {
+    .odc-col-#{$i}-sm {
       box-sizing: border-box;
       flex-grow: 0;
       width: math.div($i * 100%, $grid-columns);
@@ -65,7 +77,7 @@ $layout-values: flex-start, flex-end, center, space-between, space-around;
 }
 @include md {
   @for $i from 1 through $grid-columns {
-    .odecci-col-#{$i}-md {
+    .odc-col-#{$i}-md {
       box-sizing: border-box;
       flex-grow: 0;
       width: math.div($i * 100%, $grid-columns);
@@ -74,7 +86,7 @@ $layout-values: flex-start, flex-end, center, space-between, space-around;
 }
 @include lg {
   @for $i from 1 through $grid-columns {
-    .odecci-col-#{$i}-lg {
+    .odc-col-#{$i}-lg {
       box-sizing: border-box;
       flex-grow: 0;
       width: math.div($i * 100%, $grid-columns);
@@ -83,7 +95,7 @@ $layout-values: flex-start, flex-end, center, space-between, space-around;
 }
 @include xl {
   @for $i from 1 through $grid-columns {
-    .odecci-col-#{$i}-xl {
+    .odc-col-#{$i}-xl {
       box-sizing: border-box;
       flex-grow: 0;
       width: math.div($i * 100%, $grid-columns);

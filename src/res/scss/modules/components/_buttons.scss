@@ -1,5 +1,7 @@
 @mixin btn($bg-color: #e2e2e2) {
   text-decoration: none;
+  font-size: $font-size-x-md;
+  font-weight: $font-weight-bold;
   cursor: pointer;
   display: inline-block;
   border: 0;
@@ -8,30 +10,71 @@
   background-color: $bg-color;
 }
 
-.odecci-btn {
+.odc-btn {
   @include btn;
 }
 
 @each $key, $val in $colors {
-  .odecci-btn-#{$key} {
+  .odc-btn-#{$key} {
     @include btn($val);
     &:hover {
       background-color: lighten($val, 5);
     }
   }
-  .odecci-btn-outlined-#{$key} {
+  .odc-btn-outlined-#{$key} {
     @include btn(transparent);
     border: $base-border-thickness solid $val;
     &:hover {
       background-color: $val;
     }
   }
-  .odecci-btn-complement-#{$key} {
+  .odc-btn-complement-#{$key} {
     @include btn($val);
     color: light-comp($val);
     &:hover {
       color: $val;
       background-color: light-comp($val);
     }
+  }
+  .odc-btn-gradient {
+    @include btn;
+    background-color: unset;
+    position: relative;
+    background: var(--secondary);
+    border-radius: 7px;
+    isolation: isolate;
+    overflow: hidden;
+    &::before {
+      content: '';
+      // display: block;
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      border-radius: inherit;
+      background: var(--primary-gradient);
+      transform: scaleX(0);
+      transform-origin: bottom left;
+      transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    &:hover::before {
+      transform-origin: bottom left;
+      transform: scaleX(1);
+    }
+    // // background: #{var(--secondary)};
+    // background-image: none;
+    // background-size: 120%;
+    // border-radius: 7px;
+    // background-position: 100%;
+    // transition: background-position 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    // box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    // &:is(:hover, :focus-within) {
+    //   background-position: 0;
+    //   background-image: var(--primary-gradient);
+    //   // background-image: linear-gradient(60deg, rgba(2,0,36,1) 0%, rgba(25,67,94,1) 30%, rgba(251,55,61,1) 70%, rgba(237,28,36,1) 100%);
+    //   // background-image: var(--accent-gradient);
+    // }
+    // &:is(:hover, :focus-within) h2 {
+    //   color: rgb(var(--accent-light));
+    // }
   }
 }

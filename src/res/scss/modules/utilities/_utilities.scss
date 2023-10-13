@@ -2,7 +2,7 @@
 
 $utilities: (
   "padding": (
-    "prefix": "p",
+    "prefix": "odc-p",
     "values": (
       "0": 0,
       "1": $base-padding,
@@ -13,7 +13,7 @@ $utilities: (
     ),
   ),
   "padding-left": (
-    "prefix": "pl",
+    "prefix": "odc-pl",
     "values": (
       "0": 0,
       "1": $base-padding,
@@ -24,7 +24,7 @@ $utilities: (
     ),
   ),
   "padding-right": (
-    "prefix": "pr",
+    "prefix": "odc-pr",
     "values": (
       "0": 0,
       "1": $base-padding,
@@ -35,7 +35,7 @@ $utilities: (
     ),
   ),
   "padding-top": (
-    "prefix": "pt",
+    "prefix": "odc-pt",
     "values": (
       "0": 0,
       "1": $base-padding,
@@ -46,7 +46,7 @@ $utilities: (
     ),
   ),
   "padding-bottom": (
-    "prefix": "pb",
+    "prefix": "odc-pb",
     "values": (
       "0": 0,
       "1": $base-padding,
@@ -57,7 +57,7 @@ $utilities: (
     ),
   ),
   "margin": (
-    "prefix": "m",
+    "prefix": "odc-m",
     "values": (
       "0": 0,
       "1": $base-margin,
@@ -68,7 +68,7 @@ $utilities: (
     ),
   ),
   "margin-left": (
-    "prefix": "ml",
+    "prefix": "odc-ml",
     "values": (
       "0": 0,
       "1": $base-margin,
@@ -79,7 +79,7 @@ $utilities: (
     ),
   ),
   "margin-right": (
-    "prefix": "mr",
+    "prefix": "odc-mr",
     "values": (
       "0": 0,
       "1": $base-margin,
@@ -90,7 +90,7 @@ $utilities: (
     ),
   ),
   "margin-top": (
-    "prefix": "mt",
+    "prefix": "odc-mt",
     "values": (
       "0": 0,
       "1": $base-margin,
@@ -101,7 +101,7 @@ $utilities: (
     ),
   ),
   "margin-bottom": (
-    "prefix": "mb",
+    "prefix": "odc-mb",
     "values": (
       "0": 0,
       "1": $base-margin,
@@ -113,7 +113,7 @@ $utilities: (
   ),
 
   "opacity": (
-    "prefix": "o",
+    "prefix": "odc-o",
     "values": (
       "10": 0.1,
       "20": 0.2,
@@ -128,7 +128,7 @@ $utilities: (
     ),
   ),
   "border-radius": (
-    "prefix": "br",
+    "prefix": "odc-br",
     "values": (
       "default": $base-border-radius,
       "none": 0,
@@ -139,7 +139,7 @@ $utilities: (
     )
   ),
   "display": (
-    "prefix": "display",
+    "prefix": "odc-display",
     "values": (
       "n": none,
       "b": block,
@@ -149,7 +149,7 @@ $utilities: (
     )
   ),
   "font-size": (
-    "prefix": "font",
+    "prefix": "odc-font",
     "values": (
       "xx-sm": $font-size-xx-s,
       "x-sm": $font-size-x-s,
@@ -171,7 +171,18 @@ $utilities: (
   )
 );
 
-// generate utility classes
+
+.odc-fdr {
+  display: flex;
+  flex-direction: row;
+}
+
+.odc-fdc {
+  display: flex;
+  flex-direction: column;
+}
+
+// * generate utility classes
 @each $property, $map in $utilities {
   $prefix: map-get($map, "prefix");
   $values: map-get($map, "values");

@@ -5,44 +5,37 @@
 // 	href: string;
 // }
 
-import { Logo } from "../assets/constants.js";
+import { Logo, NavLinks } from "../assets/constants.js";
 
 // const { href, body } = Astro.props;
 ---
 
-<nav class="odecci-navbar-transparent">
-	<ul class="odecci-container">
-		<div class="odecci-row odecci-gap-1">
-			<li class="odecci-site-links">
+<nav class="odc-navbar-transparent">
+	<ul class="odc-container">
+		<div class="odc-row odc-gap-1">
+			<li class="odc-site-links">
 				<a href=''>
 					<img src={Logo} alt="" srcset="">
 				</a>
 			</li>
 		</div>
-		<div class="odecci-row odecci-gap-1">
-			<!-- {IconLinks.map((link, index) => (
-				<li>
-					<a href={link.url}>
-						<img src={link.icon} alt={`${link.name} Icon`} />
+		<div role="tablist" class="odc-row odc-gap-1">
+			{NavLinks.map((link, index) => (
+				<li role="tab" class="odc-site-links odc-nav-links">
+					<a class="odc-text-primary odc-fw-bold" href={link.url}>
 						{link.name}
+						{/* Conditionally render a down caret button for the third item */}
+						{index === 2 && 
+							<img class="odc-caret-down odc-pl-1" src={link.button}></img>
+						}
 					</a>
 				</li>
-			))} -->
-			<li class="odecci-site-links">
-				<a class="odecci-text-white" href=''>FB</a>
-			</li>
-			<li class="odecci-site-links">
-				<a class="odecci-text-white" href=''>X</a>
-			</li>
-			<li class="odecci-site-links">
-				<a class="odecci-text-white" href=''>LinkedIn</a>
-			</li>
-			<li class="odecci-site-links">
-				<a class="odecci-text-white" href=''>IG</a>
-			</li>
+			))}
 		</div>
-		<div class="odecci-row odecci-gap-1">
-			<button class="odecci-btn-outlined-secondary odecci-text-secondary">Get Free Quote <img src="../" alt="Arrow Button"></button>
+		<div class="odc-row odc-gap-1">
+			<button class="odc-btn-gradient odc-text-white odc-fdr odc-align-center">
+				Get Free Quote <img class="chevron-circle-right odc-pl-1" src="../../public/icons/chevron-circle-right-alt.svg" alt="Arrow Button">
+			</button>
 		</div>
 	</ul>
 </nav>

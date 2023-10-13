@@ -1,0 +1,49 @@
+.odc-hero-title {
+    width: 75%;
+    text-align: left;
+    h1, p {
+        text-align: left;
+    }
+    h1 {
+        line-height: 5rem;
+    }
+    p {
+        line-height: 3rem;
+    }
+}
+// .odc-text-gradient {
+//     background: linear-gradient(230deg, rgba(2,0,36,1) 0%, rgba(25,67,94,1) 25%, rgba(251,55,61,1) 55%, rgba(237,28,36,1) 75%);
+//     background: linear-gradient(230deg, rgba(2,0,36,1) 0%, rgba(25,67,94,1) 30%, rgba(251,55,61,1) 70%, rgba(237,28,36,1) 100%);
+//     // background-image: linear-gradient(60deg, rgba(2,0,36,1) 0%, rgba(25,67,94,1) 30%, rgba(251,55,61,1) 70%, rgba(237,28,36,1) 100%);
+// // background: linear-gradient(230deg, rgba(2,0,36,1) 0%, rgba(25,67,94,1) 30%, rgba(251,55,61,1) 70%, rgba(237,28,36,1) 100%);    // background: -webkit-linear-gradient(#eee, #333);
+//     -webkit-background-clip: text;
+//     -webkit-text-fill-color: transparent;
+// }
+.odc-text-gradient {
+    background: linear-gradient(234deg, #132b3c, #19435e, #ed1c24, #fb373d);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: odc-gradient-anim 22s ease infinite;
+    -o-animation: odc-gradient-anim 22s ease infinite;
+    animation: odc-gradient-anim 22s ease infinite;
+}
+
+@-webkit-keyframes odc-gradient-anim {
+    0%{background-position:0% 94%}
+    50%{background-position:100% 7%}
+    100%{background-position:0% 94%}
+}
+
+@-o-keyframes odc-gradient-anim {
+    0%{background-position:0% 94%}
+    50%{background-position:100% 7%}
+    100%{background-position:0% 94%}
+}
+
+@keyframes odc-gradient-anim {
+    0%{background-position:0% 94%}
+    50%{background-position:100% 7%}
+    100%{background-position:0% 94%}
+}

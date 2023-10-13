@@ -3,12 +3,16 @@ import Layout from '../layouts/Layout.astro';
 import MainNavbarExpanded from '../layouts/MainNavbarExpanded.astro';
 import NavbarExpanded from '../layouts/NavbarExpanded.astro';
 import Card from '../components/Card.astro';
+import Hero from '../layouts/Hero.astro';
+import CardsSection from '../layouts/CardsSection.astro';
 ---
 
 <Layout title="Home - Odecci">
 	<NavbarExpanded/>
 	<MainNavbarExpanded/>
-	<main>
+	<Hero/>
+	<CardsSection/>
+	<!-- <main>
 		<svg
 			class="astro-a"
 			width="495"
@@ -64,5 +68,5 @@ import Card from '../components/Card.astro';
 				body="Come say hi to our amazing Discord community. ❤️"
 			/>
 		</ul>
-	</main>
+	</main> -->
 </Layout>

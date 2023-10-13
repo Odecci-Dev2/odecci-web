@@ -9,6 +9,8 @@
 html {
     background: url('../../../../../public/img/BG-2.webp');
     // background: #13151a;
+    background-size: cover;
+    background-repeat: no-repeat;
     font-size: 62.5%;
     // * (62.5/100) * 16px = 10px */
 }
@@ -27,7 +29,7 @@ code {
 
 body {
     font-family: $font-family;
-    height: 100vh;
+    // height: 100vh;
 }
 
 main {
@@ -65,3 +67,9 @@ img {
     -webkit-user-select: none;
     -ms-user-select: none;
 }
+
+// h1 {
+//     font-size: 4rem;
+//     text-align: center;
+//     margin-bottom: 1em;
+// }

@@ -1,3 +1,7 @@
+// @function set-root-variable($variable-name, $value) {
+//     @return unquote(':root { --' + $variable-name + ': ' + $value + '; }');
+// }
+
 @function light-comp($color) {
     $complement: complement($color);
     $light-complement: lighten($complement, 30%);
