@@ -27,6 +27,8 @@ $info: #f6c31c !default;
     var(--accent-light) 30%,
     white 60%
   );
+
+  --anim-ease-primary: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 
@@ -81,3 +83,16 @@ $font-size-xx-display: $base-font-size * 4.8 !default;
 $font-size-ultra-display: $base-font-size * 6 !default;
 $font-size-x-ultra-display: $base-font-size * 7.2 !default;
 $font-size-xx-ultra-display: $base-font-size * 8.4 !default;
+
+// * Typography
+$font-family: 'Ubuntu',
+sans-serif;
+$font-family-alt: 'Helvetica',
+Arial,
+sans-serif;
+$font-weight-thin: 100;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+$font-weight-black: 900;

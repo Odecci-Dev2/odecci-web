@@ -1,20 +1,25 @@
 ---
 
-import { HeroImage } from "../assets/constants";
+import { ConsultationImage } from "../assets/constants";
 ---
-<div class="odc-hero-container">
+<div class="odc-mt-5">
     <section class="odc-container odc-fdr odc-align-center">
+        <div class="odc-hero-image">
+            { ConsultationImage.map((link) => (
+                <img src={link.src} alt={link.name} >
+            ))}
+        </div>
         <div class="odc-hero-title odc-text-primary">
             <h1 class="odc-mb-3">
-                <span>Elevate Your Business </span>
+                <span>Unleash your ideas with our</span>
                 <br>
-                <span>with 
+                <span>
                     <!-- <span class="odc-circle">
                         <svg width="279" height="80" viewBox="0 0 279 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M141 15.0002C89.3336 11.3335 -10.5997 12.6002 3.00026 47.0002C20.0003 90.0002 242 84 269 59.0002C311.803 19.3676 184 -0.999837 126 2.00016" stroke-width="4"></path>
                         </svg>
                     </span> -->
-                    <span class="odc-text-gradient">Bespoke Software</span>
+                    <span class="odc-text-gradient">cutting-edge mobile application</span>
                 </span>
                 <br>
                 <!-- <span class="odc-circle">
@@ -22,19 +27,14 @@ import { HeroImage } from "../assets/constants";
                         <path d="M141 15.0002C89.3336 11.3335 -10.5997 12.6002 3.00026 47.0002C20.0003 90.0002 242 84 269 59.0002C311.803 19.3676 184 -0.999837 126 2.00016" stroke-width="4"></path>
                     </svg>
                 </span> -->
-                <span>Innovations.</span>
+                <span>development services.</span>
             </h1>
             <p class="odc-font-xx-md odc-fw-regular odc-mb-3">
                 Our suite of services is designed to transform your vision into reality, leveraging innovation and expertise to steer your business toward achievement.
             </p>
             <button class="odc-btn-gradient odc-text-white odc-fdr odc-align-center">
-				Explore Our Services <img class="chevron-circle-right odc-pl-1" src="../../public/icons/chevron-circle-right-alt.svg" alt="Arrow Button">
+				Book For Consultation <img class="chevron-circle-right odc-pl-1" src="../../public/icons/chevron-circle-right-alt.svg" alt="Arrow Button">
 			</button>
-        </div>
-        <div class="odc-hero-image">
-            { HeroImage.map((link) => (
-                <img src={link.src} alt={link.name} >
-            ))}
         </div>
     </section>
 </div>

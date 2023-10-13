@@ -69,6 +69,10 @@
       @extend %flex-layout;
     }
   }
+
+  .odc-logo {
+    max-width: 80%;
+  }
   
   @each $key, $val in $colors {
     .odc-navbar-#{$key} {

@@ -1,28 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
-.odc-fw-thin {
-  font-weight: 100;
-}
-
-.odc-fw-light {
-  font-weight: 300;
-}
-
-.odc-fw-regular {
-  font-weight: 400;
-}
-
-.odc-fw-medium {
-  font-weight: 500;
-}
-
-.odc-fw-bold {
-  font-weight: 700;
-}
-
-.odc-fw-black {
-  font-weight: 900;
-}
-
 :root {
   --primary: #132B3C;
   --primary-accent: #19435E;
@@ -40,6 +16,7 @@
     var(--accent-light) 30%,
     white 60%
   );
+  --anim-ease-primary: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 *,
@@ -50,9 +27,6 @@
 }
 
 html {
-  background: url("../../../../../public/img/BG-2.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
   font-size: 62.5%;
 }
 
@@ -62,6 +36,18 @@ code {
 
 body {
   font-family: "Ubuntu", sans-serif;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+body::before {
+  content: "";
+  position: fixed;
+  background: url("../../../../../public/img/BG-2.webp");
+  inset: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
 }
 
 main {
@@ -98,6 +84,21 @@ img {
   -webkit-user-drag: none;
   -webkit-user-select: none;
   -ms-user-select: none;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6vw, 4.8rem);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 1.6rem + 4vw, 4.4rem);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: clamp(1.6rem, 1.6rem + 3vw, 3.2rem);
+  font-weight: 700;
 }
 
 .odc-text-primary {
@@ -2860,6 +2861,30 @@ img {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
+.odc-fw-thin {
+  font-weight: 100;
+}
+
+.odc-fw-light {
+  font-weight: 300;
+}
+
+.odc-fw-regular {
+  font-weight: 400;
+}
+
+.odc-fw-medium {
+  font-weight: 500;
+}
+
+.odc-fw-bold {
+  font-weight: 700;
+}
+
+.odc-fw-black {
+  font-weight: 900;
+}
+
 @media (min-width: 0) {
   .responsive-test {
     color: red;
@@ -3394,7 +3419,7 @@ img {
   background: var(--primary-gradient);
   transform: scaleX(0);
   transform-origin: bottom left;
-  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.8s var(--anim-ease-primary);
 }
 .odc-btn-gradient:hover::before {
   transform-origin: bottom left;
@@ -3475,7 +3500,7 @@ img {
   background: var(--primary-gradient);
   transform: scaleX(0);
   transform-origin: bottom left;
-  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.8s var(--anim-ease-primary);
 }
 .odc-btn-gradient:hover::before {
   transform-origin: bottom left;
@@ -3556,7 +3581,7 @@ img {
   background: var(--primary-gradient);
   transform: scaleX(0);
   transform-origin: bottom left;
-  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.8s var(--anim-ease-primary);
 }
 .odc-btn-gradient:hover::before {
   transform-origin: bottom left;
@@ -3637,7 +3662,7 @@ img {
   background: var(--primary-gradient);
   transform: scaleX(0);
   transform-origin: bottom left;
-  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.8s var(--anim-ease-primary);
 }
 .odc-btn-gradient:hover::before {
   transform-origin: bottom left;
@@ -3718,7 +3743,7 @@ img {
   background: var(--primary-gradient);
   transform: scaleX(0);
   transform-origin: bottom left;
-  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.8s var(--anim-ease-primary);
 }
 .odc-btn-gradient:hover::before {
   transform-origin: bottom left;
@@ -3799,7 +3824,7 @@ img {
   background: var(--primary-gradient);
   transform: scaleX(0);
   transform-origin: bottom left;
-  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.8s var(--anim-ease-primary);
 }
 .odc-btn-gradient:hover::before {
   transform-origin: bottom left;
@@ -3880,7 +3905,7 @@ img {
   background: var(--primary-gradient);
   transform: scaleX(0);
   transform-origin: bottom left;
-  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.8s var(--anim-ease-primary);
 }
 .odc-btn-gradient:hover::before {
   transform-origin: bottom left;
@@ -3961,7 +3986,7 @@ img {
   background: var(--primary-gradient);
   transform: scaleX(0);
   transform-origin: bottom left;
-  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.8s var(--anim-ease-primary);
 }
 .odc-btn-gradient:hover::before {
   transform-origin: bottom left;
@@ -4042,7 +4067,7 @@ img {
   background: var(--primary-gradient);
   transform: scaleX(0);
   transform-origin: bottom left;
-  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.8s var(--anim-ease-primary);
 }
 .odc-btn-gradient:hover::before {
   transform-origin: bottom left;
@@ -4123,7 +4148,7 @@ img {
   background: var(--primary-gradient);
   transform: scaleX(0);
   transform-origin: bottom left;
-  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.8s var(--anim-ease-primary);
 }
 .odc-btn-gradient:hover::before {
   transform-origin: bottom left;
@@ -4204,7 +4229,7 @@ img {
   background: var(--primary-gradient);
   transform: scaleX(0);
   transform-origin: bottom left;
-  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.8s var(--anim-ease-primary);
 }
 .odc-btn-gradient:hover::before {
   transform-origin: bottom left;
@@ -4285,7 +4310,7 @@ img {
   background: var(--primary-gradient);
   transform: scaleX(0);
   transform-origin: bottom left;
-  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.8s var(--anim-ease-primary);
 }
 .odc-btn-gradient:hover::before {
   transform-origin: bottom left;
@@ -4366,7 +4391,7 @@ img {
   background: var(--primary-gradient);
   transform: scaleX(0);
   transform-origin: bottom left;
-  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.8s var(--anim-ease-primary);
 }
 .odc-btn-gradient:hover::before {
   transform-origin: bottom left;
@@ -4447,7 +4472,7 @@ img {
   background: var(--primary-gradient);
   transform: scaleX(0);
   transform-origin: bottom left;
-  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.8s var(--anim-ease-primary);
 }
 .odc-btn-gradient:hover::before {
   transform-origin: bottom left;
@@ -4455,42 +4480,62 @@ img {
 }
 
 .link-card {
+  width: 50rem;
   list-style: none;
   display: flex;
-  padding: 1px;
   background-image: none;
   background-size: 400%;
   border-radius: 7px;
   background-position: 100%;
-  transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  transition: transform 1s ease;
+  transform: perspective(80rem) rotateY(-0.1deg);
+  transform-style: preserve-3d;
+  will-change: transform;
+  box-shadow: inset 0 1px 1px 0 hsla(0, 0%, 100%, 0.15), 0 50px 100px -20px rgba(50, 50, 93, 0.3), 0 30px 60px -30px rgba(0, 0, 0, 0.5), -10px 10px 60px -10px rgba(103, 178, 111, 0.3);
+}
+.link-card:nth-of-type(1) {
+  transform: perspective(80rem) rotateY(20deg);
+}
+.link-card:nth-of-type(1):hover {
+  transform: perspective(80rem) rotateY(8deg);
+}
+.link-card:nth-of-type(2) {
+  transform: perspective(80rem) scale(0.9);
+}
+.link-card:nth-of-type(2):hover {
+  transform: perspective(80rem) scale(0.975);
+}
+.link-card:nth-of-type(3) {
+  transform: perspective(80rem) rotateY(-20deg);
+}
+.link-card:nth-of-type(3):hover {
+  transform: perspective(80rem) rotateY(-8deg);
 }
 .link-card > a {
   width: 100%;
   text-decoration: none;
-  line-height: 1.4;
-  padding: calc(1.5rem - 1px);
+  padding: calc(2.5rem - 1px);
   border-radius: 8px;
   color: white;
-  background-color: #23262d;
-  opacity: 0.8;
+  box-shadow: inset 0px 0px 15px 3px rgba(4, 9, 12, 0.568627451);
+  background-color: var(--primary);
+  outline: 1px solid white;
 }
-.link-card:is(:hover, :focus-within) {
-  background-position: 0;
-  background-image: var(--accent-gradient);
+.link-card > a img {
+  max-width: 30%;
 }
 .link-card:is(:hover, :focus-within) h2 {
   color: rgb(var(--accent-light));
 }
 
-h2 {
-  margin: 0;
-  font-size: 1.25rem;
+h3 {
   transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 p {
   margin-top: 0.5rem;
+  line-height: 3rem;
   margin-bottom: 0;
 }
 
@@ -4553,6 +4598,10 @@ p {
   --_translate: 0;
   --_scale-delay: 0ms;
 }
+.odc-logo {
+  max-width: 80%;
+}
+
 .odc-navbar-primary {
   background-color: #132B3C;
 }
@@ -4623,15 +4672,32 @@ p {
   line-height: 3rem;
 }
 
+.odc-circle {
+  position: relative;
+  display: inline-block;
+}
+.odc-circle svg {
+  position: absolute;
+  width: 120%;
+  top: 0;
+  height: 150%;
+  left: -12%;
+  z-index: -1;
+  margin-top: -5%;
+  overflow: visible;
+  pointer-events: none;
+  stroke: var(--accent-light);
+}
+
 .odc-text-gradient {
   background: linear-gradient(234deg, #132b3c, #19435e, #ed1c24, #fb373d);
   background-size: 200% 200%;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-animation: odc-gradient-anim 22s ease infinite;
-  -o-animation: odc-gradient-anim 22s ease infinite;
-  animation: odc-gradient-anim 22s ease infinite;
+  -webkit-animation: odc-gradient-anim 6s ease infinite;
+  -o-animation: odc-gradient-anim 6s ease infinite;
+  animation: odc-gradient-anim 6s ease infinite;
 }
 
 @-webkit-keyframes odc-gradient-anim {
@@ -5055,6 +5121,18 @@ main {
 
 .odc-display-i-b {
   display: inline-block;
+}
+
+.odc-ta-left {
+  text-align: left;
+}
+
+.odc-ta-right {
+  text-align: right;
+}
+
+.odc-ta-center {
+  text-align: center;
 }
 
 .odc-font-xx-sm {

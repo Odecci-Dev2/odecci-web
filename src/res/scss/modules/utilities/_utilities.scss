@@ -148,6 +148,14 @@ $utilities: (
       "i-b": inline-block
     )
   ),
+  "text-align": (
+    "prefix": "odc-ta",
+    "values": (
+      "left": left,
+      "right": right,
+      "center": center
+    )
+  ),
   "font-size": (
     "prefix": "odc-font",
     "values": (

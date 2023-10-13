@@ -20,5 +20,9 @@ export const NavLinks = [
 ]
 
 export const HeroImage = [
-    { name: 'Facebook', src: 'public/img/High-res-hero-image-1024x914.webp' },
+    { name: 'Odecci Hero Image', src: 'public/img/High-res-hero-image-1024x914.webp' },
+]
+
+export const ConsultationImage = [
+    { name: 'Odecci Consultation', src: 'public/img/Wireframe-to-prototype.webp' },
 ]

@@ -60,3 +60,7 @@ First Commit:
 October 13, 2023 (Friday)
 First Commit:
 • Odecci Web: Hero Section Initial
+
+Second Commit:
+• Odecci Web: Cards Section Initial✅
+• Odecci Web: Consultation Section Initial✅

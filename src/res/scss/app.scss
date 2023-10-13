@@ -1,12 +1,12 @@
 @import // * Abstracts 
 'modules/abstracts/functions',
 'modules/abstracts/mixins',
-'modules/abstracts/typography',
 'modules/abstracts/variables';
 @import // * Base 
 'modules/base/base',
 'modules/base/colors',
-'modules/base/fonts';
+'modules/base/fonts',
+'modules/base/typography';
 @import // * Breakpoints 
 'modules/breakpoints/breakpoints',
 'modules/breakpoints/grid';

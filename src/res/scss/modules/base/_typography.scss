@@ -1,18 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
-// * Typography
-$font-family: 'Ubuntu',
-sans-serif;
-$font-family-alt: 'Helvetica',
-Arial,
-sans-serif;
-$font-weight-thin: 100;
-$font-weight-light: 300;
-$font-weight-regular: 400;
-$font-weight-medium: 500;
-$font-weight-bold: 700;
-$font-weight-black: 900;
-
 $font-weight-values: (
     "thin": $font-weight-thin,
     "light": $font-weight-light,

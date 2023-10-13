@@ -14,11 +14,10 @@ const { url, title, body } = Astro.props;
 	<!-- <a href={href}> -->
 	<a class="odc-fdc odc-align-center">
 		<img src={url} alt={title}>
-		<h2>
+		<h3 class="odc-mt-2 odc-mb-2 odc-ta-center">
 			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
+		</h3>
+		<p class="odc-font-xx-md odc-ta-center">
 			{body}
 		</p>
 	</a>

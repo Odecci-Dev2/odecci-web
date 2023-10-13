@@ -19,15 +19,31 @@
 //     -webkit-background-clip: text;
 //     -webkit-text-fill-color: transparent;
 // }
+.odc-circle {
+    position: relative;
+    display: inline-block;
+    svg {
+        position: absolute;
+        width: 120%;
+        top: 0;
+        height: 150%;
+        left: -12%;
+        z-index: -1;
+        margin-top: -5%;
+        overflow: visible;
+        pointer-events: none;
+        stroke: var(--accent-light);
+    }
+}
 .odc-text-gradient {
     background: linear-gradient(234deg, #132b3c, #19435e, #ed1c24, #fb373d);
     background-size: 200% 200%;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    -webkit-animation: odc-gradient-anim 22s ease infinite;
-    -o-animation: odc-gradient-anim 22s ease infinite;
-    animation: odc-gradient-anim 22s ease infinite;
+    -webkit-animation: odc-gradient-anim 6s ease infinite;
+    -o-animation: odc-gradient-anim 6s ease infinite;
+    animation: odc-gradient-anim 6s ease infinite;
 }
 
 @-webkit-keyframes odc-gradient-anim {

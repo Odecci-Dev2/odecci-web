@@ -1,42 +1,76 @@
 @use "sass:math";
 
+// .odc-light-streaks {
+//   position: relative;
+//   &::before {
+//     content: url('public/img/light-streaks.png');
+//     position: absolute;
+//     inset: 0;
+//     // background: url('public/img/light-streaks.png');
+//   }
+// }
+
 .link-card {
+  width: 50rem;
   list-style: none;
   display: flex;
-  padding: 1px;
-  // background-color: #23262d;
   background-image: none;
   background-size: 400%;
   border-radius: 7px;
   background-position: 100%;
-  transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  // transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  transition: transform 1s ease;
+  transform: perspective(80rem) rotateY(-.1deg);
+  transform-style: preserve-3d;
+  will-change: transform;
+  box-shadow: inset 0 1px 1px 0 hsla(0,0%,100%,.15), 0 50px 100px -20px rgba(50,50,93,.3), 0 30px 60px -30px rgba(0,0,0,.5), -10px 10px 60px -10px rgba(103,178,111,.3);
+  &:nth-of-type(1) {
+    transform: perspective(80rem) rotateY(20deg);
+    &:hover {
+      transform: perspective(80rem) rotateY(8deg);
+    }
+  }
+  &:nth-of-type(2) {
+    transform: perspective(80rem) scale(.9);
+    &:hover {
+      transform: perspective(80rem) scale(.975);
+    }
+  }
+  &:nth-of-type(3) {
+    transform: perspective(80rem) rotateY(-20deg);
+    &:hover {
+      transform: perspective(80rem) rotateY(-8deg);
+    }
+  }
   & > a {
     width: 100%;
     text-decoration: none;
-    line-height: 1.4;
-    padding: calc(1.5rem - 1px);
+    padding: calc(2.5rem - 1px);
     border-radius: 8px;
     color: white;
-    background-color: #23262d;
-    opacity: 0.8;
+    box-shadow: inset 0px 0px 15px 3px #04090c91;
+    background-color: var(--primary);
+    outline: 1px solid white;
+    // opacity: 0.8;
+    img {
+      max-width: 30%;
+    }
   }
   &:is(:hover, :focus-within) {
-    background-position: 0;
-    background-image: var(--accent-gradient);
+    // transform: perspective(800px) rotateY(4deg);
   }
   &:is(:hover, :focus-within) h2 {
     color: rgb(var(--accent-light));
   }
 }
 
-h2 {
-  margin: 0;
-  font-size: 1.25rem;
+h3 {
   transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 p {
   margin-top: 0.5rem;
+  line-height: 3rem;
   margin-bottom: 0;
 }
 
