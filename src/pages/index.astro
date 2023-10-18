@@ -5,15 +5,19 @@ import NavbarExpanded from '../layouts/NavbarExpanded.astro';
 import Card from '../components/Card.astro';
 import Hero from '../layouts/Hero.astro';
 import CardsSection from '../layouts/CardsSection.astro';
-import CosultationSection from '../layouts/CosultationSection.astro';
+import ConsultationSection from '../layouts/ConsultationSection.astro';
+import WrappedSection from '../layouts/WrappedSection.astro';
 ---
 
 <Layout title="Home - Odecci">
 	<NavbarExpanded/>
 	<MainNavbarExpanded/>
 	<Hero/>
-	<CardsSection/>
-	<CosultationSection/>
+	<div class="odc-backdrop">
+		<CardsSection/>
+		<ConsultationSection/>
+		<WrappedSection/>
+	</div>
 	<!-- <main>
 		<svg
 			class="astro-a"

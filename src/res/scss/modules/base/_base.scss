@@ -35,7 +35,7 @@ body {
         // content: url('../../../../../public/img/BG-2.webp');
         content: '';
         position: fixed;
-        background: url('../../../../../public/img/BG-2.webp');
+        background: url('/img/BG-2.webp');
         inset: 0;
         background-size: cover;
         background-repeat: no-repeat;
@@ -93,4 +93,20 @@ h2 {
 h3 {
     font-size: clamp(1.6rem, 1.6rem + 3vw, 3.2rem);
     font-weight: $font-weight-bold;
+}
+
+
+.odc-backdrop {
+    position: relative;
+    isolation: isolate;
+    &::after {
+        content: '';
+        z-index: -1;
+        position: absolute;
+        margin-top: 10rem;
+        border-top-left-radius: 200rem 10rem;
+        border-top-right-radius: 200rem 7rem;
+        background: white;
+        inset: 0;
+    }
 }

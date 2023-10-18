@@ -157,7 +157,7 @@ $utilities: (
     )
   ),
   "font-size": (
-    "prefix": "odc-font",
+    "prefix": "odc-fs",
     "values": (
       "xx-sm": $font-size-xx-s,
       "x-sm": $font-size-x-s,
@@ -188,6 +188,10 @@ $utilities: (
 .odc-fdc {
   display: flex;
   flex-direction: column;
+}
+
+.odc-h-100 {
+  height: 100%;
 }
 
 // * generate utility classes

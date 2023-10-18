@@ -24,16 +24,16 @@ import { HeroImage } from "../assets/constants";
                 </span> -->
                 <span>Innovations.</span>
             </h1>
-            <p class="odc-font-xx-md odc-fw-regular odc-mb-3">
+            <p class="odc-fs-xx-md odc-fw-regular odc-mb-3">
                 Our suite of services is designed to transform your vision into reality, leveraging innovation and expertise to steer your business toward achievement.
             </p>
             <button class="odc-btn-gradient odc-text-white odc-fdr odc-align-center">
-				Explore Our Services <img class="chevron-circle-right odc-pl-1" src="../../public/icons/chevron-circle-right-alt.svg" alt="Arrow Button">
+				Explore Our Services <img class="chevron-circle-right odc-pl-1" src="/icons/chevron-circle-right-alt.svg" alt="Arrow Button">
 			</button>
         </div>
         <div class="odc-hero-image">
             { HeroImage.map((link) => (
-                <img src={link.src} alt={link.name} >
+                <img src={link.src} alt={link.name} />
             ))}
         </div>
     </section>
