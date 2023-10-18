@@ -120,6 +120,16 @@ h3 {
   color: #132B3C;
 }
 
+.odc-text-primary-w-s {
+  color: #132B3C;
+  text-shadow: -2px 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.odc-text-outline-primary {
+  color: white;
+  text-shadow: -1px -1px 0 #132B3C, 1px -1px 0 #132B3C, -1px 1px 0 #132B3C, 1px 1px 0 #132B3C;
+}
+
 .odc-text-hover-primary:hover {
   color: #132B3C;
 }
@@ -346,6 +356,16 @@ h3 {
 
 .odc-text-secondary {
   color: #ed1c24;
+}
+
+.odc-text-secondary-w-s {
+  color: #ed1c24;
+  text-shadow: -2px 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.odc-text-outline-secondary {
+  color: white;
+  text-shadow: -1px -1px 0 #ed1c24, 1px -1px 0 #ed1c24, -1px 1px 0 #ed1c24, 1px 1px 0 #ed1c24;
 }
 
 .odc-text-hover-secondary:hover {
@@ -576,6 +596,16 @@ h3 {
   color: #ED1C24;
 }
 
+.odc-text-error-w-s {
+  color: #ED1C24;
+  text-shadow: -2px 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.odc-text-outline-error {
+  color: white;
+  text-shadow: -1px -1px 0 #ED1C24, 1px -1px 0 #ED1C24, -1px 1px 0 #ED1C24, 1px 1px 0 #ED1C24;
+}
+
 .odc-text-hover-error:hover {
   color: #ED1C24;
 }
@@ -802,6 +832,16 @@ h3 {
 
 .odc-text-info {
   color: #f6c31c;
+}
+
+.odc-text-info-w-s {
+  color: #f6c31c;
+  text-shadow: -2px 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.odc-text-outline-info {
+  color: white;
+  text-shadow: -1px -1px 0 #f6c31c, 1px -1px 0 #f6c31c, -1px 1px 0 #f6c31c, 1px 1px 0 #f6c31c;
 }
 
 .odc-text-hover-info:hover {
@@ -1032,6 +1072,16 @@ h3 {
   color: #1919e6;
 }
 
+.odc-text-blue-w-s {
+  color: #1919e6;
+  text-shadow: -2px 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.odc-text-outline-blue {
+  color: white;
+  text-shadow: -1px -1px 0 #1919e6, 1px -1px 0 #1919e6, -1px 1px 0 #1919e6, 1px 1px 0 #1919e6;
+}
+
 .odc-text-hover-blue:hover {
   color: #1919e6;
 }
@@ -1258,6 +1308,16 @@ h3 {
 
 .odc-text-red {
   color: #e61919;
+}
+
+.odc-text-red-w-s {
+  color: #e61919;
+  text-shadow: -2px 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.odc-text-outline-red {
+  color: white;
+  text-shadow: -1px -1px 0 #e61919, 1px -1px 0 #e61919, -1px 1px 0 #e61919, 1px 1px 0 #e61919;
 }
 
 .odc-text-hover-red:hover {
@@ -1488,6 +1548,16 @@ h3 {
   color: #e6e619;
 }
 
+.odc-text-yellow-w-s {
+  color: #e6e619;
+  text-shadow: -2px 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.odc-text-outline-yellow {
+  color: white;
+  text-shadow: -1px -1px 0 #e6e619, 1px -1px 0 #e6e619, -1px 1px 0 #e6e619, 1px 1px 0 #e6e619;
+}
+
 .odc-text-hover-yellow:hover {
   color: #e6e619;
 }
@@ -1714,6 +1784,16 @@ h3 {
 
 .odc-text-green {
   color: #19e635;
+}
+
+.odc-text-green-w-s {
+  color: #19e635;
+  text-shadow: -2px 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.odc-text-outline-green {
+  color: white;
+  text-shadow: -1px -1px 0 #19e635, 1px -1px 0 #19e635, -1px 1px 0 #19e635, 1px 1px 0 #19e635;
 }
 
 .odc-text-hover-green:hover {
@@ -1944,6 +2024,16 @@ h3 {
   color: #ffa600;
 }
 
+.odc-text-orange-w-s {
+  color: #ffa600;
+  text-shadow: -2px 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.odc-text-outline-orange {
+  color: white;
+  text-shadow: -1px -1px 0 #ffa600, 1px -1px 0 #ffa600, -1px 1px 0 #ffa600, 1px 1px 0 #ffa600;
+}
+
 .odc-text-hover-orange:hover {
   color: #ffa600;
 }
@@ -2170,6 +2260,16 @@ h3 {
 
 .odc-text-purple {
   color: #9900ff;
+}
+
+.odc-text-purple-w-s {
+  color: #9900ff;
+  text-shadow: -2px 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.odc-text-outline-purple {
+  color: white;
+  text-shadow: -1px -1px 0 #9900ff, 1px -1px 0 #9900ff, -1px 1px 0 #9900ff, 1px 1px 0 #9900ff;
 }
 
 .odc-text-hover-purple:hover {
@@ -2400,6 +2500,16 @@ h3 {
   color: #808080;
 }
 
+.odc-text-gray-w-s {
+  color: #808080;
+  text-shadow: -2px 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.odc-text-outline-gray {
+  color: white;
+  text-shadow: -1px -1px 0 #808080, 1px -1px 0 #808080, -1px 1px 0 #808080, 1px 1px 0 #808080;
+}
+
 .odc-text-hover-gray:hover {
   color: #808080;
 }
@@ -2628,6 +2738,16 @@ h3 {
   color: black;
 }
 
+.odc-text-black-w-s {
+  color: black;
+  text-shadow: -2px 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.odc-text-outline-black {
+  color: white;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+
 .odc-text-hover-black:hover {
   color: black;
 }
@@ -2640,6 +2760,16 @@ h3 {
   color: white;
 }
 
+.odc-text-white-w-s {
+  color: white;
+  text-shadow: -2px 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.odc-text-outline-white {
+  color: white;
+  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+}
+
 .odc-text-hover-white:hover {
   color: white;
 }
@@ -2650,6 +2780,16 @@ h3 {
 
 .odc-text-transparent {
   color: transparent;
+}
+
+.odc-text-transparent-w-s {
+  color: transparent;
+  text-shadow: -2px 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.odc-text-outline-transparent {
+  color: white;
+  text-shadow: -1px -1px 0 transparent, 1px -1px 0 transparent, -1px 1px 0 transparent, 1px 1px 0 transparent;
 }
 
 .odc-text-hover-transparent:hover {
@@ -4673,6 +4813,45 @@ p {
   background-color: transparent;
 }
 
+.odc-scroller {
+  overflow: hidden;
+}
+.odc-scroller .odc-scroller__inner {
+  display: flex;
+  margin: 0;
+  padding-inline: 0;
+  gap: 0 2rem;
+  padding-block: 1rem;
+  white-space: nowrap;
+}
+.odc-scroller[data-animated=true] {
+  overflow: hidden;
+  -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+.odc-scroller[data-animated=true] .odc-scroller__inner {
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
+}
+.odc-scroller[data-direction=right] {
+  --_animation-direction: reverse;
+}
+.odc-scroller[data-direction=left] {
+  --_animation-direction: forwards;
+}
+.odc-scroller[data-speed=fast] {
+  --_animation-duration: 20s;
+}
+.odc-scroller[data-speed=slow] {
+  --_animation-duration: 60s;
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 1.1rem));
+  }
+}
 .odc-hero-title {
   width: 75%;
   text-align: left;
@@ -4748,6 +4927,14 @@ p {
     background-position: 0% 94%;
   }
 }
+.odc-recent-projects-section {
+  height: 100vh;
+}
+.odc-recent-projects-section .odc-banner {
+  height: 100%;
+  background: url(/img/recent-projects/Ae-mock-up-scaled.webp) no-repeat center/cover;
+}
+
 .odc-wrapped-section {
   text-align: center;
   padding: 4rem 2rem;
@@ -4783,7 +4970,7 @@ p {
 .odc-wrapped-section .odc-10k-website-promotion {
   height: 75vh;
   width: 75%;
-  background-image: url("/img/10k-website-mock-up.webp");
+  background-image: url(/img/10k-website-mock-up.webp);
   background-size: contain;
   background-repeat: no-repeat;
 }

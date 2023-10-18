@@ -1,0 +1,47 @@
+.odc-scroller {
+    overflow: hidden;
+    .odc-scroller__inner {
+        display: flex;
+        margin: 0;
+        padding-inline: 0;
+        gap: 0 2rem;
+        padding-block: 1rem;
+        white-space: nowrap;
+    }
+    &[data-animated="true"] {
+        overflow: hidden;
+        -webkit-mask: linear-gradient(
+            90deg,
+            transparent,
+            white 20%,
+            white 80%,
+            transparent
+        );
+        mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+    }
+    &[data-animated="true"] .odc-scroller__inner {
+        width: max-content;
+        flex-wrap: nowrap;
+        animation: scroll var(--_animation-duration, 40s)
+        var(--_animation-direction, forwards) linear infinite;
+    }
+    &[data-direction="right"] {
+        --_animation-direction: reverse;
+    }
+    &[data-direction="left"] {
+        --_animation-direction: forwards;
+    }
+    &[data-speed="fast"] {
+        --_animation-duration: 20s;
+    }
+    &[data-speed="slow"] {
+        --_animation-duration: 60s;
+    }
+}
+
+@keyframes scroll {
+    to {
+        // * The subtractred value may vary upon the pixels setup
+        transform: translate(calc(-50% - 1.1rem));
+    }
+}

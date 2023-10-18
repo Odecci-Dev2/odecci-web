@@ -1,101 +1,29 @@
-// const tabsContainer = document.querySelector("[role=tablist]");
-// const tabButtons = tabsContainer.querySelectorAll("[role=tab]");
-// const tabPanels = document.querySelectorAll("[role=tabpanel]");
+// * For scrolling animation in Banner.astro
+const scrollers = document.querySelectorAll(".odc-scroller");
 
-// tabsContainer.addEventListener("click", (e) => {
-//   const clickedTab = e.target.closest("button");
-//   const currentTab = tabsContainer.querySelector('[aria-selected="true"]');
+// * If a user hasn't opted in for recuded motion, then we add the animation
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    addAnimation();
+}
 
-//   if (!clickedTab || clickedTab === currentTab) return;
+function addAnimation() {
+    scrollers.forEach((scroller) => {
 
-//   switchTab(clickedTab);
-// });
+        // * Add data-animated="true" to every `.odc-scroller` on the page
+        scroller.setAttribute("data-animated", true);
 
-// tabsContainer.addEventListener("keydown", (e) => {
-//   switch (e.key) {
-//     case "ArrowLeft":
-//       moveLeft();
-//       break;
-//     case "ArrowRight":
-//       moveRight();
-//       break;
-//     case "Home":
-//       e.preventDefault();
-//       switchTab(tabButtons[0]);
-//       break;
-//     case "End":
-//       e.preventDefault();
-//       switchTab(tabButtons[tabButtons.length - 1]);
-//       break;
-//   }
-// });
+        // * Make an array from the elements within `.odc-scroller__inner`
+        const scrollerInner = scroller.querySelector(".odc-scroller__inner");
+        const scrollerContent = Array.from(scrollerInner.children);
 
-// function moveLeft() {
-//   const currentTab = document.activeElement;
+        // * For each item in the array, clone it
+        // * add aria-hidden to it
+        // * add it into the `.odc-scroller__inner`
+        scrollerContent.forEach((item) => {
+            const duplicatedItem = item.cloneNode(true);
+            duplicatedItem.setAttribute("aria-hidden", true);
+            scrollerInner.appendChild(duplicatedItem);
+        });
 
-//   if (!currentTab.previousElementSibling) {
-//     tabButtons.item(tabButtons.length - 1).focus();
-//   } else {
-//     currentTab.previousElementSibling.focus();
-//   }
-// }
-
-// function moveRight() {
-//   const currentTab = document.activeElement;
-//   if (!currentTab.nextElementSibling) {
-//     tabButtons.item(0).focus();
-//   } else {
-//     currentTab.nextElementSibling.focus();
-//   }
-// }
-
-// function switchTab(newTab) {
-//   const oldTab = tabsContainer.querySelector('[aria-selected="true"]');
-//   const activePanelId = newTab.getAttribute("aria-controls");
-//   const activePanel = tabsContainer.nextElementSibling.querySelector(
-//     "#" + CSS.escape(activePanelId)
-//   );
-//   tabButtons.forEach((button) => {
-//     button.setAttribute("aria-selected", false);
-//     button.setAttribute("tabindex", "-1");
-//   });
-
-//   tabPanels.forEach((panel) => {
-//     panel.setAttribute("hidden", true);
-//   });
-
-//   activePanel.removeAttribute("hidden", false);
-
-//   newTab.setAttribute("aria-selected", true);
-//   newTab.setAttribute("tabindex", "0");
-//   newTab.focus();
-//   moveIndicator(oldTab, newTab);
-// }
-
-// // move underline indicator
-// function moveIndicator(oldTab, newTab) {
-//   const newTabPosition = oldTab.compareDocumentPosition(newTab);
-//   const newTabWidth = newTab.offsetWidth / tabsContainer.offsetWidth;
-//   let transitionWidth;
-
-//   // if the new tab is to the right
-//   if (newTabPosition === 4) {
-//     transitionWidth =
-//       newTab.offsetLeft + newTab.offsetWidth - oldTab.offsetLeft;
-//   } else {
-//     // if the tab is to the left
-//     transitionWidth =
-//       oldTab.offsetLeft + oldTab.offsetWidth - newTab.offsetLeft;
-//     tabsContainer.style.setProperty("--_left", newTab.offsetLeft + "px");
-//   }
-
-//   tabsContainer.style.setProperty(
-//     "--_width",
-//     transitionWidth / tabsContainer.offsetWidth
-//   );
-
-//   setTimeout(() => {
-//     tabsContainer.style.setProperty("--_left", newTab.offsetLeft + "px");
-//     tabsContainer.style.setProperty("--_width", newTabWidth);
-//   }, 220);
-// }
+    });
+}
