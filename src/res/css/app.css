@@ -6,6 +6,8 @@
   --secondary-accent: #fb373d;
   --accent-light: #fb373d;
   --accent-dark: 49, 10, 101;
+  --odc-pos-x: 0;
+  --odc-pos-y: 0;
   --primary-gradient: linear-gradient(
     60deg, var(--primary) 0%,
     var(--primary-accent) 30%,
@@ -16,6 +18,7 @@
     var(--accent-light) 30%,
     white 60%
   );
+  --box-shadow-lg: inset 0 1px 1px 0 hsla(0, 0%, 100%, 0.15), 0 50px 100px -20px rgba(50, 50, 93, 0.3), 0 30px 60px -30px rgba(0, 0, 0, 0.5), -10px 10px 60px -10px rgba(103, 178, 111, 0.3);
   --anim-ease-primary: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -3040,6 +3043,54 @@ h3 {
   font-weight: 900;
 }
 
+.odc-fw-1 {
+  font-weight: 1rem;
+}
+
+.odc-lh-1 {
+  line-height: 1rem;
+}
+
+.odc-fw-2 {
+  font-weight: 2rem;
+}
+
+.odc-lh-2 {
+  line-height: 2rem;
+}
+
+.odc-fw-3 {
+  font-weight: 3rem;
+}
+
+.odc-lh-3 {
+  line-height: 3rem;
+}
+
+.odc-fw-4 {
+  font-weight: 4rem;
+}
+
+.odc-lh-4 {
+  line-height: 4rem;
+}
+
+.odc-fw-5 {
+  font-weight: 5rem;
+}
+
+.odc-lh-5 {
+  line-height: 5rem;
+}
+
+.odc-fw-6 {
+  font-weight: 6rem;
+}
+
+.odc-lh-6 {
+  line-height: 6rem;
+}
+
 @media (min-width: 0) {
   .responsive-test {
     color: red;
@@ -4647,7 +4698,7 @@ h3 {
   transform: perspective(80rem) rotateY(-0.1deg);
   transform-style: preserve-3d;
   will-change: transform;
-  box-shadow: inset 0 1px 1px 0 hsla(0, 0%, 100%, 0.15), 0 50px 100px -20px rgba(50, 50, 93, 0.3), 0 30px 60px -30px rgba(0, 0, 0, 0.5), -10px 10px 60px -10px rgba(103, 178, 111, 0.3);
+  box-shadow: var(--box-shadow-lg);
 }
 .link-card:nth-of-type(1) {
   transform: perspective(80rem) rotateY(20deg);
@@ -4928,11 +4979,110 @@ p {
   }
 }
 .odc-recent-projects-section {
-  height: 100vh;
+  overflow: hidden;
+  position: relative;
 }
-.odc-recent-projects-section .odc-banner {
-  height: 100%;
-  background: url(/img/recent-projects/Ae-mock-up-scaled.webp) no-repeat center/cover;
+.odc-recent-projects-section .cursor-dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8rem;
+  height: 8rem;
+}
+.odc-recent-projects-section .cursor-outline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8rem;
+  height: 8rem;
+  background-color: var(--secondary);
+}
+.odc-recent-projects-section .cursor-outline::after {
+  content: "Explore";
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.odc-recent-projects-section .cursor-dot,
+.odc-recent-projects-section .cursor-outline {
+  display: none;
+  --odc-cursor-pos-x: var(--odc-pos-x);
+  --odc-cursor-pos-y: var(--odc-pos-y);
+  position: fixed !important;
+  top: var(--odc-cursor-pos-y);
+  left: var(--odc-cursor-pos-x);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+}
+.odc-recent-projects-section .cursor-dot.active,
+.odc-recent-projects-section .cursor-outline.active {
+  display: flex;
+}
+.odc-recent-projects-section .odc-slide-container {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+}
+.odc-recent-projects-section .odc-slide-container .odc-image-slider {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 3rem;
+  transition: 1s;
+}
+.odc-recent-projects-section .odc-slide-container .odc-image-slider .odc-slides-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.odc-recent-projects-section .odc-slide-container .odc-image-slider .odc-slides-div .odc-slide-img {
+  position: relative;
+  width: 30rem;
+  box-shadow: var(--box-shadow-lg);
+  filter: saturate(10%);
+  transition: 0.5s var(--anim-ease-primary);
+}
+.odc-recent-projects-section .odc-slide-container .odc-image-slider .odc-slides-div .odc-slider-btn {
+  position: absolute;
+  inset: 0;
+  padding: 0;
+  border: none;
+  background-color: rgba(67, 67, 151, 0.4);
+  transition: 0.5s var(--anim-ease-primary);
+}
+.odc-recent-projects-section .odc-slide-container .odc-image-slider .odc-slides-div .odc-slider-btn:hover {
+  background-color: rgba(67, 67, 151, 0.2);
+}
+.odc-recent-projects-section .odc-slide-container .odc-image-slider .odc-slides-div .odc-slide-img.selected {
+  width: 80rem;
+  background-image: contain;
+  background-color: none;
+  filter: saturate(100%);
+}
+.odc-recent-projects-section .odc-slide-container .odc-image-slider .odc-slides-div .odc-slider-btn.selected {
+  width: 100%;
+  background-color: unset;
+}
+.odc-recent-projects-section .odc-slide-container .odc-image-slider .odc-slides-div .odc-slider-btn.selected:hover {
+  background-color: unset !important;
+}
+.odc-recent-projects-section .odc-slide-container [odc-slider-span="1"] {
+  left: 10%;
+}
+.odc-recent-projects-section .odc-slide-container [odc-slider-span="2"] {
+  left: 0%;
+}
+.odc-recent-projects-section .odc-slide-container [odc-slider-span="3"] {
+  left: -10%;
+}
+.odc-recent-projects-section .odc-slide-container [odc-slider-span="4"] {
+  left: -20%;
 }
 
 .odc-wrapped-section {

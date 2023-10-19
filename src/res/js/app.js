@@ -1,3 +1,31 @@
+// * Get the root element
+const root = document.documentElement;
+
+// * Access the custom property value
+const root__Left = getComputedStyle(root).getPropertyValue('--odc-pos-x');
+const root__Top = getComputedStyle(root).getPropertyValue('--odc-pos-y');
+
+// * Custom Cursor
+const cursorDot = document.querySelector('[data-cursor-dot]');
+const cursorOutline = document.querySelector('[data-cursor-outline]');
+
+window.addEventListener('mousemove', (e) => {
+    const positionX = e.clientX
+    const positionY = e.clientY
+    
+    let rootX = root.style.setProperty('--odc-pos-x', `${positionX}px`)
+    let rootY = root.style.setProperty('--odc-pos-y', `${positionY}px`)
+    
+    // * Cursor Dot
+    cursorDot.style.left = rootX
+    cursorDot.style.top = rootY
+
+    cursorOutline.animate({
+        top: [cursorOutline.style.top, positionY + 'px'],
+        left: [cursorOutline.style.left, positionX + 'px'],
+    }, {duration: 500, fill: "forwards"} )
+})
+
 // * For scrolling animation in Banner.astro
 const scrollers = document.querySelectorAll(".odc-scroller");
 
@@ -27,3 +55,54 @@ function addAnimation() {
 
     });
 }
+
+
+
+// * Slider Button
+const slider = document.querySelectorAll('[odc-slider]')
+let sliderSelected = null;
+
+slider.forEach(slides => {
+    const sliderImage = slides.querySelector('.odc-slide-img');
+    const sliderButton = slides.querySelector('.odc-slider-btn');
+
+    
+
+    sliderButton.addEventListener('click', () => {
+        if (sliderSelected) {
+            sliderSelected.sliderButton.classList.remove('selected')
+            sliderSelected.sliderImage.classList.remove('selected')
+        }
+    
+        if (sliderSelected !== sliderButton) {
+            sliderButton.classList.add('selected')
+            sliderImage.classList.add('selected')
+            // * Listen for mousemove events on the card
+            sliderButton.addEventListener('mousemove', () => {
+                cursorDot.classList.add('active')
+                cursorOutline.classList.add('active')
+            })
+            sliderButton.addEventListener('mouseleave', () => {
+                cursorDot.classList.remove('active')
+                cursorOutline.classList.remove('active')
+            })
+            sliderButton.addEventListener('mouseenter', () => {
+                cursorDot.classList.add('active')
+                cursorOutline.classList.add('active')
+            })
+            // * Listen for mousemove events on the document to handle cursor inside the card
+            document.addEventListener('mousemove', (e) => {
+                // * Check if the mouse is inside the card
+                if (e.target === sliderButton || sliderButton.contains(e.target)) {
+                    cursorDot.classList.add('active')
+                    cursorOutline.classList.add('active')
+                }
+            });
+            sliderSelected = { sliderButton, sliderImage }
+        } else {
+            sliderSelected = null
+        }
+    })
+
+    
+})

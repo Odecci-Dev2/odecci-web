@@ -9,9 +9,28 @@ $font-weight-values: (
     "black": $font-weight-black,
 );
 
+$line-height-values: (
+    "1": 1rem,
+    "2": 2rem,
+    "3": 3rem,
+    "4": 4rem,
+    "5": 5rem,
+    "6": 6rem,
+);
+
 // * Font Weights
 @each $key, $val in $font-weight-values {
     .odc-fw-#{$key} {
         font-weight: $val;
+    }
+}
+
+// * Font Weights
+@each $key, $val in $line-height-values {
+    .odc-fw-#{$key} {
+        font-weight: $val;
+    }
+    .odc-lh-#{$key} {
+        line-height: $val;
     }
 }

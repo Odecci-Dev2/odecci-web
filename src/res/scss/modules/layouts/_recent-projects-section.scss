@@ -1,7 +1,105 @@
 .odc-recent-projects-section {
-    height: 100vh;
-    .odc-banner {
-        height: 100%;
-        background: url(/img/recent-projects/Ae-mock-up-scaled.webp) no-repeat center/cover;
+    overflow: hidden;
+    position: relative;
+    .cursor-dot {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 8rem;
+        height: 8rem;
+    }
+    .cursor-outline {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 8rem;
+        height: 8rem;
+        background-color: var(--secondary);
+        &::after {
+            content: 'Explore';
+            color: white;
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+    }
+    .cursor-dot,
+    .cursor-outline {
+        display: none;
+        --odc-cursor-pos-x: var(--odc-pos-x);
+        --odc-cursor-pos-y: var(--odc-pos-y);
+        position: fixed !important;
+        top: var(--odc-cursor-pos-y);
+        left: var(--odc-cursor-pos-x);
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        z-index: 1;
+        pointer-events: none;
+        &.active {
+            display: flex;
+        }
+    }
+    .odc-slide-container {
+        height: 60vh;
+        display: flex;
+        align-items: center;
+        .odc-image-slider{
+            width: 100%;
+            position: absolute;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0 3rem;
+            transition: 1s;
+            .odc-slides-div { 
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                .odc-slide-img {
+                    position: relative;
+                    width: 30rem;
+                    box-shadow: var(--box-shadow-lg);
+                    filter: saturate(10%);
+                    transition: 0.5s var(--anim-ease-primary);
+                }
+                .odc-slider-btn {
+                    position: absolute;
+                    inset: 0;
+                    padding: 0;
+                    border: none;
+                    background-color: rgba(67, 67, 151, 0.4);
+                    transition: 0.5s var(--anim-ease-primary);
+                    &:hover {
+                        background-color: rgba(67, 67, 151, 0.2);
+                    }
+                }
+                .odc-slide-img.selected {
+                    width: 80rem;
+                    background-image: contain;
+                    background-color: none;
+                    filter: saturate(100%);
+                }
+                .odc-slider-btn.selected {
+                    width: 100%;
+                    background-color: unset;
+                    &:hover {
+                        background-color: unset !important;
+                    }
+                }
+            }
+        }
+        [odc-slider-span="1"] {
+            left:10%;
+        }
+        [odc-slider-span="2"] {
+            left:0%;
+        }
+        [odc-slider-span="3"] {
+            left:-10%;
+        }
+        [odc-slider-span="4"] {
+            left:-20%;
+        }
     }
 }
