@@ -1,5 +1,5 @@
 ---
-const { title_1, title_2, title_3, title_gradient, body_1, body_2, url, src, name } = Astro.props;
+const { title_1, title_2, title_3, title_gradient, body_1, body_2, button, url, src, name } = Astro.props;
 ---
 
 <div class="odc-hero-container">
@@ -34,7 +34,7 @@ const { title_1, title_2, title_3, title_gradient, body_1, body_2, url, src, nam
 			</button>
         </div>
         <div class="odc-hero-image">
-            <img src={src} alt={alt} />
+            <img src={src} alt={name} />
         </div>
     </section>
 </div>

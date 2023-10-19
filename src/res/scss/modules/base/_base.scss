@@ -91,6 +91,12 @@ h3 {
     font-weight: $font-weight-bold;
 }
 
+h5 {
+    font-size: clamp(1.6rem, 1.5rem + 2vw, 2.2rem);
+    font-weight: $font-weight-bold;
+    position: relative;
+}
+
 
 .odc-backdrop {
     position: relative;

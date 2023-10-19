@@ -1,13 +1,21 @@
 ---
-const { title_1, title_2, title_3, title_gradient, body_1, body_2, url, src, alt } = Astro.props;
+const { subtitle, title_1, title_2, title_3, title_gradient, body_1, body_2, url, src, name } = Astro.props;
 ---
 
 <div class="odc-hero-container">
     <section class="odc-container odc-fdr odc-align-center">
         <div class="odc-hero-title odc-text-primary">
+            <h5 class="odc-text-secondary odc-mb-2">
+                <!-- <span class="odc-circle">
+                    <svg width="279" height="80" viewBox="0 0 279 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M141 15.0002C89.3336 11.3335 -10.5997 12.6002 3.00026 47.0002C20.0003 90.0002 242 84 269 59.0002C311.803 19.3676 184 -0.999837 126 2.00016" stroke-width="4"></path>
+                    </svg> -->
+                    <span>{subtitle}</span>
+                <!-- </span> -->
+            </h5>
             <h1 class="odc-mb-3">
-                <span>{title_1} </span>
-                <br>
+                <!-- <span>{title_1} </span> -->
+                <!-- <br> -->
                 <span>{title_2} 
                     <!-- <span class="odc-circle">
                         <svg width="279" height="80" viewBox="0 0 279 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -22,7 +30,12 @@ const { title_1, title_2, title_3, title_gradient, body_1, body_2, url, src, alt
                         <path d="M141 15.0002C89.3336 11.3335 -10.5997 12.6002 3.00026 47.0002C20.0003 90.0002 242 84 269 59.0002C311.803 19.3676 184 -0.999837 126 2.00016" stroke-width="4"></path>
                     </svg>
                 </span> -->
-                <span>{title_3}</span>
+                <span class="odc-circle">
+                    <svg width="279" height="80" viewBox="0 0 279 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M141 15.0002C89.3336 11.3335 -10.5997 12.6002 3.00026 47.0002C20.0003 90.0002 242 84 269 59.0002C311.803 19.3676 184 -0.999837 126 2.00016" stroke-width="4"></path>
+                    </svg>
+                    <span>{title_3}</span>
+                </span>
             </h1>
             <p class="odc-fs-xx-md odc-fw-regular odc-mb-3">
                 <span>{body_1}</span>
@@ -31,7 +44,7 @@ const { title_1, title_2, title_3, title_gradient, body_1, body_2, url, src, alt
             </p>
         </div>
         <div class="odc-hero-image">
-            <img src={src} alt={alt} />
+            <img src={src} alt={name} />
         </div>
     </section>
 </div>
