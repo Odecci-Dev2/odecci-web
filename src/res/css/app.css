@@ -4979,7 +4979,6 @@ p {
   }
 }
 .odc-recent-projects-section {
-  overflow: hidden;
   position: relative;
 }
 .odc-recent-projects-section .cursor-dot {
