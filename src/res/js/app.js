@@ -103,6 +103,5 @@ slider.forEach(slides => {
             sliderSelected = null
         }
     })
-
     
 })

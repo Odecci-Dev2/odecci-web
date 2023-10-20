@@ -31,3 +31,9 @@ export const WrappedWebsitesImage = [
     { name: 'Odecci Websites', src: '/img/10k-website-mock-up.webp' },
 ]
 
+export const OdecciPartners = [
+    { name: 'AWS', icon: '/img/partners/aws.webp', url: '/aws' },
+    { name: 'Hostinger', icon: '/img/partners/Hostinger.webp', url: '/hostinger' },
+    { name: 'PhilGeps', icon: '/img/partners/philgeps.webp', url: '/philgeps' },
+    { name: 'Microsoft', icon: '/img/partners/microsoft-logo-4-1.webp', url: '/microsoft' },
+]

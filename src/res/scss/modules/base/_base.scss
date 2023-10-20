@@ -79,7 +79,8 @@ img {
 h1 {
     font-size: clamp(2.5rem, 6vw, 4.8rem);
     font-weight: $font-weight-bold;
-    line-height: 6rem;
+    // line-height: 6rem;
+    line-height: 1;
 }
 
 h2 {
@@ -115,4 +116,50 @@ p {
         background: white;
         inset: 0;
     }
+}
+
+.odc-circle {
+    position: relative;
+    display: inline-block;
+    isolation: isolate;
+    svg {
+        position: absolute;
+        width: 120%;
+        top: 0;
+        height: 145%;
+        left: 5%;
+        z-index: -1;
+        margin-top: -2%;
+        overflow: visible;
+        pointer-events: none;
+        stroke: var(--accent-light);
+    }
+}
+.odc-text-gradient {
+    background: linear-gradient(234deg, #132b3c, #19435e, #ed1c24, #fb373d);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: odc-gradient-anim 6s ease infinite;
+    -o-animation: odc-gradient-anim 6s ease infinite;
+    animation: odc-gradient-anim 6s ease infinite;
+}
+
+@-webkit-keyframes odc-gradient-anim {
+    0%{background-position:0% 94%}
+    50%{background-position:100% 7%}
+    100%{background-position:0% 94%}
+}
+
+@-o-keyframes odc-gradient-anim {
+    0%{background-position:0% 94%}
+    50%{background-position:100% 7%}
+    100%{background-position:0% 94%}
+}
+
+@keyframes odc-gradient-anim {
+    0%{background-position:0% 94%}
+    50%{background-position:100% 7%}
+    100%{background-position:0% 94%}
 }
