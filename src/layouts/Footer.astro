@@ -1,10 +1,28 @@
+---
+import { IconLinks } from "../assets/constants.js";
+
+---
+
 <section class="odc-footer">
-    <div class="odc-wrapper">
-        <h2>
-            <span>Do you have</span>
-            <br>
-            <span>anything in mind?</span>
-        </h2>
+    <div class="odc-container">
+        <div class="odc-wrapper">
+            <h2>
+                <span>Do you have</span>
+                <span>anything in mind?</span>
+            </h2>
+            <p>
+                <span>Drop us your concern our support will contact you immediately</span>
+            </p>
+            <div class="odc-row odc-gap-1">
+                {IconLinks.map((link, index) => (
+                    <li>
+                        <a href={link.url}>
+                            <img src={link.icon} alt={`${link.name} Icon`} />
+                        </a>
+                    </li>
+                ))}
+            </div>
+        </div>
+        <div class="odc-wrapper"></div>
     </div>
-    <div class="odc-wrapper"></div>
 </section>

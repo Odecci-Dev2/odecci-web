@@ -5,18 +5,18 @@
 // 	href: string;
 // }
 import { OdecciInfo, IconLinks } from "../assets/constants.js";
-
 // const { href, body } = Astro.props;
 ---
 
 <nav class="odc-navbar-primary">
 	<ul class="odc-container">
 		<div class="odc-row odc-gap-1">
-			{OdecciInfo.map((link, index) => (
-				<li class="odc-site-links odc-text-white">
-						{link.value}
-				</li>
-			))}
+			<li class="odc-site-links odc-text-white">
+				{OdecciInfo.email.value}
+			</li>
+			<li class="odc-site-links odc-text-white">
+				{OdecciInfo.contactNumber.value}
+			</li>
 		</div>
 
 		<div class="odc-row odc-gap-1">

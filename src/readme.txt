@@ -117,3 +117,9 @@ Added section:
 Added brand class:
     - _utilities.scss
 
+Second Commit:
+• Odecci Web: Footer Section Layout
+- constant.js
+- Footer.astro
+- NavbarExpanded.js
+- index.astro

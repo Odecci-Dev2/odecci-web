@@ -1,9 +1,14 @@
 export const Logo = '/logo-01-2.svg';
 
-export const OdecciInfo = [
-    { value: 'info@odecci.com' },
-    { value: '(+63) 961 6458 398' },
-]
+export const OdecciInfo = {
+    address: 
+        { value: '0004 Miranda Street, Manatal Pandi Bulacan Philippines, 3014' },
+    email: 
+        { value: 'info@odecci.com' },
+    contactNumber: 
+        { value: '(+63) 961 6458 398' },
+}
+
 
 export const IconLinks = [
     { name: 'Facebook', icon: '/icons/facebook-fill.svg', url: '/faceboook' },
