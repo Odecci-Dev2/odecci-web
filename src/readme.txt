@@ -93,3 +93,27 @@ October 20, 2023 (Friday)
 First Commit:
 • Odecci Web: Partners Section Initial✅
 
+
+October 23, 2023 (Monday)
+First Commit:
+• Odecci Web: Made elements to components✅
+- _base.scss
+- index.astro
+- Hero.astro
+- Feature.astro
+- FeatureSection.astro
+- ConsultationSection.astro
+
+- app.js
+    - remove empty span
+
+- constant.js
+    - added public asset
+
+Added section:
+    - OdecciRoadMap.astro
+    - Footer.astro
+
+Added brand class:
+    - _utilities.scss
+

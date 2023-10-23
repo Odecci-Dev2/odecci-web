@@ -1,13 +1,28 @@
 ---
-import Feature from "../components/Feature.astro";
+import { OdecciBuildImage } from "../assets/constants";
+const { name, src } = OdecciBuildImage[0];
 
+import Feature from "../components/Feature.astro";
 ---
 
-<Feature 
-    subtitle='Why Choose Odecci?'
-    title_gradient = 'Elevate Your Digital Future'
-    title_3 = 'with Distinction'
-    body_1='Discovering a partner that mirrors your aspirations is an art. At Odecci, we paint beyond the canvas of conventional development. Unveil what sets us apart and why we’re the catalyst for your digital success.'
-    src='/img/odecci-build-1-converted-to-svg-1.png.webp'
-    alt='Odecci Build'
-/>
+<div class="odc-mt-1 odc-mb-2">
+    <section class="odc-container odc-fdr odc-align-center">
+        <Feature
+            hasSubtitle = {true}
+            isHeader1 = {false}
+            title_1 = ''
+            title_2 = ''
+            title_3 = ''
+            title_4 = 'with Distinction'
+            title_gradient = 'Elevate Your Digital Future'
+            isCircleVisible = {true}
+            subtitle='Why Choose Odecci?'
+            body_1='Discovering a partner that mirrors your aspirations is an art. At Odecci, we paint beyond the canvas of conventional development. Unveil what sets us apart and why we’re the catalyst for your digital success.'
+            body_2 = ''
+            hasButton = {false}
+            cta_name = ''
+            src = {src}
+            name = {name}
+        >
+    </section>
+</div>

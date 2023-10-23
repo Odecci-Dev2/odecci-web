@@ -1,50 +1,78 @@
 ---
-const { subtitle, title_1, title_2, title_3, title_gradient, body_1, body_2, url, src, name } = Astro.props;
+const { 
+    hasSubtitle,
+    isHeader1, 
+    title_1, 
+    title_2, 
+    title_3, 
+    title_4, 
+    title_gradient, 
+    isCircleVisible, 
+    subtitle, 
+    body_1, 
+    body_2, 
+    hasButton, 
+    cta_name, 
+    url, 
+    src, 
+    name} = Astro.props;
 ---
 
-<div class="odc-hero-container">
-    <section class="odc-container odc-fdr odc-align-center">
-        <div class="odc-hero-title odc-text-primary">
-            <h5 class="odc-text-secondary odc-mb-2">
-                <!-- <span class="odc-circle">
-                    <svg width="279" height="80" viewBox="0 0 279 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M141 15.0002C89.3336 11.3335 -10.5997 12.6002 3.00026 47.0002C20.0003 90.0002 242 84 269 59.0002C311.803 19.3676 184 -0.999837 126 2.00016" stroke-width="4"></path>
-                    </svg> -->
-                    <span>{subtitle}</span>
-                <!-- </span> -->
-            </h5>
-            <h1 class="odc-mb-3">
-                <!-- <span>{title_1} </span> -->
-                <!-- <br> -->
-                <span>{title_2} 
-                    <!-- <span class="odc-circle">
-                        <svg width="279" height="80" viewBox="0 0 279 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M141 15.0002C89.3336 11.3335 -10.5997 12.6002 3.00026 47.0002C20.0003 90.0002 242 84 269 59.0002C311.803 19.3676 184 -0.999837 126 2.00016" stroke-width="4"></path>
-                        </svg>
-                    </span> -->
-                    <span class="odc-text-gradient">{title_gradient}</span>
-                </span>
-                <br>
-                <!-- <span class="odc-circle">
-                    <svg width="279" height="80" viewBox="0 0 279 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M141 15.0002C89.3336 11.3335 -10.5997 12.6002 3.00026 47.0002C20.0003 90.0002 242 84 269 59.0002C311.803 19.3676 184 -0.999837 126 2.00016" stroke-width="4"></path>
-                    </svg>
-                </span> -->
+<div class="odc-hero-title odc-text-primary">
+    {hasSubtitle 
+        && 
+        <h5 class="odc-text-secondary odc-mb-2">
+            <span>{subtitle}</span>
+        </h5>
+    }
+    {isHeader1 ? 
+        <h1 class="odc-mb-3">
+            <span>{title_1}</span>
+            <span>
+                {title_2}
+                <span class="odc-text-gradient">{title_gradient}</span>
+                {title_3}
+            </span>
+            {isCircleVisible
+                && 
                 <span class="odc-circle">
                     <svg width="279" height="80" viewBox="0 0 279 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M141 15.0002C89.3336 11.3335 -10.5997 12.6002 3.00026 47.0002C20.0003 90.0002 242 84 269 59.0002C311.803 19.3676 184 -0.999837 126 2.00016" stroke-width="4"></path>
                     </svg>
-                    <span>{title_3}</span>
-                </span>
-            </h1>
-            <p class="odc-fs-xx-md odc-fw-regular odc-mb-3">
-                <span>{body_1}</span>
-                <br>
-                <span> {body_2}</span>
-            </p>
-        </div>
-        <div class="odc-hero-image">
-            <img src={src} alt={name} />
-        </div>
-    </section>
+                    <span>{title_4}</span>
+                </span> 
+            }
+        </h1>
+        : 
+        <h2 class="odc-mb-3">
+            <span>{title_1}</span>
+            <span>
+                {title_2}
+                <span class="odc-text-gradient">{title_gradient}</span>
+                {title_3}
+            </span>
+            {isCircleVisible
+                && 
+                <span class="odc-circle">
+                    <svg width="279" height="80" viewBox="0 0 279 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M141 15.0002C89.3336 11.3335 -10.5997 12.6002 3.00026 47.0002C20.0003 90.0002 242 84 269 59.0002C311.803 19.3676 184 -0.999837 126 2.00016" stroke-width="4"></path>
+                    </svg>
+                    <span>{title_4}</span>
+                </span> 
+            }
+        </h2>
+    }
+    <p class="odc-fs-xx-md odc-fw-regular odc-mb-3">
+        <span>{body_1}</span>
+        <span> {body_2}</span>
+    </p>
+    {hasButton
+        && 
+        <button class="odc-btn-gradient odc-text-white odc-fdr odc-align-center">
+            {cta_name}<img class="chevron-circle-right odc-pl-1" src="/icons/chevron-circle-right-alt.svg" alt="Arrow Button">
+        </button>
+    }
+</div>
+<div class="odc-hero-image">
+    <img src={src} alt={name} />
 </div>

@@ -103,6 +103,11 @@ p {
     line-height: 3rem;
 }
 
+span:not(.odc-text-gradient, .odc-circle)::after {
+    content: '\a';
+    white-space: pre;
+}
+
 .odc-backdrop {
     position: relative;
     isolation: isolate;
@@ -126,7 +131,7 @@ p {
         position: absolute;
         width: 120%;
         top: 0;
-        height: 145%;
+        height: 135%;
         left: 5%;
         z-index: -1;
         margin-top: -2%;

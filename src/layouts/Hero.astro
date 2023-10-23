@@ -1,16 +1,28 @@
 ---
 import { HeroImage } from "../assets/constants";
-import FeatureWithButton from "../components/FeatureWithButton.astro";
+import Feature from "../components/Feature.astro";
 
 const { name, src } = HeroImage[0];
 ---
-<FeatureWithButton
-    title_1='Elevate Your Business'
-    title_2='with'
-    title_gradient=' Bespoke Software'
-    title_3='Innovations'
-    body_1='Our suite of services is designed to transform your vision into reality, leveraging innovation and expertise to steer your business toward achievement.'
-    button='Explore Our Services'
-    src={src}
-    name={name}
-/>
+
+<div class="odc-hero-container">
+    <section class="odc-container odc-fdr odc-align-center">
+        <Feature
+            hasSubtitle = {false}
+            isHeader1 = {true}
+            title_1 = 'Elevate Your Business '
+            title_2 = 'with '
+            title_3 = ' Innovations'
+            title_4 = ''
+            title_gradient ='Bespoke Software'
+            isCircleVisible = {false}
+            subtitle = ''
+            body_1 = 'Our suite of services is designed to transform your vision into reality, leveraging innovation and expertise to steer your business toward achievement.'
+            body_2 = ''
+            hasButton = {true}
+            cta_name = 'Explore Our Services'
+            src = {src}
+            name = {name}
+        >
+    </section>
+</div>

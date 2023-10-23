@@ -105,3 +105,17 @@ slider.forEach(slides => {
     })
     
 })
+
+// * Remove Empty Span
+function removeEmptySpanElements() {
+    const spanElements = document.querySelectorAll('span')
+
+    spanElements.forEach((span) => {
+    // * Check if the span has no text content and no child nodes
+    if (span.textContent.trim() === '' && span.children.length === 0) {
+        // * Remove the empty span element
+        span.remove()
+    }
+    });
+}
+removeEmptySpanElements()

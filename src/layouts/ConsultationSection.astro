@@ -1,40 +1,28 @@
 ---
-
 import { ConsultationImage } from "../assets/constants";
+const { name, src } = ConsultationImage[0];
+import Feature from "../components/Feature.astro"
 ---
 <div class="odc-mt-5">
-    <section class="odc-container odc-fdr odc-align-center">
-        <div class="odc-hero-image">
-            { ConsultationImage.map((link) => (
-                <img src={link.src} alt={link.name} />
-            ))}
-        </div>
-        <div class="odc-hero-title odc-text-primary">
-            <h1 class="odc-mb-3">
-                <span>Unleash your ideas with our</span>
-                <!-- <br> -->
-                <span>
-                    <!-- <span class="odc-circle">
-                        <svg width="279" height="80" viewBox="0 0 279 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M141 15.0002C89.3336 11.3335 -10.5997 12.6002 3.00026 47.0002C20.0003 90.0002 242 84 269 59.0002C311.803 19.3676 184 -0.999837 126 2.00016" stroke-width="4"></path>
-                        </svg>
-                    </span> -->
-                    <span class="odc-text-gradient"> cutting-edge mobile application</span>
-                </span>
-                <!-- <br> -->
-                <span> development services.</span>
-                <!-- <span class="odc-circle">
-                    <svg width="279" height="80" viewBox="0 0 279 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M141 15.0002C89.3336 11.3335 -10.5997 12.6002 3.00026 47.0002C20.0003 90.0002 242 84 269 59.0002C311.803 19.3676 184 -0.999837 126 2.00016" stroke-width="4"></path>
-                    </svg>
-                </span> -->
-            </h1>
-            <p class="odc-fs-xx-md odc-fw-regular odc-mb-3">
-                Our suite of services is designed to transform your vision into reality, leveraging innovation and expertise to steer your business toward achievement.
-            </p>
-            <button class="odc-btn-gradient odc-text-white odc-fdr odc-align-center">
-				Book For Consultation <img class="chevron-circle-right odc-pl-1" src="/icons/chevron-circle-right-alt.svg" alt="Arrow Button">
-			</button>
-        </div>
+    <section class="odc-container odc-fdr odc-fd-r-rev odc-align-center">
+        <Feature
+            hasSubtitle = {false}
+            isHeader1 = {false}
+            title_1 = 'Unleash your ideas with '
+            title_2 = 'our '
+            title_3 = ' development services.'
+            title_4 = ''
+            title_gradient = 'cutting-edge mobile application'
+            isCircleVisible = {false}
+            subtitle = ''
+            body_1 = 'Are you ready to transform your innovative concepts into dynamic, user-friendly mobile applications? Look no further! Our team of expert developers and designers is here to turn your vision into reality.'
+            body_2 = ''
+            hasButton = {true}
+            cta_name = 'Book For Consultation'
+            url = ''
+            src = {src}
+            name = {name}
+        >
+        </Feature>
     </section>
 </div>

@@ -148,6 +148,15 @@ $utilities: (
       "i-b": inline-block
     )
   ),
+  "flex-direction": (
+    "prefix": "odc-fd",
+    "values": (
+      "r": row,
+      "c": column,
+      "r-rev": row-reverse,
+      "c-rev": column-reverse
+    )
+  ),
   "text-align": (
     "prefix": "odc-ta",
     "values": (
