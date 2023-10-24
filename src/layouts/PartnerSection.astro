@@ -1,13 +1,14 @@
 ---
 import { OdecciPartners } from "../assets/constants";
 ---
-
-<div class="odc-banner odc-scroller" data-direction="right" data-speed="slow">
-    <div class="odc-scroller__inner odc-fdr odc-align-center">
-        {OdecciPartners.map((link, index) => (
-            <a href={link.url}>
-                <img class="odc-ml-3 odc-mr-3" src={link.icon} alt={`${link.name} Icon`} />
-            </a>
-        ))}
+<div class="odc-partners-section odc-pt-4 odc-pb-4">
+    <div class="odc-banner odc-scroller" data-direction="right" data-speed="slow">
+        <div class="odc-scroller__inner odc-fdr odc-align-center">
+            {OdecciPartners.map((link, index) => (
+                <a href={link.url}>
+                    <img class="odc-ml-3 odc-mr-3" src={link.icon} alt={`${link.name} Icon`} />
+                </a>
+            ))}
+        </div>
     </div>
 </div>

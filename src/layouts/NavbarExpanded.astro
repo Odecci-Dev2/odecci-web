@@ -21,7 +21,7 @@ import { OdecciInfo, IconLinks } from "../assets/constants.js";
 
 		<div class="odc-row odc-gap-1">
 			{IconLinks.map((link, index) => (
-				<li>
+				<li class="odc-socmed-links">
 					<a href={link.url}>
 						<img src={link.icon} alt={`${link.name} Icon`} />
 					</a>
@@ -30,17 +30,3 @@ import { OdecciInfo, IconLinks } from "../assets/constants.js";
 		</div>
 	</ul>
 </nav>
-
-<style>
-	img {
-		-webkit-filter: invert(100%);
-		filter: invert(100%);
-		width: 2.6rem;
-		height: 2.6rem;
-		background-size: 100% 100%;
-	}
-	li:last-of-type > img {
-		width: 3rem;
-		height: 6rem;
-	}
-</style>

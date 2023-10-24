@@ -1,0 +1,50 @@
+@mixin odc-input {
+    border-radius: 4px;
+    color: rgb(32,33,36);
+    font-family: $font-family;
+    font-size: 1.6rem;
+    height: 4.8rem;
+    margin: 1px 1px 0 1px;
+    padding: 1.3rem 1.5rem;
+    z-index: 1;
+    border: none;
+    flex-grow: 1;
+    flex-shrink: 1;
+    background-color: white;
+    border: none;
+    display: block;
+    line-height: 2.4rem;
+    min-width: 0%;
+    outline:  1px solid rgb(211, 211, 211);
+}
+
+@mixin odc-textarea {
+    @include odc-input;
+    resize: none;
+    height: 20rem;
+    width: 100%;
+}
+
+@mixin odc-input-label {
+    position: absolute;
+    font-size: 1.6rem;  
+    color: rgb(95,99,104);
+    font-size: 16px;
+    font-weight: 400;
+    bottom: 16px;
+    left: 8px;
+    max-width: calc(100% - (2*8px));
+    overflow: hidden;
+    padding: 0 8px;
+    text-overflow: ellipsis;
+    transition: transform 150ms cubic-bezier(0.4,0,0.2,1),opacity 150ms cubic-bezier(0.4,0,0.2,1);
+    white-space: nowrap;
+    width: auto;
+    z-index: 2;
+}
+
+@mixin odc-input-label-textarea {
+    @include odc-input-label;
+    bottom: unset;
+    top: 16px;
+}

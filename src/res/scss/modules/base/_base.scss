@@ -50,7 +50,8 @@ main {
 
 menu,
 ol,
-ul {
+ul,
+li {
     list-style: none;
     padding-left: 0;
 }
@@ -74,6 +75,31 @@ img {
     -webkit-user-drag: none;
     -webkit-user-select: none;
     -ms-user-select: none;
+}
+.odc-site-title {
+    font-size: $font-size-lg;
+}
+
+.odc-site-links {
+    font-size: $font-size-x-md;
+    a:has(.odc-caret-down) {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.odc-socmed-links {
+    & img {
+        -webkit-filter: invert(100%);
+        filter: invert(100%);
+        width: 2.6rem;
+        height: 2.6rem;
+        background-size: 100% 100%;
+    }
+    &:last-of-type > img  {
+        width: 3rem;
+        height: 6rem;
+    }
 }
 
 h1 {
@@ -103,9 +129,52 @@ p {
     line-height: 3rem;
 }
 
-span:not(.odc-text-gradient, .odc-circle)::after {
+span:not(.odc-text-gradient, .odc-circle, .odc-input-label)::after {
     content: '\a';
     white-space: pre;
+}
+
+input {
+    @include odc-input;
+}
+
+textarea {
+    @include odc-textarea;
+}
+
+.odc-input-inner-wrapper {
+    position: relative;
+    .odc-input:focus ~ .odc-input-label, 
+    .odc-input:focus ~ .odc-input-label-ta, 
+    .odc-input.has-value ~ .odc-input-label, 
+    .odc-input.has-value ~ .odc-input-label-ta {
+        transform-origin: left top;
+        transform: scale(0.75) translate(0, -3.4rem);
+        color: white;
+        background: $primary;
+    }
+    .odc-input:focus, 
+    .odc-input.has-value {
+        background: transparent;
+        outline: 2px solid white;
+        color: white;
+    }
+}
+
+.odc-input-label {
+    @include odc-input-label;
+}
+
+.odc-input-label-ta {
+    @include odc-input-label-textarea;
+}
+
+.odc-form-validation {
+    position: absolute;
+    top: 100%;
+    transform: translateY(2px);
+    font-size: $font-size-md;
+    color: $error;
 }
 
 .odc-backdrop {

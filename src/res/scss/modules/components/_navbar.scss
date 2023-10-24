@@ -10,17 +10,6 @@
     @extend %flex-layout;
     padding: $base-padding $base-padding * 2;
     // box-shadow: $base-box-shadow;
-    .odc-site-title {
-      font-size: $font-size-lg;
-    }
-    .odc-site-links {
-      font-size: $font-size-x-md;
-      
-      a:has(.odc-caret-down) {
-        display: flex;
-        align-items: center;
-      }
-    }
     [role='tablist'] {
       --_gap: 2rem;
       display: flex;

@@ -1,21 +1,20 @@
 ---
-import { IconLinks } from "../assets/constants.js";
-
+import { OdecciLogo, IconLinks, OdecciInfo } from "../assets/constants.js";
 ---
 
-<section class="odc-footer">
-    <div class="odc-container">
-        <div class="odc-wrapper">
-            <h2>
-                <span>Do you have</span>
-                <span>anything in mind?</span>
+<section class="odc-footer odc-bg-primary">
+    <div class="odc-container odc-fdr odc-justify-space-between">
+        <div class="odc-wrapper odc-pt-3 odc-pb-3">
+            <h2 class="odc-fs-ult-display">
+                <span class="odc-text-white">Do you have</span>
+                <span class="odc-text-white">anything in mind?</span>
             </h2>
             <p>
-                <span>Drop us your concern our support will contact you immediately</span>
+                <span class="odc-text-white odc-fs-xx-md">Drop your concern, our support will contact you immediately.</span>
             </p>
-            <div class="odc-row odc-gap-1">
+            <div class="odc-row odc-gap-1 odc-dp-gap-2">
                 {IconLinks.map((link, index) => (
-                    <li>
+                    <li class="odc-socmed-links">
                         <a href={link.url}>
                             <img src={link.icon} alt={`${link.name} Icon`} />
                         </a>
@@ -23,6 +22,73 @@ import { IconLinks } from "../assets/constants.js";
                 ))}
             </div>
         </div>
-        <div class="odc-wrapper"></div>
+        <div class="odc-wrapper odc-form odc-pt-3 odc-pb-3">
+            <form class="odc-form-container" action="">
+                <div class="odc-input-wrapper odc-fdr">
+                    <div class="odc-input-inner-wrapper">
+                        <input class="odc-input" type="text">
+                        <span class="odc-input-label">First Name</span>
+                        <span class="odc-form-validation">This field is required.</span>
+                    </div>
+                    <div class="odc-input-inner-wrapper">
+                        <input class="odc-input" type="text">
+                        <span class="odc-input-label">Last Name</span>
+                        <span class="odc-form-validation">This field is required.</span>
+                    </div>
+                </div>
+                <div class="odc-input-wrapper odc-fdr">
+                    <div class="odc-input-inner-wrapper">
+                        <input class="odc-input" type="text">
+                        <span class="odc-input-label">Email</span>
+                        <span class="odc-form-validation">Please enter a valid email address.</span>
+                    </div>
+                    <div class="odc-input-inner-wrapper">
+                        <input class="odc-input" type="tel">
+                        <span class="odc-input-label">Contact Number</span>
+                        <span class="odc-form-validation">Please enter a valid phone number.</span>
+                    </div>
+                </div>
+                <div class="odc-input-wrapper odc-ta-wrapper">
+                    <div class="odc-input-inner-wrapper">
+                        <textarea class="odc-input" name="" id=""></textarea>
+                        <span class="odc-input-label-ta">Your Inquiry</span>
+                    </div>
+                </div>
+                <div class="odc-button-wrapper">
+                    <button class="odc-btn-gradient">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="odc-container odc-fdr odc-justify-space-between odc-pb-3">
+        <ul class="odc-fdc odc-gap-1">
+            <div class="odc__tags odc-fdc odc-fd-c-rev">
+                <div class="odc-wrapper">
+                    <li class="odc-site-links odc-text-white">
+                        {OdecciInfo.address.value}
+                    </li>
+                </div>
+                <h5 class="odc-tag-title odc-text-white">Address</h5>
+            </div>
+            <div class="odc__tags odc-fdc odc-fd-c-rev">
+                <div class="odc-wrapper odc-pt-1">
+                    <li class="odc-site-links odc-text-white">
+                        {OdecciInfo.contactNumber.value}
+                    </li>
+                </div>
+                <div class="odc-wrapper">
+                    <li class="odc-site-links odc-text-white">
+                        {OdecciInfo.email.value}
+                    </li>
+                </div>
+                <h5 class="odc-tag-title odc-text-white">Contact</h5>
+            </div>
+		</ul>
+        <div class="odc-fdc odc-align-flex-end">
+            <img class="odc-logo" src={OdecciLogo.secondary.src} alt={OdecciLogo.secondary.name}>
+            <p class="odc-footer__copyright">
+				©&nbsp;<span class="odc-footer__this-year">{OdecciInfo.year.value}</span>&nbsp;Odecci Inc. All Rights Reserved | Terms and Condition | Privacy Policy
+			</p>
+        </div>
     </div>
 </section>

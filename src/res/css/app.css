@@ -20,6 +20,7 @@
   );
   --box-shadow-lg: inset 0 1px 1px 0 hsla(0, 0%, 100%, 0.15), 0 50px 100px -20px rgba(50, 50, 93, 0.3), 0 30px 60px -30px rgba(0, 0, 0, 0.5), -10px 10px 60px -10px rgba(103, 178, 111, 0.3);
   --anim-ease-primary: cubic-bezier(0.22, 1, 0.36, 1);
+  --anim-ease-secondary: cubic-bezier(0.85,0,0,1);
 }
 
 *,
@@ -63,7 +64,8 @@ main {
 
 menu,
 ol,
-ul {
+ul,
+li {
   list-style: none;
   padding-left: 0;
 }
@@ -87,6 +89,30 @@ img {
   -webkit-user-drag: none;
   -webkit-user-select: none;
   -ms-user-select: none;
+}
+
+.odc-site-title {
+  font-size: 2rem;
+}
+
+.odc-site-links {
+  font-size: 1.5rem;
+}
+.odc-site-links a:has(.odc-caret-down) {
+  display: flex;
+  align-items: center;
+}
+
+.odc-socmed-links img {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+  width: 2.6rem;
+  height: 2.6rem;
+  background-size: 100% 100%;
+}
+.odc-socmed-links:last-of-type > img {
+  width: 3rem;
+  height: 6rem;
 }
 
 h1 {
@@ -115,9 +141,117 @@ p {
   line-height: 3rem;
 }
 
-span:not(.odc-text-gradient, .odc-circle)::after {
+span:not(.odc-text-gradient, .odc-circle, .odc-input-label)::after {
   content: "\a";
   white-space: pre;
+}
+
+input {
+  border-radius: 4px;
+  color: rgb(32, 33, 36);
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.6rem;
+  height: 4.8rem;
+  margin: 1px 1px 0 1px;
+  padding: 1.3rem 1.5rem;
+  z-index: 1;
+  border: none;
+  flex-grow: 1;
+  flex-shrink: 1;
+  background-color: white;
+  border: none;
+  display: block;
+  line-height: 2.4rem;
+  min-width: 0%;
+  outline: 1px solid rgb(211, 211, 211);
+}
+
+textarea {
+  border-radius: 4px;
+  color: rgb(32, 33, 36);
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.6rem;
+  height: 4.8rem;
+  margin: 1px 1px 0 1px;
+  padding: 1.3rem 1.5rem;
+  z-index: 1;
+  border: none;
+  flex-grow: 1;
+  flex-shrink: 1;
+  background-color: white;
+  border: none;
+  display: block;
+  line-height: 2.4rem;
+  min-width: 0%;
+  outline: 1px solid rgb(211, 211, 211);
+  resize: none;
+  height: 20rem;
+  width: 100%;
+}
+
+.odc-input-inner-wrapper {
+  position: relative;
+}
+.odc-input-inner-wrapper .odc-input:focus ~ .odc-input-label,
+.odc-input-inner-wrapper .odc-input:focus ~ .odc-input-label-ta,
+.odc-input-inner-wrapper .odc-input.has-value ~ .odc-input-label,
+.odc-input-inner-wrapper .odc-input.has-value ~ .odc-input-label-ta {
+  transform-origin: left top;
+  transform: scale(0.75) translate(0, -3.4rem);
+  color: white;
+  background: #132B3C;
+}
+.odc-input-inner-wrapper .odc-input:focus,
+.odc-input-inner-wrapper .odc-input.has-value {
+  background: transparent;
+  outline: 2px solid white;
+  color: white;
+}
+
+.odc-input-label {
+  position: absolute;
+  font-size: 1.6rem;
+  color: rgb(95, 99, 104);
+  font-size: 16px;
+  font-weight: 400;
+  bottom: 16px;
+  left: 8px;
+  max-width: calc(100% - 16px);
+  overflow: hidden;
+  padding: 0 8px;
+  text-overflow: ellipsis;
+  transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1), opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  width: auto;
+  z-index: 2;
+}
+
+.odc-input-label-ta {
+  position: absolute;
+  font-size: 1.6rem;
+  color: rgb(95, 99, 104);
+  font-size: 16px;
+  font-weight: 400;
+  bottom: 16px;
+  left: 8px;
+  max-width: calc(100% - 16px);
+  overflow: hidden;
+  padding: 0 8px;
+  text-overflow: ellipsis;
+  transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1), opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  width: auto;
+  z-index: 2;
+  bottom: unset;
+  top: 16px;
+}
+
+.odc-form-validation {
+  position: absolute;
+  top: 100%;
+  transform: translateY(2px);
+  font-size: 1.2rem;
+  color: #ED1C24;
 }
 
 .odc-backdrop {
@@ -3690,7 +3824,8 @@ span:not(.odc-text-gradient, .odc-circle)::after {
   background-color: unset;
   position: relative;
   background: var(--secondary);
-  border-radius: 7px;
+  border-radius: 5px;
+  color: white;
   isolation: isolate;
   overflow: hidden;
 }
@@ -3771,7 +3906,8 @@ span:not(.odc-text-gradient, .odc-circle)::after {
   background-color: unset;
   position: relative;
   background: var(--secondary);
-  border-radius: 7px;
+  border-radius: 5px;
+  color: white;
   isolation: isolate;
   overflow: hidden;
 }
@@ -3852,7 +3988,8 @@ span:not(.odc-text-gradient, .odc-circle)::after {
   background-color: unset;
   position: relative;
   background: var(--secondary);
-  border-radius: 7px;
+  border-radius: 5px;
+  color: white;
   isolation: isolate;
   overflow: hidden;
 }
@@ -3933,7 +4070,8 @@ span:not(.odc-text-gradient, .odc-circle)::after {
   background-color: unset;
   position: relative;
   background: var(--secondary);
-  border-radius: 7px;
+  border-radius: 5px;
+  color: white;
   isolation: isolate;
   overflow: hidden;
 }
@@ -4014,7 +4152,8 @@ span:not(.odc-text-gradient, .odc-circle)::after {
   background-color: unset;
   position: relative;
   background: var(--secondary);
-  border-radius: 7px;
+  border-radius: 5px;
+  color: white;
   isolation: isolate;
   overflow: hidden;
 }
@@ -4095,7 +4234,8 @@ span:not(.odc-text-gradient, .odc-circle)::after {
   background-color: unset;
   position: relative;
   background: var(--secondary);
-  border-radius: 7px;
+  border-radius: 5px;
+  color: white;
   isolation: isolate;
   overflow: hidden;
 }
@@ -4176,7 +4316,8 @@ span:not(.odc-text-gradient, .odc-circle)::after {
   background-color: unset;
   position: relative;
   background: var(--secondary);
-  border-radius: 7px;
+  border-radius: 5px;
+  color: white;
   isolation: isolate;
   overflow: hidden;
 }
@@ -4257,7 +4398,8 @@ span:not(.odc-text-gradient, .odc-circle)::after {
   background-color: unset;
   position: relative;
   background: var(--secondary);
-  border-radius: 7px;
+  border-radius: 5px;
+  color: white;
   isolation: isolate;
   overflow: hidden;
 }
@@ -4338,7 +4480,8 @@ span:not(.odc-text-gradient, .odc-circle)::after {
   background-color: unset;
   position: relative;
   background: var(--secondary);
-  border-radius: 7px;
+  border-radius: 5px;
+  color: white;
   isolation: isolate;
   overflow: hidden;
 }
@@ -4419,7 +4562,8 @@ span:not(.odc-text-gradient, .odc-circle)::after {
   background-color: unset;
   position: relative;
   background: var(--secondary);
-  border-radius: 7px;
+  border-radius: 5px;
+  color: white;
   isolation: isolate;
   overflow: hidden;
 }
@@ -4500,7 +4644,8 @@ span:not(.odc-text-gradient, .odc-circle)::after {
   background-color: unset;
   position: relative;
   background: var(--secondary);
-  border-radius: 7px;
+  border-radius: 5px;
+  color: white;
   isolation: isolate;
   overflow: hidden;
 }
@@ -4581,7 +4726,8 @@ span:not(.odc-text-gradient, .odc-circle)::after {
   background-color: unset;
   position: relative;
   background: var(--secondary);
-  border-radius: 7px;
+  border-radius: 5px;
+  color: white;
   isolation: isolate;
   overflow: hidden;
 }
@@ -4662,7 +4808,8 @@ span:not(.odc-text-gradient, .odc-circle)::after {
   background-color: unset;
   position: relative;
   background: var(--secondary);
-  border-radius: 7px;
+  border-radius: 5px;
+  color: white;
   isolation: isolate;
   overflow: hidden;
 }
@@ -4743,7 +4890,8 @@ span:not(.odc-text-gradient, .odc-circle)::after {
   background-color: unset;
   position: relative;
   background: var(--secondary);
-  border-radius: 7px;
+  border-radius: 5px;
+  color: white;
   isolation: isolate;
   overflow: hidden;
 }
@@ -4833,16 +4981,6 @@ p {
 
 .odc-navbar, .odc-navbar-transparent, .odc-navbar-white, .odc-navbar-black, .odc-navbar-gray, .odc-navbar-purple, .odc-navbar-orange, .odc-navbar-green, .odc-navbar-yellow, .odc-navbar-red, .odc-navbar-blue, .odc-navbar-info, .odc-navbar-error, .odc-navbar-secondary, .odc-navbar-primary {
   padding: 0.75rem 1.5rem;
-}
-.odc-navbar .odc-site-title, .odc-navbar-transparent .odc-site-title, .odc-navbar-white .odc-site-title, .odc-navbar-black .odc-site-title, .odc-navbar-gray .odc-site-title, .odc-navbar-purple .odc-site-title, .odc-navbar-orange .odc-site-title, .odc-navbar-green .odc-site-title, .odc-navbar-yellow .odc-site-title, .odc-navbar-red .odc-site-title, .odc-navbar-blue .odc-site-title, .odc-navbar-info .odc-site-title, .odc-navbar-error .odc-site-title, .odc-navbar-secondary .odc-site-title, .odc-navbar-primary .odc-site-title {
-  font-size: 2rem;
-}
-.odc-navbar .odc-site-links, .odc-navbar-transparent .odc-site-links, .odc-navbar-white .odc-site-links, .odc-navbar-black .odc-site-links, .odc-navbar-gray .odc-site-links, .odc-navbar-purple .odc-site-links, .odc-navbar-orange .odc-site-links, .odc-navbar-green .odc-site-links, .odc-navbar-yellow .odc-site-links, .odc-navbar-red .odc-site-links, .odc-navbar-blue .odc-site-links, .odc-navbar-info .odc-site-links, .odc-navbar-error .odc-site-links, .odc-navbar-secondary .odc-site-links, .odc-navbar-primary .odc-site-links {
-  font-size: 1.5rem;
-}
-.odc-navbar .odc-site-links a:has(.odc-caret-down), .odc-navbar-transparent .odc-site-links a:has(.odc-caret-down), .odc-navbar-white .odc-site-links a:has(.odc-caret-down), .odc-navbar-black .odc-site-links a:has(.odc-caret-down), .odc-navbar-gray .odc-site-links a:has(.odc-caret-down), .odc-navbar-purple .odc-site-links a:has(.odc-caret-down), .odc-navbar-orange .odc-site-links a:has(.odc-caret-down), .odc-navbar-green .odc-site-links a:has(.odc-caret-down), .odc-navbar-yellow .odc-site-links a:has(.odc-caret-down), .odc-navbar-red .odc-site-links a:has(.odc-caret-down), .odc-navbar-blue .odc-site-links a:has(.odc-caret-down), .odc-navbar-info .odc-site-links a:has(.odc-caret-down), .odc-navbar-error .odc-site-links a:has(.odc-caret-down), .odc-navbar-secondary .odc-site-links a:has(.odc-caret-down), .odc-navbar-primary .odc-site-links a:has(.odc-caret-down) {
-  display: flex;
-  align-items: center;
 }
 .odc-navbar [role=tablist], .odc-navbar-transparent [role=tablist], .odc-navbar-white [role=tablist], .odc-navbar-black [role=tablist], .odc-navbar-gray [role=tablist], .odc-navbar-purple [role=tablist], .odc-navbar-orange [role=tablist], .odc-navbar-green [role=tablist], .odc-navbar-yellow [role=tablist], .odc-navbar-red [role=tablist], .odc-navbar-blue [role=tablist], .odc-navbar-info [role=tablist], .odc-navbar-error [role=tablist], .odc-navbar-secondary [role=tablist], .odc-navbar-primary [role=tablist] {
   --_gap: 2rem;
@@ -4981,6 +5119,72 @@ p {
     transform: translate(calc(-50% - 1.1rem));
   }
 }
+.odc-footer .odc-container {
+  width: 100%;
+}
+.odc-footer .odc-container .odc-wrapper .odc-socmed-links {
+  isolation: isolate;
+}
+.odc-footer .odc-container .odc-wrapper .odc-socmed-links:hover > a::after {
+  border: 0.2rem solid #ed1c24;
+}
+.odc-footer .odc-container .odc-wrapper .odc-socmed-links:hover > a > img {
+  filter: invert(100%) brightness(100%);
+  transform: translateY(-1rem) rotateZ(15deg);
+}
+.odc-footer .odc-container .odc-wrapper .odc-socmed-links > a {
+  position: relative;
+}
+.odc-footer .odc-container .odc-wrapper .odc-socmed-links > a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateY(0.5rem);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2117647059);
+  border: 0.2rem solid white;
+  z-index: -1;
+  transition: 550ms var(--anim-ease-secondary);
+}
+.odc-footer .odc-container .odc-wrapper .odc-socmed-links > a > img {
+  transition: 550ms var(--anim-ease-secondary);
+}
+.odc-footer .odc-container .odc-wrapper .odc-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+}
+.odc-footer .odc-container .odc-wrapper .odc-form-container .odc-input-wrapper {
+  gap: 2rem;
+}
+.odc-footer .odc-container .odc-wrapper .odc-form-container .odc-ta-wrapper {
+  width: 100%;
+}
+.odc-footer .odc-container .odc__tags .odc-wrapper:nth-child(1):hover ~ .odc-tag-title::after,
+.odc-footer .odc-container .odc__tags .odc-wrapper:nth-child(2):hover ~ .odc-tag-title::after {
+  width: 23%;
+}
+.odc-footer .odc-container .odc-tag-title {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+}
+.odc-footer .odc-container .odc-tag-title::after {
+  content: "";
+  display: block;
+  width: 16%;
+  height: 0.3rem;
+  background: #ed1c24;
+  transition: width 550ms cubic-bezier(0.85, 0, 0, 1);
+}
+.odc-footer .odc-container .odc-footer__copyright {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  font-size: 1.5rem;
+  letter-spacing: -0.005em;
+}
+
 .odc-hero-title {
   width: 75%;
   text-align: left;
@@ -5468,6 +5672,30 @@ main {
 
 .odc-mb-5 {
   margin-bottom: 6rem;
+}
+
+.odc-dp-gap-0 {
+  gap: 0;
+}
+
+.odc-dp-gap-1 {
+  gap: 1rem;
+}
+
+.odc-dp-gap-2 {
+  gap: 2rem;
+}
+
+.odc-dp-gap-3 {
+  gap: 3rem;
+}
+
+.odc-dp-gap-4 {
+  gap: 4rem;
+}
+
+.odc-dp-gap-5 {
+  gap: 5rem;
 }
 
 .odc-o-10 {

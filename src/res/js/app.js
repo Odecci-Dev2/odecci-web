@@ -119,3 +119,16 @@ function removeEmptySpanElements() {
     });
 }
 removeEmptySpanElements()
+
+// * Inpu Value Listener
+const input = document.querySelectorAll('.odc-input')
+
+input.forEach(item => {
+    item.addEventListener('input', () => {
+        if (item.value.trim() !== '') {
+            item.classList.add('has-value');
+        } else {
+            item.classList.remove('has-value');
+        }
+    })
+})

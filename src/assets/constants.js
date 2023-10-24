@@ -1,4 +1,9 @@
-export const Logo = '/logo-01-2.svg';
+export const OdecciLogo = {
+    primary: 
+        { src: '/logo-01-2.svg', name: 'Odeccilogo-01-2.svg'},
+    secondary: 
+        { src: '/logo-04-1-2.svg', name: 'Odeccilogo-04-1-2.svg'}
+};
 
 export const OdecciInfo = {
     address: 
@@ -7,6 +12,8 @@ export const OdecciInfo = {
         { value: 'info@odecci.com' },
     contactNumber: 
         { value: '(+63) 961 6458 398' },
+    year: 
+        { value: '2023' },
 }
 
 

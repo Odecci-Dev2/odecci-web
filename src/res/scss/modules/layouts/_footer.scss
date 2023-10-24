@@ -1,0 +1,70 @@
+.odc-footer {
+    .odc-container {
+        width: 100%;
+        .odc-wrapper {
+            .odc-socmed-links {
+                isolation: isolate;
+                &:hover > a::after {
+                    border: 0.2rem solid $secondary;
+                }
+                &:hover > a > img {
+                    filter: invert(100%) brightness(100%);
+                    transform: translateY(-1rem) rotateZ(15deg);
+                }
+                & > a {
+                    position: relative;
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        inset: 0;
+                        transform: translateY(0.5rem);
+                        border-radius: 50%;
+                        background: #ffffff36;
+                        border: 0.2rem solid white;
+                        z-index: -1;
+                        transition: 550ms var(--anim-ease-secondary);
+                    }
+                    & > img {
+                        transition: 550ms var(--anim-ease-secondary);
+                    }
+                }    
+            }
+            .odc-form-container {
+                display: flex;
+                flex-direction: column;
+                gap: 2.8rem;
+                .odc-input-wrapper {
+                    gap: 2rem;
+                }
+                .odc-ta-wrapper{
+                    width: 100%;
+                }
+            }
+        }
+        // * Tags Hover
+        .odc__tags .odc-wrapper:nth-child(1):hover ~ .odc-tag-title::after,
+        .odc__tags .odc-wrapper:nth-child(2):hover ~ .odc-tag-title::after {
+            width: 23%;
+        }
+        .odc-tag-title {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 1rem;
+            &::after {
+                content: '';
+                display: block;
+                width: 16%;
+                height: 0.3rem;
+                background: $secondary;
+                transition: width 550ms cubic-bezier(0.85,0,0,1);
+            }
+        }
+        .odc-footer__copyright {
+            display: flex;
+            flex-direction: row;
+            color: white;
+            font-size: 1.5rem;
+            letter-spacing: -0.005em;
+        }
+    }
+}

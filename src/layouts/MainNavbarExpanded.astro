@@ -5,7 +5,7 @@
 // 	href: string;
 // }
 
-import { Logo, NavLinks } from "../assets/constants.js";
+import { OdecciLogo, NavLinks } from "../assets/constants.js";
 
 // const { href, body } = Astro.props;
 ---
@@ -15,7 +15,7 @@ import { Logo, NavLinks } from "../assets/constants.js";
 		<div class="odc-row odc-gap-1">
 			<li class="odc-site-links">
 				<a href=''>
-					<img class="odc-logo" src={Logo} alt="Odecci-Logo" srcset="">
+					<img class="odc-logo" src={OdecciLogo.primary.src} alt={OdecciLogo.primary.name} srcset="">
 				</a>
 			</li>
 		</div>

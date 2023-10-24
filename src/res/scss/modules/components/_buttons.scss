@@ -41,7 +41,8 @@
     background-color: unset;
     position: relative;
     background: var(--secondary);
-    border-radius: 7px;
+    border-radius: 5px;
+    color: white;
     isolation: isolate;
     overflow: hidden;
     &::before {

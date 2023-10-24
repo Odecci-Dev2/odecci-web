@@ -123,3 +123,25 @@ Second Commit:
 - Footer.astro
 - NavbarExpanded.js
 - index.astro
+
+
+October 24, 2023 (Tuesday)
+First Commit:
+• Odecci Web: Footer Section Initial✅
+- Footer.astro
+- MainNavbarExpanded.astro
+- NavbarExpanded.astro
+- PartnerSection.astro
+
+- constant.js
+- app.js
+
+- _variables.scss
+- _base.scss
+- _mixins.scss
+- _utilities.scss
+- _buttons.scss
+- _navbar.scss
+
+Added scss file:
+- _footer.scss
