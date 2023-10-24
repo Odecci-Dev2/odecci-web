@@ -145,3 +145,16 @@ First Commit:
 
 Added scss file:
 - _footer.scss
+
+Second Commit:
+• Odecci Web: Road Map Section Layout
+- constant.js
+
+- OdecciRoadMap.astro
+- index.astro
+
+- _roadmap.scss
+- _footer.scss
+- app.scss
+
+- added assets for the roadmap

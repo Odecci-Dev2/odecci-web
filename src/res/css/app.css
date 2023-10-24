@@ -5130,7 +5130,7 @@ p {
 }
 .odc-footer .odc-container .odc-wrapper .odc-socmed-links:hover > a > img {
   filter: invert(100%) brightness(100%);
-  transform: translateY(-1rem) rotateZ(15deg);
+  transform: translateY(-0.7rem) rotateZ(15deg);
 }
 .odc-footer .odc-container .odc-wrapper .odc-socmed-links > a {
   position: relative;
@@ -5142,7 +5142,7 @@ p {
   transform: translateY(0.5rem);
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.2117647059);
-  border: 0.2rem solid white;
+  border: 0.2rem solid rgba(255, 255, 255, 0.437);
   z-index: -1;
   transition: 550ms var(--anim-ease-secondary);
 }
@@ -5362,6 +5362,11 @@ p {
 }
 .odc-wrapped-section .odc-build-web [data-anim-stagger="3"] {
   transition-delay: 280ms;
+}
+
+.odc-roadmap-section {
+  height: 100vh;
+  overflow-x: auto;
 }
 
 main {

@@ -9,7 +9,7 @@
                 }
                 &:hover > a > img {
                     filter: invert(100%) brightness(100%);
-                    transform: translateY(-1rem) rotateZ(15deg);
+                    transform: translateY(-0.7rem) rotateZ(15deg);
                 }
                 & > a {
                     position: relative;
@@ -20,7 +20,7 @@
                         transform: translateY(0.5rem);
                         border-radius: 50%;
                         background: #ffffff36;
-                        border: 0.2rem solid white;
+                        border: 0.2rem solid rgba(255, 255, 255, 0.437);
                         z-index: -1;
                         transition: 550ms var(--anim-ease-secondary);
                     }

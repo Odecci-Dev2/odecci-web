@@ -3,7 +3,7 @@ export const OdecciLogo = {
         { src: '/logo-01-2.svg', name: 'Odeccilogo-01-2.svg'},
     secondary: 
         { src: '/logo-04-1-2.svg', name: 'Odeccilogo-04-1-2.svg'}
-};
+}
 
 export const OdecciInfo = {
     address: 
@@ -46,6 +46,44 @@ export const WrappedWebsitesImage = [
 export const OdecciBuildImage = [
     { name: 'Odecci Build', src: '/img/odecci-build-1-converted-to-svg-1.png.webp' },
 ]
+
+export const OdecciRoadMap = {
+    item1: 
+        {   
+            name: 'Discovery', 
+            src: '/img/road-map/Client-Checking.webp'
+        },
+    item2:
+        {   
+            name: 'Ideation', 
+            src: '/img/road-map/Discovery-Session-1.webp'
+        },
+    item3:
+        {   
+            name: 'Prototype', 
+            src: '/img/road-map/Prototype.webp'
+        },
+    item4:
+        {   
+            name: 'Development',
+            src: '/img/road-map/Development.webp'
+        },
+    item5:
+        {   
+            name: 'Testing', 
+            src: '/img/road-map/Quality-Assurance.webp'
+        },
+    item6:
+        {   
+            name: 'Deployment',
+            src: '/img/road-map/Launch.webp'
+        },
+    item7:
+        {   
+            name: 'Maintenance & Support',
+            src: '/img/road-map/Maintenance-and-support.webp'
+        }
+}
 
 export const OdecciPartners = [
     { name: 'AWS', icon: '/img/partners/aws.webp', url: '/aws' },
