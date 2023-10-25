@@ -1,9 +1,17 @@
 ---
-import { OdecciRoadMap } from "../assets/constants.js";
+import { OdecciRoadmap } from "../assets/constants.js";
 ---
 
-<div class="odc-roadmap-section odc-bg-yellow">
-    <div class="odc-wrapper">
-        <img src={OdecciRoadMap.item1.src} alt={OdecciRoadMap.item1.name}>
+<section class="odc-roadmap-section odc__sticky__container odc-bg-yellow" data-odc-horizontal-scroll>
+    <div class="odc-h-container odc__sticky">
+        <div class="odc-wrapper odc__scroll__section">
+            <img class="odc-roadmap__image" src={OdecciRoadmap.item1.src} alt={OdecciRoadmap.item1.name}>
+            <img class="odc-roadmap__image" src={OdecciRoadmap.item2.src} alt={OdecciRoadmap.item2.name}>
+            <img class="odc-roadmap__image" src={OdecciRoadmap.item3.src} alt={OdecciRoadmap.item3.name}>
+            <img class="odc-roadmap__image" src={OdecciRoadmap.item4.src} alt={OdecciRoadmap.item4.name}>
+            <img class="odc-roadmap__image" src={OdecciRoadmap.item5.src} alt={OdecciRoadmap.item5.name}>
+            <img class="odc-roadmap__image" src={OdecciRoadmap.item6.src} alt={OdecciRoadmap.item6.name}>
+            <img class="odc-roadmap__image" src={OdecciRoadmap.item7.src} alt={OdecciRoadmap.item7.name}>
+        </div>
     </div>
-</div>
+</section>

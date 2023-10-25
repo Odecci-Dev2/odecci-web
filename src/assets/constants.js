@@ -47,7 +47,7 @@ export const OdecciBuildImage = [
     { name: 'Odecci Build', src: '/img/odecci-build-1-converted-to-svg-1.png.webp' },
 ]
 
-export const OdecciRoadMap = {
+export const OdecciRoadmap = {
     item1: 
         {   
             name: 'Discovery', 

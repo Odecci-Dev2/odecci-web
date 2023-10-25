@@ -23,9 +23,10 @@ $align-values: center, flex-start, flex-end, stretch, baseline;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 2rem;
   box-sizing: border-box;
 }
+
 .odc-row {
   display: flex;
   flex-flow: row wrap;

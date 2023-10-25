@@ -31,6 +31,7 @@
 }
 
 html {
+  scroll-snap-type: y proximity;
   font-size: 62.5%;
 }
 
@@ -56,6 +57,10 @@ body::before {
 
 main {
   height: 100%;
+}
+
+section:not(.odc-hero-container) {
+  scroll-snap-align: start;
 }
 
 :focus:not(:focus-visible) {
@@ -3338,7 +3343,14 @@ textarea {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+.odc-h-container {
+  display: flex;
+  margin: auto 0;
+  padding: 2rem 0;
   box-sizing: border-box;
 }
 
@@ -5364,65 +5376,31 @@ p {
   transition-delay: 280ms;
 }
 
-.odc-roadmap-section {
+.odc-roadmap-section .odc-h-container .odc-wrapper {
+  background: aqua;
+}
+.odc-roadmap-section .odc-h-container .odc-wrapper .odc-roadmap__image {
+  width: 2%;
+}
+
+.odc__sticky__container {
+  height: 800vh;
+}
+.odc__sticky__container .odc__sticky {
+  overflow: hidden;
+  position: sticky;
+  top: 0;
   height: 100vh;
-  overflow-x: auto;
 }
-
-main {
-  margin: auto;
-  padding: 1rem;
-  width: 800px;
-  max-width: calc(100% - 2rem);
-  color: white;
-  font-size: 20px;
-  line-height: 1.6;
-}
-
-.astro-a {
+.odc__sticky__container .odc__sticky .odc__scroll__section {
   position: absolute;
-  top: -32px;
-  left: 50%;
-  transform: translatex(-50%);
-  width: 220px;
-  height: auto;
-  z-index: -1;
-}
-
-.text-gradient {
-  background-image: var(--accent-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: 400%;
-  background-position: 0%;
-}
-
-.instructions {
-  margin-bottom: 2rem;
-  border: 1px solid rgba(var(--accent-light), 25%);
-  background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
-  padding: 1.5rem;
-  border-radius: 8px;
-}
-
-.instructions code {
-  font-size: 0.8em;
-  font-weight: bold;
-  background: rgba(var(--accent-light), 12%);
-  color: rgb(var(--accent-light));
-  border-radius: 4px;
-  padding: 0.3em 0.4em;
-}
-
-.instructions strong {
-  color: rgb(var(--accent-light));
-}
-
-.link-card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-  gap: 2rem;
-  padding: 0;
+  top: 0;
+  height: 100%;
+  width: 800vw;
+  will-change: transform;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .odc-fdr {

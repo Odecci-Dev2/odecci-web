@@ -158,3 +158,20 @@ Second Commit:
 - app.scss
 
 - added assets for the roadmap
+
+
+October 25, 2023 (Wednesday)
+First Commit:
+• Odecci Web: Road Map Section🟦
+- added hybrid scrolling (app.js & _roadmap,scss)
+- added scroll snapping (_base.scss)
+
+constants.js
+- modified variable name for conflicting variables
+***OdecciRoadmap
+
+Added jsx.main in index.astro for offset reference
+Added [data-odc-main-page] attribute to jsx.body 
+
+Deleted _index.scss boilerplate styles
+

@@ -120,7 +120,7 @@ function removeEmptySpanElements() {
 }
 removeEmptySpanElements()
 
-// * Inpu Value Listener
+// * Input Value Listener
 const input = document.querySelectorAll('.odc-input')
 
 input.forEach(item => {
@@ -132,3 +132,24 @@ input.forEach(item => {
         }
     })
 })
+
+const stickySections = document.querySelectorAll('.odc__sticky')
+
+window.addEventListener('scroll', () => {
+    // for (let i = 0; i < stickySections.length; i++) {
+    //     transform(stickySections[i]);
+    //     // console.log(stickySections[i].parentElement.parentElement.parentElement.offsetTop);
+    // }
+    for (const section of stickySections) {
+            transform(section)
+    }
+})
+
+function transform(element) {
+    const offsetTop = element.parentElement.offsetTop
+    const scrollSection = element.querySelector('.odc__scroll__section')
+    console.log(offsetTop);
+    let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100
+    percentage = percentage < 0 ? 0 : percentage > 700 ? 700 : percentage 
+    scrollSection.style.transform = `translate3d(${-(percentage)}vw, 0, 0)`
+}
