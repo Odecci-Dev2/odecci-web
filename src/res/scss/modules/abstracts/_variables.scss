@@ -29,6 +29,10 @@ $info: #f6c31c !default;
     var(--accent-light) 30%,
     white 60%
   );
+  --card-gradient: linear-gradient(
+    230deg, rgba(255,255,255,1) 0%, 
+    rgba(244,119,124,1) 90%, 
+    rgba(237,28,36,1) 100%);
 
   --box-shadow-lg: inset 0 1px 1px 0 hsla(0, 0%, 100%, 0.15), 0 50px 100px -20px rgba(50, 50, 93, 0.3), 0 30px 60px -30px rgba(0, 0, 0, 0.5), -10px 10px 60px -10px rgba(103, 178, 111, 0.3);
 

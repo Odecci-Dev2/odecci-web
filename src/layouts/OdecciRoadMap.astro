@@ -2,16 +2,93 @@
 import { OdecciRoadmap } from "../assets/constants.js";
 ---
 
-<section class="odc-roadmap-section odc__sticky__container odc-bg-yellow" data-odc-horizontal-scroll>
-    <div class="odc-h-container odc__sticky">
+<section class="odc-roadmap-section odc__sticky__container" data-odc-horizontal-scroll>
+    <div class="odc__sticky">
         <div class="odc-wrapper odc__scroll__section">
-            <img class="odc-roadmap__image" src={OdecciRoadmap.item1.src} alt={OdecciRoadmap.item1.name}>
-            <img class="odc-roadmap__image" src={OdecciRoadmap.item2.src} alt={OdecciRoadmap.item2.name}>
-            <img class="odc-roadmap__image" src={OdecciRoadmap.item3.src} alt={OdecciRoadmap.item3.name}>
-            <img class="odc-roadmap__image" src={OdecciRoadmap.item4.src} alt={OdecciRoadmap.item4.name}>
-            <img class="odc-roadmap__image" src={OdecciRoadmap.item5.src} alt={OdecciRoadmap.item5.name}>
-            <img class="odc-roadmap__image" src={OdecciRoadmap.item6.src} alt={OdecciRoadmap.item6.name}>
-            <img class="odc-roadmap__image" src={OdecciRoadmap.item7.src} alt={OdecciRoadmap.item7.name}>
+            <div class="odc-map-wrapper odc-fdr odc-bg-gradient">
+                <div class="odc-map__inner-wrapper odc-fdr">
+                    <div class="odc-map__box odc-fdc">
+                        <h4 class="odc-map__header odc-text-primary">
+                            {OdecciRoadmap.item1.name}
+                        </h4>
+                        <img class="odc-roadmap__image" src={OdecciRoadmap.item1.src} alt={OdecciRoadmap.item1.name}>
+                    </div>
+                    <div class="odc-text-wrapper odc-fdc odc-justify-space-between odc-ml-10">
+                        <p class="odc-fs-x-md odc-text-primary">
+                            <span>
+                                This is where it all begins. We sit down with you to understand your vision, goals, and requirements. Through in-depth discussions, we grasp the essence of your project and map out a strategic plan.
+                            </span>
+                        </p>
+                        <button>Stay Open</button>
+                    </div>
+                </div>
+            </div>
+            <div class="odc-map-wrapper">
+                <img class="odc-roadmap__image" src={OdecciRoadmap.item2.src} alt={OdecciRoadmap.item2.name}>
+                <div class="odc-text-wrapper">
+                    <p>{OdecciRoadmap.item2.name}</p>
+                    <p>
+                        <span>
+                            We translate your ideas into visual concepts. Our creative team designs the user interface and experience, crafting a blueprint that aligns aesthetics with functionality.
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <div class="odc-map-wrapper">
+                <img class="odc-roadmap__image" src={OdecciRoadmap.item3.src} alt={OdecciRoadmap.item3.name}>
+                <div class="odc-text-wrapper">
+                    <p>{OdecciRoadmap.item3.name}</p>
+                    <p>
+                        <span>
+                            With the design in place, we create a prototype that simulates the user journey. This interactive model gives you a firsthand feel of how the final product will function and flow.
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <div class="odc-map-wrapper">
+                <img class="odc-roadmap__image" src={OdecciRoadmap.item4.src} alt={OdecciRoadmap.item4.name}>
+                <div class="odc-text-wrapper">
+                    <p>{OdecciRoadmap.item4.name}</p>
+                    <p>
+                        <span>
+                            Our skilled developers bring the concept to life. Lines of code are meticulously written, transforming the design and prototype into a fully functional application with all its features.
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <div class="odc-map-wrapper">
+                <img class="odc-roadmap__image" src={OdecciRoadmap.item5.src} alt={OdecciRoadmap.item5.name}>
+                <div class="odc-text-wrapper">
+                    <p>{OdecciRoadmap.item5.name}</p>
+                    <p>
+                        <span>
+                            Prior to launch, rigorous testing takes place. We scrutinize every aspect of the application, checking for bugs, glitches, and ensuring a seamless user experience.
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <div class="odc-map-wrapper">
+                <img class="odc-roadmap__image" src={OdecciRoadmap.item6.src} alt={OdecciRoadmap.item6.name}>
+                <div class="odc-text-wrapper">
+                    <p class="">{OdecciRoadmap.item6.name}</p>
+                    <p>
+                        <span>
+                            It's time to introduce your creation to the world. With your approval, we launch the application, making it accessible to users and showcasing the result of meticulous planning and execution.
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <div class="odc-map-wrapper">
+                <img class="odc-roadmap__image" src={OdecciRoadmap.item7.src} alt={OdecciRoadmap.item7.name}>
+                <div class="odc-text-wrapper">
+                    <p>{OdecciRoadmap.item7.name}</p>
+                    <p>
+                        <span>
+                            Our commitment doesn't end at launch. We provide ongoing maintenance and support, ensuring your application remains optimized, secure, and up-to-date. We're here whenever you need us.
+                        </span>
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 </section>

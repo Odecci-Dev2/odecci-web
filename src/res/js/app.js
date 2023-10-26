@@ -134,6 +134,7 @@ input.forEach(item => {
 })
 
 const stickySections = document.querySelectorAll('.odc__sticky')
+// const stickySections = document.querySelector('.odc__sticky')
 
 window.addEventListener('scroll', () => {
     // for (let i = 0; i < stickySections.length; i++) {
@@ -144,12 +145,17 @@ window.addEventListener('scroll', () => {
             transform(section)
     }
 })
-
 function transform(element) {
     const offsetTop = element.parentElement.offsetTop
+    console.log('ScrollY = ', window.scrollY);
+    console.log('offsetTop = ', offsetTop);
+    console.log('window.innerHeight = ', window.innerHeight);
     const scrollSection = element.querySelector('.odc__scroll__section')
-    console.log(offsetTop);
-    let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100
-    percentage = percentage < 0 ? 0 : percentage > 700 ? 700 : percentage 
-    scrollSection.style.transform = `translate3d(${-(percentage)}vw, 0, 0)`
+    // console.log(offsetTop);
+    let percentage = ((window.scrollY - (offsetTop + 728)) / window.innerHeight) * 100
+    console.log('Total: ' + percentage);
+    percentage = percentage < 0 ? 0 : percentage > 800 ? 800 : percentage 
+    // scrollSection.style.transform = `translate3d(${-(percentage)}vw, 0, 0)`
+    scrollSection.style.transform = `translateX(${-(percentage)}vw`
 }
+

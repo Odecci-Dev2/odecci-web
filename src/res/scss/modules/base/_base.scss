@@ -123,6 +123,12 @@ h3 {
     font-weight: $font-weight-bold;
 }
 
+h4 {
+    font-size: clamp(1.6rem, 1.55rem + 2.5vw, 2.4rem);
+    font-weight: $font-weight-bold;
+    position: relative;
+}
+
 h5 {
     font-size: clamp(1.6rem, 1.5rem + 2vw, 2.2rem);
     font-weight: $font-weight-bold;
@@ -213,6 +219,7 @@ textarea {
         stroke: var(--accent-light);
     }
 }
+
 .odc-text-gradient {
     background: linear-gradient(234deg, #132b3c, #19435e, #ed1c24, #fb373d);
     background-size: 200% 200%;
@@ -222,6 +229,23 @@ textarea {
     -webkit-animation: odc-gradient-anim 6s ease infinite;
     -o-animation: odc-gradient-anim 6s ease infinite;
     animation: odc-gradient-anim 6s ease infinite;
+}
+.odc-bg-gradient {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    &::after {
+        content: '';
+        z-index: -1;
+        position: absolute;
+        inset: 0;
+        filter: opacity(25%);
+        background: linear-gradient(234deg, #132b3c, #19435e, #ed1c24, #fb373d);
+        background-size: 200% 200%;
+        -webkit-animation: odc-gradient-anim 6s ease infinite;
+        -o-animation: odc-gradient-anim 6s ease infinite;
+        animation: odc-gradient-anim 6s ease infinite;
+    }
 }
 
 @-webkit-keyframes odc-gradient-anim {

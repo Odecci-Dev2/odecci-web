@@ -175,3 +175,11 @@ Added [data-odc-main-page] attribute to jsx.body
 
 Deleted _index.scss boilerplate styles
 
+
+October 26, 2023 (Thursday)
+First Commit:
+• Odecci Web: Road Map fixed horiz-scroll bug
+- fixed horizontal scrolling (app.js)
+- _roadmap.scss
+- OdecciRoadMap.astro
+

@@ -1,18 +1,6 @@
-.odc-roadmap-section {
-    .odc-h-container {
-        // width: 300vw;
-        .odc-wrapper {
-            background: aqua;
-            .odc-roadmap__image {
-                width: 2%;
-            }
-        }
-    }
-}
-
-.odc__sticky__container {
+.odc-roadmap-section.odc__sticky__container {
     // * Set the viewport height depending on the number of images (100vh = 1img + 100vh)
-    height: 800vh;
+    height: 500vh;
     .odc__sticky {
         overflow: hidden;
         position: sticky;
@@ -23,12 +11,139 @@
             top: 0;
             height: 100%;
             // * Set the viewport width depending on the viewport height set in the parent (it needs to be consistent)
-            width: 800vw;
+            width: 500vw;
             will-change: transform;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            // padding: 0 5vw;
+            margin: 0 3vw;
+            .odc-map-wrapper {
+                position: relative;
+                height: 25rem;
+                max-width: 25rem;
+                border-radius: 3px;
+                padding: 3rem;
+                transition: all 300ms var(--anim-ease-secondary);
+                &.odc-bg-gradient::after {
+                    transition: filter 300ms var(--anim-ease-secondary);
+                }
+                &:hover {
+                    max-width: 50rem;
+                    // *** Background Gradient
+                    &.odc-bg-gradient::after {
+                        filter: opacity(75%);
+                    }
+                    & .odc-map__header{
+                        color: white;
+                        text-shadow: -2px 2px 3px rgba(0,0,0,0.40);
+                        &.odc-text-primary::after {
+                            // background: $primary;
+                            background: white;
+                            width: 100%; 
+                            box-shadow: -2px 2px 3px rgba(0,0,0,0.40);
+                        }
+                        &.odc-text-primary::before {
+                            opacity: 0.6;
+                            // color: var(--accent-light);
+                        }
+                    }
+                    & .odc-roadmap__image {
+                        filter: blur(5px);
+                        z-index: -9;
+                    }
+                    & .odc-text-wrapper {
+                        margin-left: 3rem;
+                    }
+                }
+                .odc-map__inner-wrapper {
+                    .odc-map__header {
+                        position: relative;
+                        isolation: isolate;
+                        transition: 600ms var(--anim-ease-secondary);
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            top: 100%;
+                            left: 0;
+                            background: white;
+                            height: 0.4rem;
+                            width: 0%;
+                            transition: 800ms var(--anim-ease-secondary);
+                        }
+                        &::before {
+                            position: absolute;
+                            font-size: 37rem;
+                            left: 0;
+                            top: 100%;
+                            transform: translate(-5.6rem, -15.2rem);
+                            // bottom: 0;
+                            color: white;
+                            z-index: -8;
+                        }
+                        &:nth-of-type(1){
+                            &::before {
+                                content: '1';
+                            }
+                        }
+                        &:nth-of-type(2){
+                            &::before {
+                                content: '2';
+                            }
+                        }
+                        &:nth-of-type(3){
+                            &::before {
+                                content: '3';
+                            }
+                        }
+                        &:nth-of-type(4){
+                            &::before {
+                                content: '4';
+                            }
+                        }
+                        &:nth-of-type(5){
+                            &::before {
+                                content: '5';
+                            }
+                        }
+                        &:nth-of-type(6){
+                            &::before {
+                                content: '6';
+                            }
+                        }
+                        &:nth-of-type(7){
+                            &::before {
+                                content: '7';
+                            }
+                        }
+                    }
+                    .odc-roadmap__image {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        transform: scale(0.8) translateY(8rem);
+                        width: 100%;
+                        
+                    }
+                }
+                .odc-text-wrapper {
+                    position: relative;
+                    // padding: 1rem;
+                    // background: white;
+                    border-radius: 3px;
+                    transition: margin-left 300ms var(--anim-ease-secondary);
+                    z-index: 9;
+                    p {
+                        color: white;
+                        margin-top: 0;
+                        line-height: 1.6;
+                    }
+                    button {
+                        align-self: flex-end;
+                        color: white;
+                        background: none;
+                        border: none;
+                    }
+                }
+            }
         }
     }
 }

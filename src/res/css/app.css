@@ -18,6 +18,10 @@
     var(--accent-light) 30%,
     white 60%
   );
+  --card-gradient: linear-gradient(
+    230deg, rgba(255,255,255,1) 0%,
+    rgba(244,119,124,1) 90%,
+    rgba(237,28,36,1) 100%);
   --box-shadow-lg: inset 0 1px 1px 0 hsla(0, 0%, 100%, 0.15), 0 50px 100px -20px rgba(50, 50, 93, 0.3), 0 30px 60px -30px rgba(0, 0, 0, 0.5), -10px 10px 60px -10px rgba(103, 178, 111, 0.3);
   --anim-ease-primary: cubic-bezier(0.22, 1, 0.36, 1);
   --anim-ease-secondary: cubic-bezier(0.85,0,0,1);
@@ -134,6 +138,12 @@ h2 {
 h3 {
   font-size: clamp(1.6rem, 1.6rem + 3vw, 3.2rem);
   font-weight: 700;
+}
+
+h4 {
+  font-size: clamp(1.6rem, 1.55rem + 2.5vw, 2.4rem);
+  font-weight: 700;
+  position: relative;
 }
 
 h5 {
@@ -298,6 +308,24 @@ textarea {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  -webkit-animation: odc-gradient-anim 6s ease infinite;
+  -o-animation: odc-gradient-anim 6s ease infinite;
+  animation: odc-gradient-anim 6s ease infinite;
+}
+
+.odc-bg-gradient {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.odc-bg-gradient::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  filter: opacity(25%);
+  background: linear-gradient(234deg, #132b3c, #19435e, #ed1c24, #fb373d);
+  background-size: 200% 200%;
   -webkit-animation: odc-gradient-anim 6s ease infinite;
   -o-animation: odc-gradient-anim 6s ease infinite;
   animation: odc-gradient-anim 6s ease infinite;
@@ -3347,13 +3375,6 @@ textarea {
   box-sizing: border-box;
 }
 
-.odc-h-container {
-  display: flex;
-  margin: auto 0;
-  padding: 2rem 0;
-  box-sizing: border-box;
-}
-
 .odc-row {
   display: flex;
   flex-flow: row wrap;
@@ -4929,7 +4950,7 @@ textarea {
   display: flex;
   background-image: none;
   background-size: 400%;
-  border-radius: 7px;
+  border-radius: 3px;
   background-position: 100%;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
   transition: transform 1s ease;
@@ -4960,7 +4981,7 @@ textarea {
   width: 100%;
   text-decoration: none;
   padding: calc(2.5rem - 1px);
-  border-radius: 8px;
+  border-radius: 3px;
   color: white;
   box-shadow: inset 0px 0px 15px 3px rgba(4, 9, 12, 0.568627451);
   background-color: var(--primary);
@@ -5376,31 +5397,129 @@ p {
   transition-delay: 280ms;
 }
 
-.odc-roadmap-section .odc-h-container .odc-wrapper {
-  background: aqua;
+.odc-roadmap-section.odc__sticky__container {
+  height: 500vh;
 }
-.odc-roadmap-section .odc-h-container .odc-wrapper .odc-roadmap__image {
-  width: 2%;
-}
-
-.odc__sticky__container {
-  height: 800vh;
-}
-.odc__sticky__container .odc__sticky {
+.odc-roadmap-section.odc__sticky__container .odc__sticky {
   overflow: hidden;
   position: sticky;
   top: 0;
   height: 100vh;
 }
-.odc__sticky__container .odc__sticky .odc__scroll__section {
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section {
   position: absolute;
   top: 0;
   height: 100%;
-  width: 800vw;
+  width: 500vw;
   will-change: transform;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  margin: 0 3vw;
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper {
+  position: relative;
+  height: 25rem;
+  max-width: 25rem;
+  border-radius: 3px;
+  padding: 3rem;
+  transition: all 300ms var(--anim-ease-secondary);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper.odc-bg-gradient::after {
+  transition: filter 300ms var(--anim-ease-secondary);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:hover {
+  max-width: 50rem;
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:hover.odc-bg-gradient::after {
+  filter: opacity(75%);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:hover .odc-map__header {
+  color: white;
+  text-shadow: -2px 2px 3px rgba(0, 0, 0, 0.4);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:hover .odc-map__header.odc-text-primary::after {
+  background: white;
+  width: 100%;
+  box-shadow: -2px 2px 3px rgba(0, 0, 0, 0.4);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:hover .odc-map__header.odc-text-primary::before {
+  opacity: 0.6;
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:hover .odc-roadmap__image {
+  filter: blur(5px);
+  z-index: -9;
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:hover .odc-text-wrapper {
+  margin-left: 3rem;
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper .odc-map__inner-wrapper .odc-map__header {
+  position: relative;
+  isolation: isolate;
+  transition: 600ms var(--anim-ease-secondary);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper .odc-map__inner-wrapper .odc-map__header::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  height: 0.4rem;
+  width: 0%;
+  transition: 800ms var(--anim-ease-secondary);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper .odc-map__inner-wrapper .odc-map__header::before {
+  position: absolute;
+  font-size: 37rem;
+  left: 0;
+  top: 100%;
+  transform: translate(-5.6rem, -15.2rem);
+  color: white;
+  z-index: -8;
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper .odc-map__inner-wrapper .odc-map__header:nth-of-type(1)::before {
+  content: "1";
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper .odc-map__inner-wrapper .odc-map__header:nth-of-type(2)::before {
+  content: "2";
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper .odc-map__inner-wrapper .odc-map__header:nth-of-type(3)::before {
+  content: "3";
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper .odc-map__inner-wrapper .odc-map__header:nth-of-type(4)::before {
+  content: "4";
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper .odc-map__inner-wrapper .odc-map__header:nth-of-type(5)::before {
+  content: "5";
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper .odc-map__inner-wrapper .odc-map__header:nth-of-type(6)::before {
+  content: "6";
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper .odc-map__inner-wrapper .odc-map__header:nth-of-type(7)::before {
+  content: "7";
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper .odc-map__inner-wrapper .odc-roadmap__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(0.8) translateY(8rem);
+  width: 100%;
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper .odc-text-wrapper {
+  position: relative;
+  border-radius: 3px;
+  transition: margin-left 300ms var(--anim-ease-secondary);
+  z-index: 9;
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper .odc-text-wrapper p {
+  color: white;
+  margin-top: 0;
+  line-height: 1.6;
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper .odc-text-wrapper button {
+  align-self: flex-end;
+  color: white;
+  background: none;
+  border: none;
 }
 
 .odc-fdr {
@@ -5585,6 +5704,26 @@ p {
   margin-left: 6rem;
 }
 
+.odc-ml-6 {
+  margin-left: 7.5rem;
+}
+
+.odc-ml-7 {
+  margin-left: 9rem;
+}
+
+.odc-ml-8 {
+  margin-left: 10.5rem;
+}
+
+.odc-ml-9 {
+  margin-left: 12rem;
+}
+
+.odc-ml-10 {
+  margin-left: 13.5rem;
+}
+
 .odc-mr-0 {
   margin-right: 0;
 }
@@ -5607,6 +5746,26 @@ p {
 
 .odc-mr-5 {
   margin-right: 6rem;
+}
+
+.odc-mr-6 {
+  margin-right: 7.5rem;
+}
+
+.odc-mr-7 {
+  margin-right: 9rem;
+}
+
+.odc-mr-8 {
+  margin-right: 10.5rem;
+}
+
+.odc-mr-9 {
+  margin-right: 12rem;
+}
+
+.odc-mr-10 {
+  margin-right: 13.5rem;
 }
 
 .odc-mt-0 {
