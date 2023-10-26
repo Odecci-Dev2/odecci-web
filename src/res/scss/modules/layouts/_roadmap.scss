@@ -26,11 +26,18 @@
                 &.odc-bg-gradient::after {
                     transition: filter 300ms var(--anim-ease-secondary);
                 }
-                &:hover {
+                &.open {
                     max-width: 50rem;
                     // *** Background Gradient
                     &.odc-bg-gradient::after {
-                        filter: opacity(75%);
+                        filter: opacity(80%);
+                    }
+                    &.odc-bg-gradient::before {
+                        content: '';
+                        position: absolute;
+                        inset: 0;
+                        background: #000;
+                        opacity: 0.4;
                     }
                     & .odc-map__header{
                         color: white;
@@ -54,6 +61,90 @@
                         margin-left: 3rem;
                     }
                 }
+                &:hover {
+                    max-width: 50rem;
+                    // *** Background Gradient
+                    &.odc-bg-gradient::after {
+                        filter: opacity(80%);
+                    }
+                    &.odc-bg-gradient::before {
+                        content: '';
+                        position: absolute;
+                        inset: 0;
+                        background: #000;
+                        opacity: 0.4;
+                    }
+                    & .odc-map__header{
+                        color: white;
+                        text-shadow: -2px 2px 3px rgba(0,0,0,0.40);
+                        &.odc-text-primary::after {
+                            // background: $primary;
+                            background: white;
+                            width: 100%; 
+                            box-shadow: -2px 2px 3px rgba(0,0,0,0.40);
+                        }
+                        &.odc-text-primary::before {
+                            opacity: 0.6;
+                            // color: var(--accent-light);
+                        }
+                    }
+                    & .odc-roadmap__image {
+                        filter: blur(5px);
+                        z-index: -9;
+                    }
+                    & .odc-text-wrapper {
+                        margin-left: 3rem;
+                    }
+                }
+                &:nth-of-type(1) .odc-map__inner-wrapper {
+                    &.odc-map__header::before {
+                        content: '1';
+                    }
+                } 
+                &:nth-of-type(2) .odc-map__inner-wrapper {
+                    &.odc-map__header::before {
+                        content: '2';
+                    }
+                }
+                &:nth-of-type(3) .odc-map__inner-wrapper {
+                    &.odc-map__header::before {
+                        content: '3';
+                    }
+                }
+                &:nth-of-type(4) .odc-map__inner-wrapper {
+                    &.odc-map__header::before {
+                        content: '4';
+                    }
+                    .odc-roadmap__image {
+                        transform: scale(0.9) translateY(9rem);
+                    }
+                }
+                &:nth-of-type(5) .odc-map__inner-wrapper {
+                    &.odc-map__header::before {
+                        content: '5';
+                    }
+                    .odc-roadmap__image {
+                        transform: scale(0.9) translateY(10rem);
+                    }
+                } 
+                &:nth-of-type(6) .odc-map__inner-wrapper {
+                    &.odc-map__header::before {
+                        content: '6';
+                    }
+                    .odc-roadmap__image {
+                        transform: scale(0.68) translateY(5rem);
+                    }
+                } 
+                &:nth-of-type(7) .odc-map__inner-wrapper {
+                    &.odc-map__header::before {
+                        content: '7';
+                        font-size: 37rem;
+                        transform: translate(-5.6rem, -18.2rem);
+                    } 
+                    .odc-roadmap__image {
+                        transform: scale(0.8) translateY(12rem);
+                    }
+                }
                 .odc-map__inner-wrapper {
                     .odc-map__header {
                         position: relative;
@@ -75,45 +166,10 @@
                             left: 0;
                             top: 100%;
                             transform: translate(-5.6rem, -15.2rem);
-                            // bottom: 0;
                             color: white;
                             z-index: -8;
                         }
-                        &:nth-of-type(1){
-                            &::before {
-                                content: '1';
-                            }
-                        }
-                        &:nth-of-type(2){
-                            &::before {
-                                content: '2';
-                            }
-                        }
-                        &:nth-of-type(3){
-                            &::before {
-                                content: '3';
-                            }
-                        }
-                        &:nth-of-type(4){
-                            &::before {
-                                content: '4';
-                            }
-                        }
-                        &:nth-of-type(5){
-                            &::before {
-                                content: '5';
-                            }
-                        }
-                        &:nth-of-type(6){
-                            &::before {
-                                content: '6';
-                            }
-                        }
-                        &:nth-of-type(7){
-                            &::before {
-                                content: '7';
-                            }
-                        }
+                        
                     }
                     .odc-roadmap__image {
                         position: absolute;
@@ -121,7 +177,6 @@
                         left: 0;
                         transform: scale(0.8) translateY(8rem);
                         width: 100%;
-                        
                     }
                 }
                 .odc-text-wrapper {
@@ -137,10 +192,16 @@
                         line-height: 1.6;
                     }
                     button {
+                        pointer-events: all;
                         align-self: flex-end;
                         color: white;
                         background: none;
                         border: none;
+                        font-weight: bold;
+                        transition: 300ms var(--anim-ease-secondary);
+                        &:hover {
+                            color: rgba(255, 255, 255, 0.796);
+                        }
                     }
                 }
             }

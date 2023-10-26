@@ -5427,11 +5427,50 @@ p {
 .odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper.odc-bg-gradient::after {
   transition: filter 300ms var(--anim-ease-secondary);
 }
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper.open {
+  max-width: 50rem;
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper.open.odc-bg-gradient::after {
+  filter: opacity(80%);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper.open.odc-bg-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #000;
+  opacity: 0.4;
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper.open .odc-map__header {
+  color: white;
+  text-shadow: -2px 2px 3px rgba(0, 0, 0, 0.4);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper.open .odc-map__header.odc-text-primary::after {
+  background: white;
+  width: 100%;
+  box-shadow: -2px 2px 3px rgba(0, 0, 0, 0.4);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper.open .odc-map__header.odc-text-primary::before {
+  opacity: 0.6;
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper.open .odc-roadmap__image {
+  filter: blur(5px);
+  z-index: -9;
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper.open .odc-text-wrapper {
+  margin-left: 3rem;
+}
 .odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:hover {
   max-width: 50rem;
 }
 .odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:hover.odc-bg-gradient::after {
-  filter: opacity(75%);
+  filter: opacity(80%);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:hover.odc-bg-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #000;
+  opacity: 0.4;
 }
 .odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:hover .odc-map__header {
   color: white;
@@ -5451,6 +5490,41 @@ p {
 }
 .odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:hover .odc-text-wrapper {
   margin-left: 3rem;
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(1) .odc-map__inner-wrapper.odc-map__header::before {
+  content: "1";
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(2) .odc-map__inner-wrapper.odc-map__header::before {
+  content: "2";
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(3) .odc-map__inner-wrapper.odc-map__header::before {
+  content: "3";
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(4) .odc-map__inner-wrapper.odc-map__header::before {
+  content: "4";
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(4) .odc-map__inner-wrapper .odc-roadmap__image {
+  transform: scale(0.9) translateY(9rem);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(5) .odc-map__inner-wrapper.odc-map__header::before {
+  content: "5";
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(5) .odc-map__inner-wrapper .odc-roadmap__image {
+  transform: scale(0.9) translateY(10rem);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(6) .odc-map__inner-wrapper.odc-map__header::before {
+  content: "6";
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(6) .odc-map__inner-wrapper .odc-roadmap__image {
+  transform: scale(0.68) translateY(5rem);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(7) .odc-map__inner-wrapper.odc-map__header::before {
+  content: "7";
+  font-size: 37rem;
+  transform: translate(-5.6rem, -18.2rem);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(7) .odc-map__inner-wrapper .odc-roadmap__image {
+  transform: scale(0.8) translateY(12rem);
 }
 .odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper .odc-map__inner-wrapper .odc-map__header {
   position: relative;
@@ -5476,27 +5550,6 @@ p {
   color: white;
   z-index: -8;
 }
-.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper .odc-map__inner-wrapper .odc-map__header:nth-of-type(1)::before {
-  content: "1";
-}
-.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper .odc-map__inner-wrapper .odc-map__header:nth-of-type(2)::before {
-  content: "2";
-}
-.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper .odc-map__inner-wrapper .odc-map__header:nth-of-type(3)::before {
-  content: "3";
-}
-.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper .odc-map__inner-wrapper .odc-map__header:nth-of-type(4)::before {
-  content: "4";
-}
-.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper .odc-map__inner-wrapper .odc-map__header:nth-of-type(5)::before {
-  content: "5";
-}
-.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper .odc-map__inner-wrapper .odc-map__header:nth-of-type(6)::before {
-  content: "6";
-}
-.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper .odc-map__inner-wrapper .odc-map__header:nth-of-type(7)::before {
-  content: "7";
-}
 .odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper .odc-map__inner-wrapper .odc-roadmap__image {
   position: absolute;
   top: 0;
@@ -5516,10 +5569,16 @@ p {
   line-height: 1.6;
 }
 .odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper .odc-text-wrapper button {
+  pointer-events: all;
   align-self: flex-end;
   color: white;
   background: none;
   border: none;
+  font-weight: bold;
+  transition: 300ms var(--anim-ease-secondary);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper .odc-text-wrapper button:hover {
+  color: rgba(255, 255, 255, 0.796);
 }
 
 .odc-fdr {

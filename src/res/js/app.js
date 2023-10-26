@@ -133,29 +133,47 @@ input.forEach(item => {
     })
 })
 
+
+// *** Road Map Section
+
 const stickySections = document.querySelectorAll('.odc__sticky')
-// const stickySections = document.querySelector('.odc__sticky')
 
 window.addEventListener('scroll', () => {
-    // for (let i = 0; i < stickySections.length; i++) {
-    //     transform(stickySections[i]);
-    //     // console.log(stickySections[i].parentElement.parentElement.parentElement.offsetTop);
-    // }
     for (const section of stickySections) {
             transform(section)
     }
 })
+
 function transform(element) {
     const offsetTop = element.parentElement.offsetTop
-    console.log('ScrollY = ', window.scrollY);
-    console.log('offsetTop = ', offsetTop);
-    console.log('window.innerHeight = ', window.innerHeight);
+    // console.log('ScrollY = ', window.scrollY);
+    // console.log('offsetTop = ', offsetTop);
+    // console.log('window.innerHeight = ', window.innerHeight);
     const scrollSection = element.querySelector('.odc__scroll__section')
-    // console.log(offsetTop);
     let percentage = ((window.scrollY - (offsetTop + 728)) / window.innerHeight) * 100
     console.log('Total: ' + percentage);
     percentage = percentage < 0 ? 0 : percentage > 800 ? 800 : percentage 
-    // scrollSection.style.transform = `translate3d(${-(percentage)}vw, 0, 0)`
     scrollSection.style.transform = `translateX(${-(percentage)}vw`
 }
 
+
+const btnStayHovered = document.querySelectorAll('[data-btn-stay-hovered]')
+const mapWrapper = document.querySelectorAll('[data-map-wrapper]')
+
+btnStayHovered.forEach(btn => {
+    btn.addEventListener('click', () => {
+        let toggleThis = btn.closest('[data-map-wrapper]')
+        toggleThis.classList.add('open')
+        if (btn.matches("[data-btn-stay-hovered='false']")) {
+            btn.innerHTML = 'Close'
+            btn.setAttribute('data-btn-stay-hovered' , 'true')
+        }
+        if (btn.matches("[data-btn-stay-hovered='true']")) {
+            btn.addEventListener('click', () => {
+                btn.innerHTML = 'Stay Open'
+                toggleThis.classList.remove('open')
+                btn.setAttribute('data-btn-stay-hovered' , 'false')
+            })
+        }
+    })
+})

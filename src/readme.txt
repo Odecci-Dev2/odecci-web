@@ -183,3 +183,14 @@ First Commit:
 - _roadmap.scss
 - OdecciRoadMap.astro
 
+• Odecci Web Prototype: Road Map Initial✅
+- Figma Prototype of the roadmap
+
+Second Commit:
+• Odecci Web: Road Map Initial✅
+- Added button toggle 
+    - app.js
+- Implemented card layout for every element 
+    - OdecciRoadMap.astro
+- Fixed cards layout 
+    - _roadmap.scss
