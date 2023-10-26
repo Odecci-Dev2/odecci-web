@@ -5398,7 +5398,7 @@ p {
 }
 
 .odc-roadmap-section.odc__sticky__container {
-  height: 500vh;
+  height: 290vh;
 }
 .odc-roadmap-section.odc__sticky__container .odc__sticky {
   overflow: hidden;
@@ -5410,7 +5410,7 @@ p {
   position: absolute;
   top: 0;
   height: 100%;
-  width: 500vw;
+  width: 290vw;
   will-change: transform;
   display: flex;
   align-items: center;
@@ -5421,19 +5421,16 @@ p {
   height: 25rem;
   max-width: 25rem;
   border-radius: 3px;
-  padding: 3rem;
-  transition: all 300ms var(--anim-ease-secondary);
-}
-.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper.odc-bg-gradient::after {
-  transition: filter 300ms var(--anim-ease-secondary);
+  background: white;
+  transition: all 600ms var(--anim-ease-secondary);
 }
 .odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper.open {
   max-width: 50rem;
 }
-.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper.open.odc-bg-gradient::after {
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper.open .odc-bg-gradient::after {
   filter: opacity(80%);
 }
-.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper.open.odc-bg-gradient::before {
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper.open .odc-bg-gradient::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -5462,10 +5459,10 @@ p {
 .odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:hover {
   max-width: 50rem;
 }
-.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:hover.odc-bg-gradient::after {
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:hover .odc-bg-gradient::after {
   filter: opacity(80%);
 }
-.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:hover.odc-bg-gradient::before {
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:hover .odc-bg-gradient::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -5491,40 +5488,47 @@ p {
 .odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:hover .odc-text-wrapper {
   margin-left: 3rem;
 }
-.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(1) .odc-map__inner-wrapper.odc-map__header::before {
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(1) .odc-map__inner-wrapper .odc-map__header::before {
   content: "1";
 }
-.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(2) .odc-map__inner-wrapper.odc-map__header::before {
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(2) .odc-map__inner-wrapper .odc-map__header::before {
   content: "2";
 }
-.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(3) .odc-map__inner-wrapper.odc-map__header::before {
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(3) .odc-map__inner-wrapper .odc-map__header::before {
   content: "3";
 }
-.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(4) .odc-map__inner-wrapper.odc-map__header::before {
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(4) .odc-map__inner-wrapper .odc-map__header::before {
   content: "4";
 }
 .odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(4) .odc-map__inner-wrapper .odc-roadmap__image {
   transform: scale(0.9) translateY(9rem);
 }
-.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(5) .odc-map__inner-wrapper.odc-map__header::before {
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(5) .odc-map__inner-wrapper .odc-map__header::before {
   content: "5";
 }
 .odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(5) .odc-map__inner-wrapper .odc-roadmap__image {
   transform: scale(0.9) translateY(10rem);
 }
-.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(6) .odc-map__inner-wrapper.odc-map__header::before {
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(6) .odc-map__inner-wrapper .odc-map__header::before {
   content: "6";
 }
 .odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(6) .odc-map__inner-wrapper .odc-roadmap__image {
   transform: scale(0.68) translateY(5rem);
 }
-.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(7) .odc-map__inner-wrapper.odc-map__header::before {
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(7) .odc-map__inner-wrapper .odc-map__header::before {
   content: "7";
   font-size: 37rem;
   transform: translate(-5.6rem, -18.2rem);
 }
 .odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(7) .odc-map__inner-wrapper .odc-roadmap__image {
   transform: scale(0.8) translateY(12rem);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper .odc-map__inner-wrapper {
+  overflow: hidden;
+  padding: 3rem;
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper .odc-map__inner-wrapper.odc-bg-gradient::after {
+  transition: filter 300ms var(--anim-ease-secondary);
 }
 .odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper .odc-map__inner-wrapper .odc-map__header {
   position: relative;
@@ -5560,7 +5564,7 @@ p {
 .odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper .odc-text-wrapper {
   position: relative;
   border-radius: 3px;
-  transition: margin-left 300ms var(--anim-ease-secondary);
+  transition: margin-left 600ms var(--anim-ease-secondary);
   z-index: 9;
 }
 .odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper .odc-text-wrapper p {
@@ -5579,6 +5583,165 @@ p {
 }
 .odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper .odc-text-wrapper button:hover {
   color: rgba(255, 255, 255, 0.796);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(1)::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 100%;
+  height: 5.13rem;
+  width: 0.4rem;
+  background: var(--primary);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(1)::after {
+  content: "";
+  position: absolute;
+  z-index: -9;
+  left: 50%;
+  right: 0;
+  top: 100%;
+  height: 0.45rem;
+  width: 70%;
+  transform-origin: bottom left;
+  transform: translate(0, 4.66rem);
+  background: var(--primary);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(2) {
+  transform: translate(5rem, 17rem);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(2)::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 100%;
+  height: 5.13rem;
+  width: 0.4rem;
+  background: var(--primary);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(2)::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  right: 0;
+  bottom: 100%;
+  height: 0.45rem;
+  width: 70%;
+  transform-origin: bottom left;
+  transform: translate(0, -4.66rem);
+  background: var(--primary);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(3) {
+  transform: translate(10rem, -5rem);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(3)::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 100%;
+  height: 5.13rem;
+  width: 0.4rem;
+  background: var(--primary);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(3)::after {
+  content: "";
+  position: absolute;
+  z-index: -9;
+  left: 50%;
+  right: 0;
+  top: 100%;
+  height: 0.45rem;
+  width: 70%;
+  transform-origin: bottom left;
+  transform: translate(0, 4.66rem);
+  background: var(--primary);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(4) {
+  transform: translate(15rem, 13rem);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(4)::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 100%;
+  height: 5.13rem;
+  width: 0.4rem;
+  background: var(--primary);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(4)::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  right: 0;
+  bottom: 100%;
+  height: 0.45rem;
+  width: 70%;
+  transform-origin: bottom left;
+  transform: translate(0, -4.66rem);
+  background: var(--primary);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(5) {
+  transform: translate(20rem, -9rem);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(5)::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 100%;
+  height: 5.13rem;
+  width: 0.4rem;
+  background: var(--primary);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(5)::after {
+  content: "";
+  position: absolute;
+  z-index: -9;
+  left: 50%;
+  right: 0;
+  top: 100%;
+  height: 0.45rem;
+  width: 70%;
+  transform-origin: bottom left;
+  transform: translate(0, 4.66rem);
+  background: var(--primary);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(6) {
+  transform: translate(25rem, 8rem);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(6)::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 100%;
+  height: 5.13rem;
+  width: 0.4rem;
+  background: var(--primary);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(6)::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  right: 0;
+  bottom: 100%;
+  height: 0.45rem;
+  width: 70%;
+  transform-origin: bottom left;
+  transform: translate(0, -4.66rem);
+  background: var(--primary);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(7) {
+  transform: translate(30rem, -13rem);
 }
 
 .odc-fdr {

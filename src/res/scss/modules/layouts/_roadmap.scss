@@ -1,6 +1,6 @@
 .odc-roadmap-section.odc__sticky__container {
     // * Set the viewport height depending on the number of images (100vh = 1img + 100vh)
-    height: 500vh;
+    height: 290vh;
     .odc__sticky {
         overflow: hidden;
         position: sticky;
@@ -11,28 +11,44 @@
             top: 0;
             height: 100%;
             // * Set the viewport width depending on the viewport height set in the parent (it needs to be consistent)
-            width: 500vw;
+            width: 290vw;
             will-change: transform;
             display: flex;
             align-items: center;
             margin: 0 3vw;
+            // &::before {
+            //     position: absolute;
+            //     right: -198rem;
+            //     z-index: -1;
+            //     content: url(/img/road-map/Grid.jpg);
+            //     filter: invert(100%);
+            //     transform: scale(0.2);
+            //     opacity: 0.1;
+            // }
+            // &::after {
+            //     position: absolute;
+            //     right: -340.9rem;
+            //     z-index: -1;
+            //     content: url(/img/road-map/Grid.jpg);
+            //     filter: invert(100%);
+            //     transform: scale(0.2);
+            //     opacity: 0.1;
+            // }
             .odc-map-wrapper {
                 position: relative;
                 height: 25rem;
                 max-width: 25rem;
                 border-radius: 3px;
-                padding: 3rem;
-                transition: all 300ms var(--anim-ease-secondary);
-                &.odc-bg-gradient::after {
-                    transition: filter 300ms var(--anim-ease-secondary);
-                }
+                background: white;
+                transition: all 600ms var(--anim-ease-secondary);
+                
                 &.open {
                     max-width: 50rem;
                     // *** Background Gradient
-                    &.odc-bg-gradient::after {
+                    & .odc-bg-gradient::after {
                         filter: opacity(80%);
                     }
-                    &.odc-bg-gradient::before {
+                    & .odc-bg-gradient::before {
                         content: '';
                         position: absolute;
                         inset: 0;
@@ -64,10 +80,10 @@
                 &:hover {
                     max-width: 50rem;
                     // *** Background Gradient
-                    &.odc-bg-gradient::after {
+                    & .odc-bg-gradient::after {
                         filter: opacity(80%);
                     }
-                    &.odc-bg-gradient::before {
+                    & .odc-bg-gradient::before {
                         content: '';
                         position: absolute;
                         inset: 0;
@@ -97,55 +113,60 @@
                     }
                 }
                 &:nth-of-type(1) .odc-map__inner-wrapper {
-                    &.odc-map__header::before {
+                    & .odc-map__header::before {
                         content: '1';
                     }
                 } 
                 &:nth-of-type(2) .odc-map__inner-wrapper {
-                    &.odc-map__header::before {
+                    & .odc-map__header::before {
                         content: '2';
                     }
                 }
                 &:nth-of-type(3) .odc-map__inner-wrapper {
-                    &.odc-map__header::before {
+                    & .odc-map__header::before {
                         content: '3';
                     }
                 }
                 &:nth-of-type(4) .odc-map__inner-wrapper {
-                    &.odc-map__header::before {
+                    & .odc-map__header::before {
                         content: '4';
                     }
-                    .odc-roadmap__image {
+                    & .odc-roadmap__image {
                         transform: scale(0.9) translateY(9rem);
                     }
                 }
                 &:nth-of-type(5) .odc-map__inner-wrapper {
-                    &.odc-map__header::before {
+                    & .odc-map__header::before {
                         content: '5';
                     }
-                    .odc-roadmap__image {
+                    & .odc-roadmap__image {
                         transform: scale(0.9) translateY(10rem);
                     }
                 } 
                 &:nth-of-type(6) .odc-map__inner-wrapper {
-                    &.odc-map__header::before {
+                    & .odc-map__header::before {
                         content: '6';
                     }
-                    .odc-roadmap__image {
+                    & .odc-roadmap__image {
                         transform: scale(0.68) translateY(5rem);
                     }
                 } 
                 &:nth-of-type(7) .odc-map__inner-wrapper {
-                    &.odc-map__header::before {
+                    & .odc-map__header::before {
                         content: '7';
                         font-size: 37rem;
                         transform: translate(-5.6rem, -18.2rem);
                     } 
-                    .odc-roadmap__image {
+                    & .odc-roadmap__image {
                         transform: scale(0.8) translateY(12rem);
                     }
                 }
                 .odc-map__inner-wrapper {
+                    overflow: hidden;
+                    padding: 3rem;
+                    &.odc-bg-gradient::after {
+                        transition: filter 300ms var(--anim-ease-secondary);
+                    }
                     .odc-map__header {
                         position: relative;
                         isolation: isolate;
@@ -184,7 +205,7 @@
                     // padding: 1rem;
                     // background: white;
                     border-radius: 3px;
-                    transition: margin-left 300ms var(--anim-ease-secondary);
+                    transition: margin-left 600ms var(--anim-ease-secondary);
                     z-index: 9;
                     p {
                         color: white;
@@ -204,6 +225,169 @@
                         }
                     }
                 }
+                &:nth-of-type(1) {
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        margin: 0 auto;
+                        top: 100%;
+                        height: 5.13rem;
+                        width: 0.4rem;
+                        background: var(--primary);
+                    }
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        z-index: -9;
+                        left: 50%;
+                        right: 0;
+                        top: 100%;
+                        height: 0.45rem;
+                        width: 70%;
+                        transform-origin: bottom left;
+                        transform: translate(0, 4.66rem);
+                        background: var(--primary);
+                    }
+                }
+                &:nth-of-type(2) {
+                    transform: translate(5rem, 17rem);
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        margin: 0 auto;
+                        bottom: 100%;
+                        height: 5.13rem;
+                        width: 0.4rem;
+                        background: var(--primary);
+                    }
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        left: 50%;
+                        right: 0;
+                        bottom: 100%;
+                        height: 0.45rem;
+                        width: 70%;
+                        transform-origin: bottom left;
+                        transform: translate(0, -4.66rem);
+                        background: var(--primary);
+                    }
+                }
+                &:nth-of-type(3) {
+                    transform: translate(10rem, -5rem);
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        margin: 0 auto;
+                        top: 100%;
+                        height: 5.13rem;
+                        width: 0.4rem;
+                        background: var(--primary);
+                    }
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        z-index: -9;
+                        left: 50%;
+                        right: 0;
+                        top: 100%;
+                        height: 0.45rem;
+                        width: 70%;
+                        transform-origin: bottom left;
+                        transform: translate(0, 4.66rem);
+                        background: var(--primary);
+                    }
+                }
+                &:nth-of-type(4) {
+                    transform: translate(15rem, 13rem);
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        margin: 0 auto;
+                        bottom: 100%;
+                        height: 5.13rem;
+                        width: 0.4rem;
+                        background: var(--primary);
+                    }
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        left: 50%;
+                        right: 0;
+                        bottom: 100%;
+                        height: 0.45rem;
+                        width: 70%;
+                        transform-origin: bottom left;
+                        transform: translate(0, -4.66rem);
+                        background: var(--primary);
+                    }
+                }
+                &:nth-of-type(5) {
+                    transform: translate(20rem, -9rem);
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        margin: 0 auto;
+                        top: 100%;
+                        height: 5.13rem;
+                        width: 0.4rem;
+                        background: var(--primary);
+                    }
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        z-index: -9;
+                        left: 50%;
+                        right: 0;
+                        top: 100%;
+                        height: 0.45rem;
+                        width: 70%;
+                        transform-origin: bottom left;
+                        transform: translate(0, 4.66rem);
+                        background: var(--primary);
+                    }
+                }
+                &:nth-of-type(6) {
+                    transform: translate(25rem, 8rem);
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        margin: 0 auto;
+                        bottom: 100%;
+                        height: 5.13rem;
+                        width: 0.4rem;
+                        background: var(--primary);
+                    }
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        left: 50%;
+                        right: 0;
+                        bottom: 100%;
+                        height: 0.45rem;
+                        width: 70%;
+                        transform-origin: bottom left;
+                        transform: translate(0, -4.66rem);
+                        background: var(--primary);
+                    }
+                }
+                &:nth-of-type(7) {
+                    transform: translate(30rem, -13rem);
+                }
+                
             }
         }
     }

@@ -152,7 +152,7 @@ function transform(element) {
     const scrollSection = element.querySelector('.odc__scroll__section')
     let percentage = ((window.scrollY - (offsetTop + 728)) / window.innerHeight) * 100
     console.log('Total: ' + percentage);
-    percentage = percentage < 0 ? 0 : percentage > 800 ? 800 : percentage 
+    percentage = percentage < 0 ? 0 : percentage > 200 ? 200 : percentage 
     scrollSection.style.transform = `translateX(${-(percentage)}vw`
 }
 
@@ -161,19 +161,31 @@ const btnStayHovered = document.querySelectorAll('[data-btn-stay-hovered]')
 const mapWrapper = document.querySelectorAll('[data-map-wrapper]')
 
 btnStayHovered.forEach(btn => {
+
     btn.addEventListener('click', () => {
+
         let toggleThis = btn.closest('[data-map-wrapper]')
         toggleThis.classList.add('open')
+
         if (btn.matches("[data-btn-stay-hovered='false']")) {
+
             btn.innerHTML = 'Close'
             btn.setAttribute('data-btn-stay-hovered' , 'true')
+
         }
+
         if (btn.matches("[data-btn-stay-hovered='true']")) {
+
             btn.addEventListener('click', () => {
+
                 btn.innerHTML = 'Stay Open'
                 toggleThis.classList.remove('open')
                 btn.setAttribute('data-btn-stay-hovered' , 'false')
+                
             })
+
         }
+
     })
+
 })

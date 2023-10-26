@@ -194,3 +194,11 @@ Second Commit:
     - OdecciRoadMap.astro
 - Fixed cards layout 
     - _roadmap.scss
+
+Third Commit:
+• Odecci Web: Road Map Initial✅
+- Implemented the design from Prototype
+- OdecciRoadMap.astro
+- _roadmap.scss
+- app.js
+**TODO: fix the error in app.js
