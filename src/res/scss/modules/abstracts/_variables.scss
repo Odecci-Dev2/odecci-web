@@ -24,6 +24,18 @@ $info: #f6c31c !default;
     var(--secondary-accent) 70%,
     var(--secondary) 100%)
   ;
+  --primary--gradient-rev: linear-gradient(
+    240deg, var(--primary) 0%,
+    var(--primary-accent) 30%,
+    var(--secondary-accent) 70%,
+    var(--secondary) 100%)
+  ;
+  // --primary--gradient-rev: linear-gradient(
+  //   60deg, var(--primary) 100%,
+  //   var(--primary-accent) 70%,
+  //   var(--secondary-accent) 30%,
+  //   var(--secondary) 0%)
+  // ;
   --accent-gradient: linear-gradient(
     45deg, var(--secondary-accent),
     var(--accent-light) 30%,

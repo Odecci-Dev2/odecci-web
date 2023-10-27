@@ -202,3 +202,27 @@ Third Commit:
 - _roadmap.scss
 - app.js
 **TODO: fix the error in app.js
+
+
+October 27, 2023 (Friday)
+First Commit:
+• Odecci Web: Road Map Initial✅
+- Implemented the design from Prototype
+- OdecciRoadMap.astro
+- _roadmap.scss
+- _variables.scss
+- app.js
+
+Second Commit:
+• Odecci Web: Started routing pages
+- astro.config.mjs
+ Added pages:
+ + our-works.astro
+ + home.astro
+- extended modules and components
+
+• Odecci Web: Added sticky nav
+- MainNavbarExpanded.astro
+ * Modified some class
+- _navbar.scss
+- _base.scss

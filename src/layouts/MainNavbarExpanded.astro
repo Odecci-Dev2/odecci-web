@@ -10,15 +10,11 @@ import { OdecciLogo, NavLinks } from "../assets/constants.js";
 // const { href, body } = Astro.props;
 ---
 
-<nav class="odc-navbar-transparent">
-	<ul class="odc-container">
-		<div class="odc-row odc-gap-1">
-			<li class="odc-site-links">
-				<a href=''>
-					<img class="odc-logo" src={OdecciLogo.primary.src} alt={OdecciLogo.primary.name} srcset="">
-				</a>
-			</li>
-		</div>
+<nav class="odc-navbar-transparent odc-navbar__sticky" odc-nav-scrolled="true">
+	<ul class="odc-container odc-align-center">
+		<a class="odc-row" href=''>
+			<img class="odc-logo" src={OdecciLogo.primary.src} alt={OdecciLogo.primary.name} srcset="">
+		</a>
 		<div role="tablist" class="odc-row odc-gap-1">
 			{NavLinks.map((link, index) => (
 				<li role="tab" class="odc-site-links odc-nav-links">

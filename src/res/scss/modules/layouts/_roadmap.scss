@@ -16,24 +16,6 @@
             display: flex;
             align-items: center;
             margin: 0 3vw;
-            // &::before {
-            //     position: absolute;
-            //     right: -198rem;
-            //     z-index: -1;
-            //     content: url(/img/road-map/Grid.jpg);
-            //     filter: invert(100%);
-            //     transform: scale(0.2);
-            //     opacity: 0.1;
-            // }
-            // &::after {
-            //     position: absolute;
-            //     right: -340.9rem;
-            //     z-index: -1;
-            //     content: url(/img/road-map/Grid.jpg);
-            //     filter: invert(100%);
-            //     transform: scale(0.2);
-            //     opacity: 0.1;
-            // }
             .odc-map-wrapper {
                 position: relative;
                 height: 25rem;
@@ -224,6 +206,22 @@
                             color: rgba(255, 255, 255, 0.796);
                         }
                     }
+                } 
+                &::before,
+                &::after {
+                    pointer-events: none;
+                }
+                &:nth-of-type(odd)::before {
+                    background: var(--primary-gradient) !important;
+                }
+                &:nth-of-type(odd)::after {
+                    background: var(--primary);
+                }
+                &:nth-of-type(even)::before {
+                    background: var(--primary--gradient-rev) !important;
+                }
+                &:nth-of-type(even)::after {
+                    background: var(--primary);
                 }
                 &:nth-of-type(1) {
                     &::before {
@@ -235,7 +233,6 @@
                         top: 100%;
                         height: 5.13rem;
                         width: 0.4rem;
-                        background: var(--primary);
                     }
                     &::after {
                         content: '';
@@ -248,7 +245,6 @@
                         width: 70%;
                         transform-origin: bottom left;
                         transform: translate(0, 4.66rem);
-                        background: var(--primary);
                     }
                 }
                 &:nth-of-type(2) {
@@ -262,7 +258,7 @@
                         bottom: 100%;
                         height: 5.13rem;
                         width: 0.4rem;
-                        background: var(--primary);
+                        background: var(--primary--gradient-rev);
                     }
                     &::after {
                         content: '';
@@ -274,7 +270,6 @@
                         width: 70%;
                         transform-origin: bottom left;
                         transform: translate(0, -4.66rem);
-                        background: var(--primary);
                     }
                 }
                 &:nth-of-type(3) {
@@ -288,7 +283,6 @@
                         top: 100%;
                         height: 5.13rem;
                         width: 0.4rem;
-                        background: var(--primary);
                     }
                     &::after {
                         content: '';
@@ -301,7 +295,6 @@
                         width: 70%;
                         transform-origin: bottom left;
                         transform: translate(0, 4.66rem);
-                        background: var(--primary);
                     }
                 }
                 &:nth-of-type(4) {
@@ -315,7 +308,6 @@
                         bottom: 100%;
                         height: 5.13rem;
                         width: 0.4rem;
-                        background: var(--primary);
                     }
                     &::after {
                         content: '';
@@ -327,7 +319,6 @@
                         width: 70%;
                         transform-origin: bottom left;
                         transform: translate(0, -4.66rem);
-                        background: var(--primary);
                     }
                 }
                 &:nth-of-type(5) {
@@ -341,7 +332,6 @@
                         top: 100%;
                         height: 5.13rem;
                         width: 0.4rem;
-                        background: var(--primary);
                     }
                     &::after {
                         content: '';
@@ -354,7 +344,6 @@
                         width: 70%;
                         transform-origin: bottom left;
                         transform: translate(0, 4.66rem);
-                        background: var(--primary);
                     }
                 }
                 &:nth-of-type(6) {
@@ -369,7 +358,6 @@
                         bottom: 100%;
                         height: 5.13rem;
                         width: 0.4rem;
-                        background: var(--primary);
                     }
                     &::after {
                         content: '';
@@ -381,7 +369,6 @@
                         width: 70%;
                         transform-origin: bottom left;
                         transform: translate(0, -4.66rem);
-                        background: var(--primary);
                     }
                 }
                 &:nth-of-type(7) {

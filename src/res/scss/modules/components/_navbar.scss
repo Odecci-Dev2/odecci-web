@@ -10,6 +10,39 @@
     @extend %flex-layout;
     padding: $base-padding $base-padding * 2;
     // box-shadow: $base-box-shadow;
+    &.odc-navbar__sticky {
+      position: sticky;
+      line-height: 70px;
+      left: 0;
+      width: 100%;
+      top: 0;
+      padding: 0;
+      background: hsla(0,0%,100%,0);
+      z-index: 10;
+      box-shadow: 0 0 0 rgba(0,40,100,0);
+      transition: all .25s ease-in-out;
+      transform: translateZ(1000px);
+      isolation: isolate;
+      &::before {
+        &[odc-nav-scrolled] {
+          -webkit-backdrop-filter: blur(5px) saturate(200%);
+          backdrop-filter: blur(5px) saturate(200%);
+        }
+        display: block;
+        content: " ";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        top: 0;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+        border-bottom: 1px solid #c0c0c0;
+        background: white;
+        // background: hsla(0,0%,100%,0) linear-gradient(180deg,#f7faff,rgba(247,250,255,0.7));
+        // transition: backdrop-filter .25s ease-out,-webkit-backdrop-filter .25s ease-out;
+      }
+    }
     [role='tablist'] {
       --_gap: 2rem;
       display: flex;

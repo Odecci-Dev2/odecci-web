@@ -13,6 +13,11 @@
     var(--primary-accent) 30%,
     var(--secondary-accent) 70%,
     var(--secondary) 100%) ;
+  --primary--gradient-rev: linear-gradient(
+    240deg, var(--primary) 0%,
+    var(--primary-accent) 30%,
+    var(--secondary-accent) 70%,
+    var(--secondary) 100%) ;
   --accent-gradient: linear-gradient(
     45deg, var(--secondary-accent),
     var(--accent-light) 30%,
@@ -36,6 +41,7 @@
 
 html {
   scroll-snap-type: y proximity;
+  scroll-padding-top: 9rem;
   font-size: 62.5%;
 }
 
@@ -5015,6 +5021,37 @@ p {
 .odc-navbar, .odc-navbar-transparent, .odc-navbar-white, .odc-navbar-black, .odc-navbar-gray, .odc-navbar-purple, .odc-navbar-orange, .odc-navbar-green, .odc-navbar-yellow, .odc-navbar-red, .odc-navbar-blue, .odc-navbar-info, .odc-navbar-error, .odc-navbar-secondary, .odc-navbar-primary {
   padding: 0.75rem 1.5rem;
 }
+.odc-navbar.odc-navbar__sticky, .odc-navbar__sticky.odc-navbar-transparent, .odc-navbar__sticky.odc-navbar-white, .odc-navbar__sticky.odc-navbar-black, .odc-navbar__sticky.odc-navbar-gray, .odc-navbar__sticky.odc-navbar-purple, .odc-navbar__sticky.odc-navbar-orange, .odc-navbar__sticky.odc-navbar-green, .odc-navbar__sticky.odc-navbar-yellow, .odc-navbar__sticky.odc-navbar-red, .odc-navbar__sticky.odc-navbar-blue, .odc-navbar__sticky.odc-navbar-info, .odc-navbar__sticky.odc-navbar-error, .odc-navbar__sticky.odc-navbar-secondary, .odc-navbar__sticky.odc-navbar-primary {
+  position: sticky;
+  line-height: 70px;
+  left: 0;
+  width: 100%;
+  top: 0;
+  padding: 0;
+  background: hsla(0, 0%, 100%, 0);
+  z-index: 10;
+  box-shadow: 0 0 0 rgba(0, 40, 100, 0);
+  transition: all 0.25s ease-in-out;
+  transform: translateZ(1000px);
+  isolation: isolate;
+}
+.odc-navbar.odc-navbar__sticky::before, .odc-navbar__sticky.odc-navbar-transparent::before, .odc-navbar__sticky.odc-navbar-white::before, .odc-navbar__sticky.odc-navbar-black::before, .odc-navbar__sticky.odc-navbar-gray::before, .odc-navbar__sticky.odc-navbar-purple::before, .odc-navbar__sticky.odc-navbar-orange::before, .odc-navbar__sticky.odc-navbar-green::before, .odc-navbar__sticky.odc-navbar-yellow::before, .odc-navbar__sticky.odc-navbar-red::before, .odc-navbar__sticky.odc-navbar-blue::before, .odc-navbar__sticky.odc-navbar-info::before, .odc-navbar__sticky.odc-navbar-error::before, .odc-navbar__sticky.odc-navbar-secondary::before, .odc-navbar__sticky.odc-navbar-primary::before {
+  display: block;
+  content: " ";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 0;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  border-bottom: 1px solid #c0c0c0;
+  background: white;
+}
+.odc-navbar.odc-navbar__sticky::before[odc-nav-scrolled], .odc-navbar__sticky.odc-navbar-transparent::before[odc-nav-scrolled], .odc-navbar__sticky.odc-navbar-white::before[odc-nav-scrolled], .odc-navbar__sticky.odc-navbar-black::before[odc-nav-scrolled], .odc-navbar__sticky.odc-navbar-gray::before[odc-nav-scrolled], .odc-navbar__sticky.odc-navbar-purple::before[odc-nav-scrolled], .odc-navbar__sticky.odc-navbar-orange::before[odc-nav-scrolled], .odc-navbar__sticky.odc-navbar-green::before[odc-nav-scrolled], .odc-navbar__sticky.odc-navbar-yellow::before[odc-nav-scrolled], .odc-navbar__sticky.odc-navbar-red::before[odc-nav-scrolled], .odc-navbar__sticky.odc-navbar-blue::before[odc-nav-scrolled], .odc-navbar__sticky.odc-navbar-info::before[odc-nav-scrolled], .odc-navbar__sticky.odc-navbar-error::before[odc-nav-scrolled], .odc-navbar__sticky.odc-navbar-secondary::before[odc-nav-scrolled], .odc-navbar__sticky.odc-navbar-primary::before[odc-nav-scrolled] {
+  -webkit-backdrop-filter: blur(5px) saturate(200%);
+  backdrop-filter: blur(5px) saturate(200%);
+}
 .odc-navbar [role=tablist], .odc-navbar-transparent [role=tablist], .odc-navbar-white [role=tablist], .odc-navbar-black [role=tablist], .odc-navbar-gray [role=tablist], .odc-navbar-purple [role=tablist], .odc-navbar-orange [role=tablist], .odc-navbar-green [role=tablist], .odc-navbar-yellow [role=tablist], .odc-navbar-red [role=tablist], .odc-navbar-blue [role=tablist], .odc-navbar-info [role=tablist], .odc-navbar-error [role=tablist], .odc-navbar-secondary [role=tablist], .odc-navbar-primary [role=tablist] {
   --_gap: 2rem;
   display: flex;
@@ -5584,6 +5621,21 @@ p {
 .odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper .odc-text-wrapper button:hover {
   color: rgba(255, 255, 255, 0.796);
 }
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper::before, .odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper::after {
+  pointer-events: none;
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(odd)::before {
+  background: var(--primary-gradient) !important;
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(odd)::after {
+  background: var(--primary);
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(even)::before {
+  background: var(--primary--gradient-rev) !important;
+}
+.odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(even)::after {
+  background: var(--primary);
+}
 .odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(1)::before {
   content: "";
   position: absolute;
@@ -5593,7 +5645,6 @@ p {
   top: 100%;
   height: 5.13rem;
   width: 0.4rem;
-  background: var(--primary);
 }
 .odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(1)::after {
   content: "";
@@ -5606,7 +5657,6 @@ p {
   width: 70%;
   transform-origin: bottom left;
   transform: translate(0, 4.66rem);
-  background: var(--primary);
 }
 .odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(2) {
   transform: translate(5rem, 17rem);
@@ -5620,7 +5670,7 @@ p {
   bottom: 100%;
   height: 5.13rem;
   width: 0.4rem;
-  background: var(--primary);
+  background: var(--primary--gradient-rev);
 }
 .odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(2)::after {
   content: "";
@@ -5632,7 +5682,6 @@ p {
   width: 70%;
   transform-origin: bottom left;
   transform: translate(0, -4.66rem);
-  background: var(--primary);
 }
 .odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(3) {
   transform: translate(10rem, -5rem);
@@ -5646,7 +5695,6 @@ p {
   top: 100%;
   height: 5.13rem;
   width: 0.4rem;
-  background: var(--primary);
 }
 .odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(3)::after {
   content: "";
@@ -5659,7 +5707,6 @@ p {
   width: 70%;
   transform-origin: bottom left;
   transform: translate(0, 4.66rem);
-  background: var(--primary);
 }
 .odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(4) {
   transform: translate(15rem, 13rem);
@@ -5673,7 +5720,6 @@ p {
   bottom: 100%;
   height: 5.13rem;
   width: 0.4rem;
-  background: var(--primary);
 }
 .odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(4)::after {
   content: "";
@@ -5685,7 +5731,6 @@ p {
   width: 70%;
   transform-origin: bottom left;
   transform: translate(0, -4.66rem);
-  background: var(--primary);
 }
 .odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(5) {
   transform: translate(20rem, -9rem);
@@ -5699,7 +5744,6 @@ p {
   top: 100%;
   height: 5.13rem;
   width: 0.4rem;
-  background: var(--primary);
 }
 .odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(5)::after {
   content: "";
@@ -5712,7 +5756,6 @@ p {
   width: 70%;
   transform-origin: bottom left;
   transform: translate(0, 4.66rem);
-  background: var(--primary);
 }
 .odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(6) {
   transform: translate(25rem, 8rem);
@@ -5726,7 +5769,6 @@ p {
   bottom: 100%;
   height: 5.13rem;
   width: 0.4rem;
-  background: var(--primary);
 }
 .odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(6)::after {
   content: "";
@@ -5738,7 +5780,6 @@ p {
   width: 70%;
   transform-origin: bottom left;
   transform: translate(0, -4.66rem);
-  background: var(--primary);
 }
 .odc-roadmap-section.odc__sticky__container .odc__sticky .odc__scroll__section .odc-map-wrapper:nth-of-type(7) {
   transform: translate(30rem, -13rem);
