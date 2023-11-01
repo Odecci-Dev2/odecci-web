@@ -137,12 +137,14 @@ input.forEach(item => {
 // *** Road Map Section
 
 const stickySections = document.querySelectorAll('.odc__sticky')
-
 window.addEventListener('scroll', () => {
     for (const section of stickySections) {
-            transform(section)
-    }
+            transform(section)  
+        }
 })
+
+const btnStayHovered = document.querySelectorAll('[data-btn-stay-hovered]')
+const mapWrapper = document.querySelectorAll('[data-map-wrapper]')
 
 function transform(element) {
     const offsetTop = element.parentElement.offsetTop
@@ -151,41 +153,67 @@ function transform(element) {
     // console.log('window.innerHeight = ', window.innerHeight);
     const scrollSection = element.querySelector('.odc__scroll__section')
     let percentage = ((window.scrollY - (offsetTop + 728)) / window.innerHeight) * 100
-    console.log('Total: ' + percentage);
+    // console.log('Total: ' + percentage);
     percentage = percentage < 0 ? 0 : percentage > 200 ? 200 : percentage 
     scrollSection.style.transform = `translateX(${-(percentage)}vw`
+
+    btnStayHovered.forEach(btn => {
+
+        if (percentage >= 140 ) {
+                
+            let toggleThis = btn.closest('[data-map-wrapper]')
+            toggleThis.classList.add('open')
+
+    
+        } else if (percentage < 1) {
+    
+            let toggleThis = btn.closest('[data-map-wrapper]')
+            toggleThis.classList.remove('open')
+
+        } 
+    
+    })
+
+
 }
 
-
-const btnStayHovered = document.querySelectorAll('[data-btn-stay-hovered]')
-const mapWrapper = document.querySelectorAll('[data-map-wrapper]')
-
 btnStayHovered.forEach(btn => {
-
+    
     btn.addEventListener('click', () => {
 
         let toggleThis = btn.closest('[data-map-wrapper]')
-        toggleThis.classList.add('open')
 
         if (btn.matches("[data-btn-stay-hovered='false']")) {
-
-            btn.innerHTML = 'Close'
-            btn.setAttribute('data-btn-stay-hovered' , 'true')
+            
+            btn.addEventListener('click', (e) => {
+                e.preventDefault()
+                
+                btn.innerHTML = 'Close'
+                toggleThis.classList.add('open')
+                btn.setAttribute('data-btn-stay-hovered' , 'true')
+                
+            })
 
         }
-
+    
         if (btn.matches("[data-btn-stay-hovered='true']")) {
-
-            btn.addEventListener('click', () => {
-
+    
+            btn.addEventListener('click', (e) => {
+                e.preventDefault()
+    
                 btn.innerHTML = 'Stay Open'
                 toggleThis.classList.remove('open')
                 btn.setAttribute('data-btn-stay-hovered' , 'false')
                 
             })
-
+    
         }
-
+    
     })
 
 })
+
+
+function lerp (start, end, t) {
+    return start * ( 1 - t ) + end * t;
+}

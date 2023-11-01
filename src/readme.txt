@@ -226,3 +226,9 @@ Second Commit:
  * Modified some class
 - _navbar.scss
 - _base.scss
+
+
+November 01, 2023 (Monday)
+First Commit
+• Odecci Web: Road Map Refactoring✅
+- app.js
